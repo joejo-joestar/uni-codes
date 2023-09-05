@@ -14,9 +14,7 @@ public class W02_Q4_Count {
         for (int i = 0; i < 5; i++) {
             System.out.print("Please enter Number " + (i+1) + ": ");
             nums[i] = inp.nextInt();
-
-
-
+            
         }
 
         for (int i = 0; i < 5; i++) {
