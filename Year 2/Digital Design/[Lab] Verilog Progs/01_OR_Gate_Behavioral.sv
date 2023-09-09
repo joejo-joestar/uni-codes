@@ -1,3 +1,4 @@
+
 //main program
 module OR_Gate (output reg Z, input E, F);
   
