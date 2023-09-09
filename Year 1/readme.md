@@ -1,2 +1,4 @@
-# CP Lab Codes
+# Computer Programming (CS F111) Lab Codes
 Almost all the codes from the Computer Programming Lab in Year 1
+
+All these codes can be run on an [online Complier](https://www.onlinegdb.com) in C or can be downloaded and run in vscode or such :)
