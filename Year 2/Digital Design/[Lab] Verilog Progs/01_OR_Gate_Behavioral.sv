@@ -1,3 +1,6 @@
+/*
+Code can be found here: https://edaplayground.com/x/LqTN
+*/
 
 //main program
 module OR_Gate (output reg Z, input E, F);
