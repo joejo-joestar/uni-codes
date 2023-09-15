@@ -25,7 +25,7 @@ module tb_OR_Gate;
   wire r;
   
   initial begin
-    
+		
 		//$dumpfile ("dump.vcd"); //only needed if using the online compiler
 		//$dumpvars (1, tb_OR_Gate); //only needed if using the online compiler
     
