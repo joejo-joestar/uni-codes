@@ -24,7 +24,7 @@ class Elements {
         System.out.println(" ");
         
     }
-
+    
     public void sort() {
         
         if (aweight > 15) {
@@ -59,7 +59,7 @@ public class W03_Q1_PT {
             
             System.out.print("Please enter the Chemical Symbol of the element: ");
             String sym = inp.nextLine();
-           
+            
             System.out.print("Please enter the Class / Type of the element: ");
             String type = inp.nextLine();
             
@@ -72,12 +72,13 @@ public class W03_Q1_PT {
             
         }
 
+        System.out.println(" ");
         System.out.println("The Elements with Atomic Weight over 15amu are: ");
         for (int i = 0; i < num; i++) {
             arr[i].sort();
-
+            
         }
         
     }
-
+    
 }
