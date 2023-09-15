@@ -17,7 +17,7 @@ module tb_NOT_Gate;
   wire r;
   
   initial begin
-    
+		
 		//$dumpfile ("dump.vcd"); //only needed if using the online compiler
 		//$dumpvars (1, tb_NOT_Gate); //only needed if using the online compiler
     
