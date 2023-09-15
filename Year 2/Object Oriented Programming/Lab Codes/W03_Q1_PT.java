@@ -1,13 +1,11 @@
 import java.util.Scanner;
 
 class Elements {
-    
     int anum;
     String name, sym, type;
     double aweight;
 
     Elements(int an, String na, String sy, String ty, double aw) {
-        
         anum = an;
         name = na;
         sym = sy;
@@ -17,7 +15,6 @@ class Elements {
     }
 
     public void display() {
-
         System.out.println(" ");
         System.out.println("Atomic Number: " + anum);
         System.out.println("Element Name: " + name);
@@ -31,7 +28,6 @@ class Elements {
     public void sort() {
         
         if (aweight > 15) {
-            
             display();
             
         }
@@ -42,9 +38,7 @@ class Elements {
 
 
 public class W03_Q1_PT {
-    
     public static void main(String[] args) {
-        
         Scanner inp = new Scanner(System.in);
         
         System.out.print("Please enter the number of the elements to input: ");
@@ -53,7 +47,6 @@ public class W03_Q1_PT {
         Elements[] arr = new Elements[num];
         
         for (int i = 0; i < num; i++) {
-            
             System.out.println(" ");
             
             System.out.print("Please enter the Atomic number of the element: ");
@@ -81,11 +74,10 @@ public class W03_Q1_PT {
 
         System.out.println("The Elements with Atomic Weight over 15amu are: ");
         for (int i = 0; i < num; i++) {
-
             arr[i].sort();
 
         }
-          
+        
     }
 
 }
