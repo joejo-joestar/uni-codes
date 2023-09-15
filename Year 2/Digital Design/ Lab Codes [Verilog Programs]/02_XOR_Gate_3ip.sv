@@ -17,7 +17,7 @@ module tb_XOR_Gate;
   wire s;
   
   initial begin
-      
+			
 		//$dumpfile ("dump.vcd"); //only needed if using the online compiler
 		//$dumpvars (1, tb_XOR_Gate); //only needed if using the online compiler
     
