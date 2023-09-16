@@ -3,6 +3,18 @@ Code can be found here: https://edaplayground.com/x/MaXw
 */
 
 //main program
+	//AND Gate
+module AND_Gate (output reg Z, input A, B, C);
+  
+  wire p;
+  
+  and #10 OR1 (p, A, B);
+  and #10 OR2 (Z, p, C);
+  
+endmodule
+
+
+	//OR Gate
 module OR_Gate (output reg Z, input A, B, C);
   
   wire p;
@@ -11,7 +23,6 @@ module OR_Gate (output reg Z, input A, B, C);
   or #10 OR2 (Z, p, C);
   
 endmodule
-
 
 //testbench
 module tb_OR_Gate;
