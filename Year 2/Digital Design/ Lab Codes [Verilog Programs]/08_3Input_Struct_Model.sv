@@ -24,6 +24,8 @@ module OR_Gate (output reg Z, input A, B, C);
   
 endmodule
 
+
+
 //testbench
 	//OR Gate
 module tb_AND_Gate;
