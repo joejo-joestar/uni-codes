@@ -25,28 +25,57 @@ module OR_Gate (output reg Z, input A, B, C);
 endmodule
 
 //testbench
-module tb_OR_Gate;
+	//OR Gate
+module tb_AND_Gate;
   
-  reg p, q, r;
-  wire s;
+  reg and_ip1, and_ip2, and_ip3;
+  wire and_op;
   
   initial begin
     
-    // $dumpfile ("dump.vcd"); //only needed if using the online compiler
-    // $dumpvars (1, tb_OR_Gate); //only needed if using the online compiler
+    // $dumpfile ("dump.vcd");
+    // $dumpvars (1, tb_AND_Gate);
     
-    #000 p = 0; q = 0; r = 0;
-    #100 p = 0; q = 0; r = 1;
-    #100 p = 0; q = 1; r = 0;
-    #100 p = 0; q = 1; r = 1;
-    #100 p = 1; q = 0; r = 0;
-    #100 p = 1; q = 0; r = 1;
-    #100 p = 1; q = 1; r = 0;
-    #100 p = 1; q = 1; r = 1;
+    #000 and_ip1 = 0; and_ip2 = 0; and_ip3 = 0;
+    #100 and_ip1 = 0; and_ip2 = 0; and_ip3 = 1;
+    #100 and_ip1 = 0; and_ip2 = 1; and_ip3 = 0;
+    #100 and_ip1 = 0; and_ip2 = 1; and_ip3 = 1;
+    #100 and_ip1 = 1; and_ip2 = 0; and_ip3 = 0;
+    #100 and_ip1 = 1; and_ip2 = 0; and_ip3 = 1;
+    #100 and_ip1 = 1; and_ip2 = 1; and_ip3 = 0;
+    #100 and_ip1 = 1; and_ip2 = 1; and_ip3 = 1;
     #100 $stop;
     
   end
   
-  OR_Gate U1 (s,p, q, r);
+  AND_Gate U1 (and_op, and_ip1 ,and_ip2, and_ip3);
+  
+endmodule
+
+
+	//OR Gate
+module tb_OR_Gate;
+  
+  reg or_ip1, or_ip2, or_ip3;
+  wire or_op;
+  
+  initial begin
+    
+    // $dumpfile ("dump.vcd");
+    // $dumpvars (1, tb_OR_Gate);
+    
+    #000 or_ip1 = 0; or_ip2 = 0; or_ip3 = 0;
+    #100 or_ip1 = 0; or_ip2 = 0; or_ip3 = 1;
+    #100 or_ip1 = 0; or_ip2 = 1; or_ip3 = 0;
+    #100 or_ip1 = 0; or_ip2 = 1; or_ip3 = 1;
+    #100 or_ip1 = 1; or_ip2 = 0; or_ip3 = 0;
+    #100 or_ip1 = 1; or_ip2 = 0; or_ip3 = 1;
+    #100 or_ip1 = 1; or_ip2 = 1; or_ip3 = 0;
+    #100 or_ip1 = 1; or_ip2 = 1; or_ip3 = 1;
+    #100 $stop;
+    
+  end
+  
+  OR_Gate U1 (or_op, or_ip1, or_ip2, or_ip3);
   
 endmodule
