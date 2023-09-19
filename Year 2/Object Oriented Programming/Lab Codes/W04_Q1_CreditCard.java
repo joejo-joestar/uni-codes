@@ -45,67 +45,67 @@ class CreditCard {
         Scanner ip = new Scanner(System.in);
 
             if (p == pin) {
-            if (enabled == true) {
-                System.out.println("Input Amount to Withdraw: ");
-                
-                double amt = ip.nextInt();
-                double sidisc = (amt - (amt*0.01));
-                double godisc = (amt - (amt*0.02));
-                double pldisc = (amt - (amt*0.03));
-                
-                if (amt > currentCred) {
-                    System.out.println(" "); 
-                    System.out.println("Insufficient Funds"); 
-                    System.out.println(" "); 
-
-                }
-
-                if (amt <= creditLim) {
-                    if (cardType == 1) {
-                        currentCred = currentCred - sidisc;
-                        System.out.println("Current Credit = " + currentCred);
-
+                if (enabled == true) {
+                    System.out.println("Input Amount to Withdraw: ");
+                    
+                    double amt = ip.nextInt();
+                    double sidisc = (amt - (amt*0.01));
+                    double godisc = (amt - (amt*0.02));
+                    double pldisc = (amt - (amt*0.03));
+                    
+                    if (amt > currentCred) {
+                        System.out.println(" "); 
+                        System.out.println("Insufficient Funds"); 
+                        System.out.println(" "); 
+    
                     }
-
-                    else if (cardType == 2) {
-                        currentCred = currentCred - godisc;
-                        System.out.println("Current Credit = " + currentCred);
+    
+                    if (amt <= creditLim) {
+                        if (cardType == 1) {
+                            currentCred = currentCred - sidisc;
+                            System.out.println("Current Credit = " + currentCred);
+    
+                        }
+    
+                        else if (cardType == 2) {
+                            currentCred = currentCred - godisc;
+                            System.out.println("Current Credit = " + currentCred);
+                        
+                        }
+    
+                        else if (cardType == 3) {
+                            currentCred = currentCred - pldisc;
+                            System.out.println("Current Credit = " + currentCred);
+                        
+                        }
+                        
+                        else {
+                            System.out.println("error");
+    
+                        }
+    
+                    }
+    
+                    else if (amt > creditLim) {
+                        System.out.println("The amount entered is over the credit limit.");
                     
                     }
-
-                    else if (cardType == 3) {
-                        currentCred = currentCred - pldisc;
-                        System.out.println("Current Credit = " + currentCred);
-                    
-                    }
-                    
+    
                     else {
-                        System.out.println("error");
-
+                        System.out.println("Error");
+                        
                     }
-
+    
                 }
-
-                else if (amt > creditLim) {
-                    System.out.println("The amount entered is over the credit limit.");
-                
-                }
-
-                else {
-                    System.out.println("Error");
+    
+                else if (enabled == false) {
+                    System.out.println("Please Activate the Card.");
                     
                 }
-
-            }
-
-            else if (enabled == false) {
-                System.out.println("Please Activate the Card.");
                 
-            }
-            
-            else{
-                System.out.println("Error");
-            }
+                else{
+                    System.out.println("Error");
+                }
             
         }
 
