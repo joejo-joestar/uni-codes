@@ -3,7 +3,7 @@ Code can be found here: https://edaplayground.com/x/McG_
 */
 
 //main program
-module NAND_Gate (output reg Z, input A, B);
+module NAND_Gate (Z, A, B);
 
     output Z;
     input A, B;
@@ -12,30 +12,29 @@ module NAND_Gate (output reg Z, input A, B);
     nand #1 NA1 (p, A, A);
     nand #1 NA2 (q, B, B);
     nand #1 NA3 (Z, p, q);
-    
   
 endmodule
 
 
 //testbench
 module tb_NAND_Gate;
-    
-    reg in_1, in_2;
-    wire op;
+  
+   reg in_1, in_2;
+   wire op;
 
-    initial begin
+   initial begin
 
-        $dumpfile ("dump.vcd"); //only needed if using the online compiler
-        $dumpvars (1, tb_NAND_Gate); //only needed if using the online compiler
+     // $dumpfile ("dump.vcd"); //only needed if using the online compiler
+     // $dumpvars (1, tb_NAND_Gate); //only needed if using the online compiler
 
-        #000 in_1 = 0; in_2 = 0;
-        #100 in_1 = 0; in_2 = 1;
-        #100 in_1 = 1; in_2 = 0;
-        #100 in_1 = 1; in_2 = 1;
-        #100 $stop;
+     #000 in_1 = 0; in_2 = 0;
+     #100 in_1 = 0; in_2 = 1;
+     #100 in_1 = 1; in_2 = 0;
+     #100 in_1 = 1; in_2 = 1;
+     #100 $stop;
 
-        end
+    end
 
-    NAND_Gate U1 (op, in_1, in_2);
-    
+  NAND_Gate U1 (op, in_1, in_2);
+  
 endmodule
