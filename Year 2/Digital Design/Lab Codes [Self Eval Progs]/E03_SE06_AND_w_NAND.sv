@@ -24,8 +24,8 @@ module tb_NAND_Gate;
 
     initial begin
 
-        $dumpfile ("dump.vcd"); //only needed if using the online compiler
-        $dumpvars (1, tb_NAND_Gate); //only needed if using the online compiler
+        // $dumpfile ("dump.vcd"); //only needed if using the online compiler
+        // $dumpvars (1, tb_NAND_Gate); //only needed if using the online compiler
 
         #000 in_1 = 0; in_2 = 0;
         #100 in_1 = 0; in_2 = 1;
