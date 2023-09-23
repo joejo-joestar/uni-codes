@@ -27,8 +27,8 @@ module tb_Eqn_Ckt;
 
     initial begin
 
-        $dumpfile ("dump.vcd"); //only needed if using the online compiler
-        $dumpvars (1, tb_Eqn_Ckt); //only needed if using the online compiler
+        // $dumpfile ("dump.vcd"); //only needed if using the online compiler
+        // $dumpvars (1, tb_Eqn_Ckt); //only needed if using the online compiler
 
         #000 ip1 = 0; ip2 = 0; ip3 = 0;
         #100 ip1 = 0; ip2 = 0; ip3 = 1;
