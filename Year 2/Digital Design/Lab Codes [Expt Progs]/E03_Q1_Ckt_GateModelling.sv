@@ -3,7 +3,7 @@ Code can be found here: https://edaplayground.com/x/
 */
 
 //main program
-module Ckt ();
+module Ckt (X, A, B, C);
 	output X;
   input A, B, C;
   wire p, q, r;
