@@ -2,6 +2,7 @@
 #include<string.h>
 #include<stdlib.h>
 
+
 struct Books {
     char name[100];
     char writer[50];
@@ -12,8 +13,8 @@ struct Books {
 };
 
 void main() {
-    int count=0;
-    int turi_ip_ip_ip=0;
+    int count = 0;
+    int menu_op = 0;
     struct Books b[50];
 
     while(1) {
@@ -21,22 +22,20 @@ void main() {
         int num = count;
         printf("Menu:\n  1. View Books\n  2. Add Book\n  3. Search Book\n  4. Edit Book Details\n  5. Delete Book\n  6. Quit \n");
         printf("Please enter the desired option: ");
-        scanf("%d", &turi_ip_ip_ip);
+        scanf("%d", &menu_op);
 
         //View Books
-        if(turi_ip_ip_ip==1) {
+        if(menu_op==1) {
             for (int j=0; j<count; j++) {
-                printf("\n");
-                printf("The book with serial number %d is %s by %s \n", j+1, b[j].name, b[j].writer);
+                printf("\nThe book with serial number %d is %s by %s \n", j+1, b[j].name, b[j].writer);
 
             }
-
             printf("\n");
 
         }
 
         //Add Books
-        else if(turi_ip_ip_ip==2) {
+        else if(menu_op==2) {
 
             printf("\nThe Serial Number of this book is %d\n", count+1);
             
@@ -62,43 +61,31 @@ void main() {
         }
 
         //Search Books
-        else if(turi_ip_ip_ip==3) {
+        else if(menu_op==3) {
             int index=1;
     
-            printf("\n");
-
-            printf("Please enter the Serial Number of the book to search for: ");
+            printf("\nPlease enter the Serial Number of the book to search for: ");
             scanf("%d", &index);
             index--;
 
             if(index>=0 && index<count) {
-                printf("The title of the book: %s", b[index].name);
-                printf("\n");
-
-                printf("The author of the book: %s", b[index].writer);
-                printf("\n");
-
-                printf("The edition of the book: %d", b[index].ed);
-                printf("\n");
-
-                printf("The price of the book: %.2f", b[index].cost);
-                printf("\n");
-
-                printf("The number of copies of the book: %d\n", b[index].copies);
-                printf("\n");
+                printf("The title of the book: %s \n", b[index].name);
+                printf("The author of the book: %s \n", b[index].writer);
+                printf("The edition of the book: %d \n", b[index].ed);
+                printf("The price of the book: %.2f \n", b[index].cost);
+                printf("The number of copies of the book: %d \n \n", b[index].copies);
                 
             }
             
             else {
-                printf("\nBook Doesnt Exist!\n");
-                printf("\n");
+                printf("\nBook Doesnt Exist! \n \n");
 
             }
 
         }
 
         //Edit Books
-        else if(turi_ip_ip_ip==4) {
+        else if(menu_op==4) {
             int index=1;
 
             printf("\nPlease enter the Serial Number of the book to edit: ");
@@ -127,15 +114,14 @@ void main() {
             }
 
             else {
-                printf("Book Doesnt Exist!\n");
-                printf("\n");
+                printf("Book Doesnt Exist!\n\n");
 
             }
 
         }
 
         //Delete Books
-        else if(turi_ip_ip_ip==5) {
+        else if(menu_op==5) {
             int index=0;
             
             printf("\nPlease enter the Serial Number of the book to delete: ");
@@ -151,21 +137,19 @@ void main() {
 
                 count--;
                 
-                printf("Done!\n");
-                printf("\n");
+                printf("Done!\n\n");
 
             }
             
             else {
-                printf("Book Doesnt Exist!\n");
-                printf("\n");
+                printf("Book Doesnt Exist!\n\n");
 
             }
 
         }
         
         //Exit
-        else if(turi_ip_ip_ip==6) {
+        else if(menu_op==6) {
             break;
 
         } 
