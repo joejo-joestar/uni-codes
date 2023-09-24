@@ -5,8 +5,6 @@ public class Q4_Count {
         int countpos = 0;
         int countneg = 0;
         int countzero = 0;
-        int temp = 0;
-
         Scanner inp = new Scanner(System.in);       
         
         int[] nums = new int[5];
@@ -26,9 +24,7 @@ public class Q4_Count {
 
             else if (nums[i] == 0)
                 countzero++;
-
-            else 
-                temp++;
+            else {}
 
         }
         
