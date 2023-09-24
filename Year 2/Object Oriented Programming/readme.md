@@ -1,5 +1,10 @@
 # Codes from Object Oriented Programming (CS F213)
 
-Almost all the codes from the Object Oriented Programming Course in Year 2 Sem 1. (From all the Labs and the Practice / Tutorials)
+Almost all the codes from the Labs and Tutorials / Practice in CSE Year 2
 
-Note: All these codes can be run on an [Online Complier](https://www.onlinegdb.com) in java or can be downloaded and run in vscode or such :)
+The official repo for year 2 codes can be found at
+[SivaaB's Repo](https://github.com/SivaaB/BITSPil-CSF213)
+
+All these codes can be run on an [Online Complier](https://www.onlinegdb.com) in
+Java/C or can be downloaded and run in [VSCode](https://code.visualstudio.com/)
+or such :)

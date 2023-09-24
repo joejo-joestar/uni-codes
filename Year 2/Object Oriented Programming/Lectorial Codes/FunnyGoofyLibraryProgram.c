@@ -13,7 +13,7 @@ struct Books {
 
 void main() {
     int count=0;
-    int turi_ip_ip_ip=0;
+    int turi_ip_ip_ip=0;     //ty @SreenikethanI
     struct Books b[50];
 
     while(1) {
