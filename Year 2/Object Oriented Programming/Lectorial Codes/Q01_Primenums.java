@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Primenums {
+class Q01_Primenums {
     public static void main(String[] args) {
         Scanner inp = new Scanner(System.in);
         int num1, num2 = 0;
