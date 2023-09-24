@@ -1,6 +1,6 @@
 import java.lang.Math;
 
-public class W02_Q3_Sq_Cub {
+public class Q3_Sq_Cub {
     public static void main(String[] args) {
         for (int i = 0; i <= 10; i++) {
             double num = i;

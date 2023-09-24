@@ -70,7 +70,7 @@ class Employee {
     
 }
 
-public class W04_Q2_Employee_Salary {
+public class Q2_Employee_Salary {
     public static void main(String[] args) {
         Scanner ip = new Scanner(System.in);
         Employee[] earr = new Employee[3];

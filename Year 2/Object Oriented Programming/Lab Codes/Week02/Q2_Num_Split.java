@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class W02_Q2_Num_Split {
+public class Q2_Num_Split {
     public static void main(String[] args) {
         
         Scanner inp = new Scanner(System.in);

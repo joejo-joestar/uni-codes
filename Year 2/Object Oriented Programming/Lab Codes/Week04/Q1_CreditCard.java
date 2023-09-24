@@ -229,7 +229,7 @@ class CreditCard {
 
 }
 
-public class W04_Q1_CreditCard {
+public class Q1_CreditCard {
     public static void main(String[] args) {
         Scanner ip = new Scanner(System.in);
         

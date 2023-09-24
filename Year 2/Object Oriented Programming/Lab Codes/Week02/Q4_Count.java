@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class W02_Q4_Count {
+public class Q4_Count {
     public static void main(String[] args) {
         int countpos = 0;
         int countneg = 0;

@@ -37,7 +37,7 @@ class Elements {
 }
 
 
-public class W03_Q1_PT {
+public class Q1_PT {
     public static void main(String[] args) {
         Scanner inp = new Scanner(System.in);
         

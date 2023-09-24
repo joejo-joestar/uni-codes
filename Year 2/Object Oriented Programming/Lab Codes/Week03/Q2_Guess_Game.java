@@ -46,7 +46,7 @@ class GuessGame {
 }
 
 
-public class W03_Q2_Guess_Game {
+public class Q2_Guess_Game {
     public static void main(String[] args) {
         Random rand = new Random();
         

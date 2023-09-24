@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class W02_Q1_Circle_Measure {
+public class Q1_Circle_Measure {
     public static void main(String[] args) {
         int rad;
         double dia, peri, ar;
