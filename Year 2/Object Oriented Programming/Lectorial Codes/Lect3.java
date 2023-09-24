@@ -273,7 +273,6 @@ class Complex {
                 imag = Integer.parseInt(split[2]);
         }
         Complex (Complex c) {
-                String[] split = cmpx.split("\\s*\\+\\s*|\\s*\\-\\s*|\\s*i\\s*");
                 real = c.real;
                 imag = c.imag;
         }
@@ -302,8 +301,8 @@ public class Lect3 {
         Complex c1 = new Complex(1, 3);
         Complex c2 = new Complex("2 + 3i");
         Complex c3 = new Complex(c1);
-        add(c1, c2);
-        c1.add(3, 6); // c1 = c1 + complex(3,6);
-        c4 = c1.add(c3); //c4 = c1 + c3
-        c1.display();
+//         c1.add(c1, c2);
+//         c1.add(3, 6); // c1 = c1 + complex(3,6);
+//         c4 = c1.add(c3); //c4 = c1 + c3
+//         c1.display();
 }
