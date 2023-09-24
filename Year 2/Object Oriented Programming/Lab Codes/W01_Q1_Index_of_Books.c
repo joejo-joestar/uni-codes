@@ -2,7 +2,6 @@
 #include<string.h>
 #include<stdlib.h>
 
-
 struct Books {
     char name[100];
     char writer[50];
@@ -18,7 +17,6 @@ void main() {
     struct Books b[50];
 
     while(1) {
-
         int num = count;
         printf("Menu:\n  1. View Books\n  2. Add Book\n  3. Search Book\n  4. Edit Book Details\n  5. Delete Book\n  6. Quit \n");
         printf("Please enter the desired option: ");
@@ -36,7 +34,6 @@ void main() {
 
         //Add Books
         else if(menu_op == 2) {
-
             printf("\nThe Serial Number of this book is %d\n", count+1);
             
             printf("Please Enter the title of the book: ");
