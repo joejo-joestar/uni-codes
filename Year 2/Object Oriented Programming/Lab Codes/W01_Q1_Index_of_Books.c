@@ -25,8 +25,8 @@ void main() {
         scanf("%d", &menu_op);
 
         //View Books
-        if(menu_op==1) {
-            for (int j=0; j<count; j++) {
+        if(menu_op == 1) {
+            for (int j = 0; j < count; j++) {
                 printf("\nThe book with serial number %d is %s by %s \n", j+1, b[j].name, b[j].writer);
 
             }
@@ -35,7 +35,7 @@ void main() {
         }
 
         //Add Books
-        else if(menu_op==2) {
+        else if(menu_op == 2) {
 
             printf("\nThe Serial Number of this book is %d\n", count+1);
             
@@ -61,14 +61,14 @@ void main() {
         }
 
         //Search Books
-        else if(menu_op==3) {
-            int index=1;
+        else if(menu_op == 3) {
+            int index = 1;
     
             printf("\nPlease enter the Serial Number of the book to search for: ");
             scanf("%d", &index);
             index--;
 
-            if(index>=0 && index<count) {
+            if(index >= 0 && index < count) {
                 printf("The title of the book: %s \n", b[index].name);
                 printf("The author of the book: %s \n", b[index].writer);
                 printf("The edition of the book: %d \n", b[index].ed);
@@ -85,15 +85,15 @@ void main() {
         }
 
         //Edit Books
-        else if(menu_op==4) {
-            int index=1;
+        else if(menu_op == 4) {
+            int index = 1;
 
             printf("\nPlease enter the Serial Number of the book to edit: ");
             scanf("%d", &index);
             printf("\n");
             index = index-1;
 
-            if(index>=0 && index<count) {
+            if(index >= 0 && index < count) {
                 printf("Please Enter the new title of the book: ");
                 getchar();
                 gets(b[index].name);
@@ -121,17 +121,17 @@ void main() {
         }
 
         //Delete Books
-        else if(menu_op==5) {
-            int index=0;
+        else if(menu_op == 5) {
+            int index = 0;
             
             printf("\nPlease enter the Serial Number of the book to delete: ");
             scanf("%d", &index);
             printf("\n");
             index--;
 
-            if(index>=0 && index<count) {
-                for(int j=index+1; j<count; j++) {
-                    b[j-1]=b[j];
+            if(index >= 0 && index < count) {
+                for(int j = index + 1; j < count; j++) {
+                    b[j-1] = b[j];
 
                 }
 
@@ -149,7 +149,7 @@ void main() {
         }
         
         //Exit
-        else if(menu_op==6) {
+        else if(menu_op == 6) {
             break;
 
         } 
