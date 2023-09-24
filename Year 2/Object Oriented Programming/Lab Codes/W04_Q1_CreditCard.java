@@ -103,7 +103,7 @@ class CreditCard {
                     
                 }
                 
-                else{
+                else {
                     System.out.println("Error");
                 }
             
@@ -169,7 +169,7 @@ class CreditCard {
                     }
             }
 
-            else{
+            else {
                 System.out.println("Error");
             }
             
@@ -198,22 +198,22 @@ class CreditCard {
             System.out.println("The Card is Inactive");
         }
 
-        else{
+        else {
             System.out.println("Error");
         }
 
         System.out.println("Card Pin: " + pin);
         System.out.println("Card Expiry Month: " + expiryMonth);
         
-        if(cardType == 1) {
+        if (cardType == 1) {
             System.out.println("Card Type: Silver" );
         }
 
-        else if(cardType == 2) {
+        else if (cardType == 2) {
             System.out.println("Card Type: Gold" );
         }
 
-        else if(cardType == 3) {
+        else if (cardType == 3) {
             System.out.println("Card Type: Platinum" );
         }
 
@@ -291,7 +291,7 @@ public class W04_Q1_CreditCard {
             }
 
             //  Change Pin
-            if(inp == 3) {
+            if (inp == 3) {
                 System.out.printf("Please enter Current Card Pin: ");
                 int pin = ip.nextInt();
                 uarr[0].changePin(pin);
@@ -299,7 +299,7 @@ public class W04_Q1_CreditCard {
             }
 
             //  Transaction
-            if(inp == 4) {
+            if (inp == 4) {
                 System.out.printf("Please enter Current Card Pin: ");
                 int pin = ip.nextInt();
                 uarr[0].transact(pin);
@@ -307,7 +307,7 @@ public class W04_Q1_CreditCard {
             }
 
             //  Activate / Deactivate
-            if(inp == 5) {
+            if (inp == 5) {
                 System.out.printf("Please enter Current Card Pin: ");
                 int pin = ip.nextInt();
                 uarr[0].changeCardStat(pin);;
@@ -315,12 +315,12 @@ public class W04_Q1_CreditCard {
             }
 
             //  Exit
-            if(inp == 6) {
+            if (inp == 6) {
                 break;
                 
             }
             
-            else{
+            else {
                 System.out.println(" ");
                 System.out.println("Invalid Input");
                 System.out.println(" ");
