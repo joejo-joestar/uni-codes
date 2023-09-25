@@ -9,5 +9,5 @@ module half_adder(S, C, A, B);
 
 endmodule
 
-//no testbech because this code is to program an fpga
+// no testbech because this code is to program an fpga
 // refer to the Pin Planner Diagram readme file
