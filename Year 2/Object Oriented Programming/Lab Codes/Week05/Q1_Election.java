@@ -3,7 +3,7 @@ import java.util.Scanner;
 class Votes {
     int[] vote = new int[10000];
     int voters;
-    int totvotecount;
+    // int totvotecount;
     int countc1 = 0;
     int countc2 = 0;
     int countc3 = 0;
@@ -11,9 +11,8 @@ class Votes {
     int countc5 = 0;
     int countvoid = 0;
 
-public Votes(int[] vote, int voters) {
+public Votes(int[] vote) {
     this.vote = vote;
-    this.voters = voters;
         
 }
 
@@ -60,7 +59,7 @@ public class Q1_Election {
             votes[i] = vote;
         }
         
-        Votes obj = new Votes(votes, voters);
+        Votes obj = new Votes(votes);
         obj.count(votes, voters);
         obj.display();
 
