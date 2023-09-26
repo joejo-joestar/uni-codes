@@ -11,35 +11,35 @@ class Votes {
     int countc5 = 0;
     int countvoid = 0;
 
-public Votes(int[] vote) {
-    this.vote = vote;
-        
-}
+    public Votes(int[] vote) {
+        this.vote = vote;
+            
+    }
 
-public void count (int[] vote, int voters){
+    public void count (int[] vote, int voters){
 
-    for (int i = 0; i < voters; i++) {
-        if (vote[i] == 1) {countc1++;}
-        else if (vote[i] == 2) {countc2++;}
-        else if (vote[i] == 3) {countc3++;}
-        else if (vote[i] == 4) {countc4++;}
-        else if (vote[i] == 5) {countc5++;}
-        else {countvoid++;}
+        for (int i = 0; i < voters; i++) {
+            if (vote[i] == 1) {countc1++;}
+            else if (vote[i] == 2) {countc2++;}
+            else if (vote[i] == 3) {countc3++;}
+            else if (vote[i] == 4) {countc4++;}
+            else if (vote[i] == 5) {countc5++;}
+            else {countvoid++;}
+
+        }
 
     }
 
+    public void display() {
+        System.out.println(" ");
+        System.out.println("Candidate 1 has " + countc1 + " votes");
+        System.out.println("Candidate 2 has " + countc2 + " votes");
+        System.out.println("Candidate 3 has " + countc3 + " votes");
+        System.out.println("Candidate 4 has " + countc4 + " votes");
+        System.out.println("Candidate 5 has " + countc5 + " votes");
+        System.out.println("There were " + countvoid + " spoilt votes");
+    }
 }
-
-public void display() {
-    System.out.println(" ");
-    System.out.println("Candidate 1 has " + countc1 + " votes");
-    System.out.println("Candidate 2 has " + countc2 + " votes");
-    System.out.println("Candidate 3 has " + countc3 + " votes");
-    System.out.println("Candidate 4 has " + countc4 + " votes");
-    System.out.println("Candidate 5 has " + countc5 + " votes");
-    System.out.println("There were " + countvoid + " spoilt votes");
-}
-
 
 public class Q1_Election {
     public static void main(String[] args) {
@@ -63,8 +63,6 @@ public class Q1_Election {
         obj.count(votes, voters);
         obj.display();
 
-        }
-        
     }
-    
+        
 }
