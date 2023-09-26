@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 class Largest {
     public static void main(String[] args) {
