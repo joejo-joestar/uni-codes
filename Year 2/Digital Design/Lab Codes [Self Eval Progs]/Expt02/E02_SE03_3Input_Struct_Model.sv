@@ -4,14 +4,14 @@ Code can be found here: https://edaplayground.com/x/MaXw
 
 //main program
 
-// 2ip AND Gate
+  // 2ip AND Gate
 module andgate (output reg out, input in1, in2);
 
   assign out = in1 & in2;
 
 endmodule
 
-// 2ip OR Gate
+  // 2ip OR Gate
 module orgate (output reg out, input in1, in2);
 
   assign out = in1 | in2;

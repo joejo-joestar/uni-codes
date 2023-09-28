@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class OddEven {
-	public static void main (String[] args) {
+	public static void main(String[] args) {
 
 		Scanner inp = new Scanner(System.in);
 
@@ -10,7 +10,7 @@ public class OddEven {
 		System.out.print("Please enter a number: ");
 		num = inp.nextInt();
 
-		if(num % 2 == 0) {
+		if (num % 2 == 0) {
 			System.out.println("The number '" + num + "' is even");
 
 		}

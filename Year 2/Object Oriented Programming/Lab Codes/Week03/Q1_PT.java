@@ -36,7 +36,6 @@ class Elements {
 
 }
 
-
 public class Q1_PT {
     public static void main(String[] args) {
         Scanner inp = new Scanner(System.in);

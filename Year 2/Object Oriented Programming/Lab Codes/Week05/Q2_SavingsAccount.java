@@ -4,7 +4,7 @@ class Q2_SavingsAccount {
     static double annualInterestrate = 0.04;
     private float savingsBalance;
 
-    public Q2_SavingsAccount (float currcred) {
+    public Q2_SavingsAccount(float currcred) {
         savingsBalance = currcred;
 
     }
@@ -15,7 +15,7 @@ class Q2_SavingsAccount {
 
     }
 
-    public static void modifyInterestRate (double interest) {
+    public static void modifyInterestRate(double interest) {
         annualInterestrate = (interest / 100);
 
     }
@@ -35,7 +35,7 @@ class Q2_SavingsAccount {
 
         for (int j = 0; j < 12; j++) {
             monthlyInterest();
-            System.out.println("In Month " + (j+1) + ":\t" + savingsBalance);
+            System.out.println("In Month " + (j + 1) + ":\t" + savingsBalance);
 
         }
         System.out.println(" ");
@@ -47,16 +47,17 @@ class Q2_SavingsAccount {
         Q2_SavingsAccount[] acc = new Q2_SavingsAccount[4];
 
         for (int i = 0; i < 3; i++) {
-            System.out.print("Please enter Person " + (i+1) + "'s Savings Balance: ");
+            System.out.print("Please enter Person " + (i + 1) + "'s Savings Balance: ");
             acc[i] = new Q2_SavingsAccount(inp.nextFloat());
 
             while (true) {
-                System.out.println("Menu: \n 1. Check Current Balance \n 2. Change Interest Rate \n 3. Simulate Savings Balance for 12 months \n 4. Quit");
+                System.out.println(
+                        "Menu: \n 1. Check Current Balance \n 2. Change Interest Rate \n 3. Simulate Savings Balance for 12 months \n 4. Quit");
                 System.out.print("Please enter the menu option: ");
                 int ip = inp.nextInt();
 
                 if (ip == 1) {
-                    acc[i].display((i+1));
+                    acc[i].display((i + 1));
 
                 }
 
@@ -68,7 +69,7 @@ class Q2_SavingsAccount {
                 }
 
                 else if (ip == 3) {
-                    acc[i].simulate((i+1));
+                    acc[i].simulate((i + 1));
 
                 }
 

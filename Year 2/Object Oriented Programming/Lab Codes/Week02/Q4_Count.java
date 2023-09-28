@@ -10,7 +10,7 @@ public class Q4_Count {
         int[] nums = new int[5];
 
         for (int i = 0; i < 5; i++) {
-            System.out.print("Please enter Number " + (i+1) + ": ");
+            System.out.print("Please enter Number " + (i + 1) + ": ");
             nums[i] = inp.nextInt();
 
         }
@@ -24,7 +24,8 @@ public class Q4_Count {
 
             else if (nums[i] == 0)
                 countzero++;
-            else {}
+            else {
+            }
 
         }
 

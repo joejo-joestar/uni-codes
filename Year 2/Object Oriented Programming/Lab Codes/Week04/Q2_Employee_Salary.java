@@ -43,26 +43,26 @@ class Employee {
 
         System.out.println(" ");
 
-        System.out.println("ID number of the employee " + (i+1) + ": " + idnum);
+        System.out.println("ID number of the employee " + (i + 1) + ": " + idnum);
 
-        System.out.println("Name of the employee " + (i+1) + ": " + name);
+        System.out.println("Name of the employee " + (i + 1) + ": " + name);
 
-        if (dept == 1){
-            System.out.println("Department of the employee " + (i+1) + ": Staff" );
-
-        }
-
-        else if (dept == 2){
-            System.out.println("Department of the employee " + (i+1) + ": Accounts");
+        if (dept == 1) {
+            System.out.println("Department of the employee " + (i + 1) + ": Staff");
 
         }
 
-        else if (dept == 3){
-            System.out.println("Department of the employee " + (i+1) + ": Admin");
+        else if (dept == 2) {
+            System.out.println("Department of the employee " + (i + 1) + ": Accounts");
 
         }
 
-        System.out.println("Total Salary of the employee " + (i+1) + ":" + totalSalary);
+        else if (dept == 3) {
+            System.out.println("Department of the employee " + (i + 1) + ": Admin");
+
+        }
+
+        System.out.println("Total Salary of the employee " + (i + 1) + ":" + totalSalary);
 
         System.out.println(" ");
 
@@ -78,16 +78,17 @@ public class Q2_Employee_Salary {
         for (int i = 0; i < 3; i++) {
             System.out.println(" ");
 
-            System.out.print("Please enter the ID number of the employee " + (i+1) + ": ");
+            System.out.print("Please enter the ID number of the employee " + (i + 1) + ": ");
             String id = ip.nextLine();
 
-            System.out.print("Please enter the Name of the employee " + (i+1) + ": ");
+            System.out.print("Please enter the Name of the employee " + (i + 1) + ": ");
             String na = ip.nextLine();
 
-            System.out.print("Please enter the Department of the employee " + (i+1) + " ('1' for Staff, '2' for Accounts, '3' for Admin): ");
+            System.out.print("Please enter the Department of the employee " + (i + 1)
+                    + " ('1' for Staff, '2' for Accounts, '3' for Admin): ");
             int de = ip.nextInt();
 
-            System.out.print("Please enter the Basic of the employee "+ (i+1) + ": ");
+            System.out.print("Please enter the Basic of the employee " + (i + 1) + ": ");
             double bas = ip.nextDouble();
 
             System.out.println(" ");

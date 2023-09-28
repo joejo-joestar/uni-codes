@@ -16,15 +16,22 @@ class Votes {
 
     }
 
-    public void count (int[] vote, int voters){
+    public void count(int[] vote, int voters) {
 
         for (int i = 0; i < voters; i++) {
-            if (vote[i] == 1) {countc1++;}
-            else if (vote[i] == 2) {countc2++;}
-            else if (vote[i] == 3) {countc3++;}
-            else if (vote[i] == 4) {countc4++;}
-            else if (vote[i] == 5) {countc5++;}
-            else {countvoid++;}
+            if (vote[i] == 1) {
+                countc1++;
+            } else if (vote[i] == 2) {
+                countc2++;
+            } else if (vote[i] == 3) {
+                countc3++;
+            } else if (vote[i] == 4) {
+                countc4++;
+            } else if (vote[i] == 5) {
+                countc5++;
+            } else {
+                countvoid++;
+            }
 
         }
 

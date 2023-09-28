@@ -13,7 +13,6 @@ public class Q2_Num_Split {
         for (int i = 0; i < 5; i++) {
             System.out.print(split[i] + " ");
 
-
         }
 
     }
