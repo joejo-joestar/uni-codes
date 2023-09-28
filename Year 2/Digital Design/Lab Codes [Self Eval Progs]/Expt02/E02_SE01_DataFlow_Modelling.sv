@@ -85,8 +85,8 @@ module tb_NAND_Gate;
 
   initial begin
 
-    // $dumpfile ("dump.vcd");
-    // $dumpvars (1, tb_NAND_Gate);
+    // $dumpfile ("dump.vcd"); //only needed if using the online compiler
+    // $dumpvars (1, tb_NAND_Gate); //only needed if using the online compiler
 
     #000 nand_a = 0; nand_b = 0;
     #100 nand_a = 0; nand_b = 1;
@@ -109,8 +109,8 @@ module tb_OR_Gate;
 
   initial begin
 
-    // $dumpfile ("dump.vcd");
-    // $dumpvars (1, tb_OR_Gate);
+    // $dumpfile ("dump.vcd"); //only needed if using the online compiler
+    // $dumpvars (1, tb_OR_Gate); //only needed if using the online compiler
 
     #000 or_a = 0; or_b = 0;
     #100 or_a = 0; or_b = 1;
@@ -132,8 +132,8 @@ module tb_NOR_Gate;
 
   initial begin
 
-    // $dumpfile ("dump.vcd");
-    // $dumpvars (1, tb_NOR_Gate);
+    // $dumpfile ("dump.vcd"); //only needed if using the online compiler
+    // $dumpvars (1, tb_NOR_Gate); //only needed if using the online compiler
 
     #000 nor_a = 0; nor_b = 0;
     #100 nor_a = 0; nor_b = 1;
@@ -156,8 +156,8 @@ module tb_XOR_Gate;
 
   initial begin
 
-    // $dumpfile ("dump.vcd");
-    // $dumpvars (1, tb_XOR_Gate);
+    // $dumpfile ("dump.vcd"); //only needed if using the online compiler
+    // $dumpvars (1, tb_XOR_Gate); //only needed if using the online compiler
 
     #000 xor_a = 0; xor_b = 0;
     #100 xor_a = 0; xor_b = 1;
@@ -180,8 +180,8 @@ module tb_XNOR_Gate;
 
   initial begin
 
-    // $dumpfile ("dump.vcd");
-    // $dumpvars (1, tb_XNOR_Gate);
+    // $dumpfile ("dump.vcd"); //only needed if using the online compiler
+    // $dumpvars (1, tb_XNOR_Gate); //only needed if using the online compiler
 
     #000 xnor_a = 0; xnor_b = 0;
     #100 xnor_a = 0; xnor_b = 1;

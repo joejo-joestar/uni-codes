@@ -21,8 +21,8 @@ module tb_Twos_Comp;
 
   initial begin
 
-    $dumpfile ("dump.vcd");
-    $dumpvars (1, tb_Twos_Comp);
+    // $dumpfile ("dump.vcd"); //only needed if using the online compiler
+    // $dumpvars (1, tb_Twos_Comp); //only needed if using the online compiler
 
     //binary number	: 10111011
     //1's comp 		: 01000100

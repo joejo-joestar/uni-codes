@@ -22,8 +22,8 @@ module tb_Hamming;
 
   initial begin
 
-    $dumpfile ("dump.vcd");
-    $dumpvars (1, tb_Hamming);
+    // $dumpfile ("dump.vcd"); //only needed if using the online compiler
+    // $dumpvars (1, tb_Hamming); //only needed if using the online compiler
 
     #000 m0 = 0; m1 = 0; m2 = 0; m3 =  0;
     #100 m0 = 0; m1 = 0; m2 = 0; m3 =  1;

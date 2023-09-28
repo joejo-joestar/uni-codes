@@ -26,10 +26,10 @@ module tb_Ones_Comp;
 
   initial begin
 
-		//$dumpfile ("dump.vcd"); //only needed if using the online compiler
-		//$dumpvars (1, tb_Ones_Comp); //only needed if using the online compiler
+		// $dumpfile ("dump.vcd"); //only needed if using the online compiler
+		// $dumpvars (1, tb_Ones_Comp); //only needed if using the online compiler
 
-    //binary number: 10111011
+    // binary number: 10111011
 
     #00 p = 1;
     #50 p = 0;
