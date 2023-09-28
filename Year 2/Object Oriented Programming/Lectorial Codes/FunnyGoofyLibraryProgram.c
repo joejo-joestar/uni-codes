@@ -39,14 +39,14 @@ void main() {
         else if(turi_ip_ip_ip==2) {
 
             printf("\nThe Serial Number of this book is %d\n", count+1);
-            
+
             printf("Please Enter the title of the book: ");
             getchar();
             gets(b[count].name);
 
             printf("Please Enter the author of the book: ");
             gets(b[count].writer);
-            
+
             printf("Please Enter the edition of the book: ");
             scanf("%d", &b[count].ed);
 
@@ -56,7 +56,7 @@ void main() {
             printf("Please Enter the number of copies of the book: ");
             scanf("%d", &b[count].copies);
             printf("\n");
-            
+
             count++;
 
         }
@@ -64,7 +64,7 @@ void main() {
         //Search Books
         else if(turi_ip_ip_ip==3) {
             int index=1;
-    
+
             printf("\n");
 
             printf("Please enter the Serial Number of the book to search for: ");
@@ -86,9 +86,9 @@ void main() {
 
                 printf("The number of copies of the book: %d\n", b[index].copies);
                 printf("\n");
-                
+
             }
-            
+
             else {
                 printf("\nBook Doesnt Exist!\n");
                 printf("\n");
@@ -113,7 +113,7 @@ void main() {
 
                 printf("Please Enter the new author of the book: ");
                 gets(b[index].writer);
-                
+
                 printf("Please Enter the new edition of the book: ");
                 scanf("%d", &b[index].ed);
 
@@ -123,7 +123,7 @@ void main() {
                 printf("Please Enter the updated number of copies of the book: ");
                 scanf("%d", &b[index].copies);
                 printf("\n");
-            
+
             }
 
             else {
@@ -137,7 +137,7 @@ void main() {
         //Delete Books
         else if(turi_ip_ip_ip==5) {
             int index=0;
-            
+
             printf("\nPlease enter the Serial Number of the book to delete: ");
             scanf("%d", &index);
             printf("\n");
@@ -150,12 +150,12 @@ void main() {
                 }
 
                 count--;
-                
+
                 printf("Done!\n");
                 printf("\n");
 
             }
-            
+
             else {
                 printf("Book Doesnt Exist!\n");
                 printf("\n");
@@ -163,17 +163,17 @@ void main() {
             }
 
         }
-        
+
         //Exit
         else if(turi_ip_ip_ip==6) {
             break;
 
-        } 
-        
+        }
+
         //Error
         else {
             printf("\nPlease enter a valid option\n");
-        
+
         }
 
     }

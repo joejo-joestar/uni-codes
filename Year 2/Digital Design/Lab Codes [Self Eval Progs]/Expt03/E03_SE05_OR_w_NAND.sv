@@ -12,13 +12,13 @@ module NAND_Gate (Z, A, B);
     nand #1 NA1 (p, A, A);
     nand #1 NA2 (q, B, B);
     nand #1 NA3 (Z, p, q);
-  
+
 endmodule
 
 
 //testbench
 module tb_NAND_Gate;
-  
+
    reg in_1, in_2;
    wire op;
 
@@ -36,5 +36,5 @@ module tb_NAND_Gate;
     end
 
   NAND_Gate U1 (op, in_1, in_2);
-  
+
 endmodule

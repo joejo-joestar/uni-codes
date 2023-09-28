@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Q2_Num_Split {
     public static void main(String[] args) {
-        
+
         Scanner inp = new Scanner(System.in);
 
         System.out.print("Please eneter a 5 digit number: ");

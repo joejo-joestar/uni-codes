@@ -157,8 +157,8 @@
 //                 Lect3 p = new Lect3();
 //         }
 // }
-        
-        
+
+
 
 //         // q10a.
 // public class Lect3 {
@@ -181,8 +181,8 @@
 //                 System.out.println(p.getX());
 //         }
 // }
-        
-        
+
+
 
 //         // q10b.
 // final class Complex {
@@ -208,8 +208,8 @@
 //                 System.out.println(c2);
 //         }
 // }
-        
-        
+
+
 
 //         // q10c.
 // public class Lect3 {
@@ -232,8 +232,8 @@
 //                 obj.func();
 //         }
 // }
-        
-        
+
+
 
 //         // q11a.
 // import java.util.*;

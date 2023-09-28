@@ -13,7 +13,7 @@ class Votes {
 
     public Votes(int[] vote) {
         this.vote = vote;
-            
+
     }
 
     public void count (int[] vote, int voters){
@@ -44,25 +44,26 @@ class Votes {
 public class Q1_Election {
     public static void main(String[] args) {
         Scanner inp = new Scanner(System.in);
-        
+
+        System.out.print("Candidates: \n 1. Candidate 1 \n 2. Candidate 2 \n 3. Candidate 3 \n 4. Candidate 4 \n 5. Candidate 5");
         System.out.print("Please enter the number of voters: ");
         int voters = inp.nextInt();
-        
+
         int[] votes = new int[voters];
-        
+
         for (int i = 0; i < voters; i++) {
             System.out.println(" ");
-            
+
             System.out.print("Please enter your vote: ");
             int vote = inp.nextInt();
-        
+
             votes[i] = vote;
         }
-        
+
         Votes obj = new Votes(votes);
         obj.count(votes, voters);
         obj.display();
 
     }
-        
+
 }

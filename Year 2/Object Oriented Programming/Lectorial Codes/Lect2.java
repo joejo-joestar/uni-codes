@@ -76,9 +76,9 @@
 //         // byte b = 128;
 //         System.out.println(y);
 //     }
-// }       
+// }
 
-        
+
 // public class Lect2 {
 //     public static void main (String[] args) {
 //         int a = 14, b = -14;
@@ -104,7 +104,7 @@
 //         int a = 3000, b;
 //         short c;
 //         byte b1 = -50, b2;
-//         long l;        
+//         long l;
         // b = a * b1;  // St 1
 //         c = a * b1;  // St 2
 //         l = a * 25f; // St 3

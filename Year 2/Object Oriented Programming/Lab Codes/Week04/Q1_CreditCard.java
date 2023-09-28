@@ -18,7 +18,7 @@ class CreditCard {
         expiryMonth = expMon;
         cardType = cTy;
         currentCred = curCred;
-        creditLim = credLim; 
+        creditLim = credLim;
 
     }
 
@@ -47,66 +47,66 @@ class CreditCard {
             if (p == pin) {
                 if (enabled == true) {
                     System.out.println("Input Amount to Withdraw: ");
-                    
+
                     double amt = ip.nextInt();
                     double sidisc = (amt - (amt*0.01));
                     double godisc = (amt - (amt*0.02));
                     double pldisc = (amt - (amt*0.03));
-                    
+
                     if (amt > currentCred) {
-                        System.out.println(" "); 
-                        System.out.println("Insufficient Funds"); 
-                        System.out.println(" "); 
-    
+                        System.out.println(" ");
+                        System.out.println("Insufficient Funds");
+                        System.out.println(" ");
+
                     }
-    
+
                     if (amt <= creditLim) {
                         if (cardType == 1) {
                             currentCred = currentCred - sidisc;
                             System.out.println("Current Credit = " + currentCred);
-    
+
                         }
-    
+
                         else if (cardType == 2) {
                             currentCred = currentCred - godisc;
                             System.out.println("Current Credit = " + currentCred);
-                        
+
                         }
-    
+
                         else if (cardType == 3) {
                             currentCred = currentCred - pldisc;
                             System.out.println("Current Credit = " + currentCred);
-                        
+
                         }
-                        
+
                         else {
                             System.out.println("error");
-    
+
                         }
-    
+
                     }
-    
+
                     else if (amt > creditLim) {
                         System.out.println("The amount entered is over the credit limit.");
-                    
+
                     }
-    
+
                     else {
                         System.out.println("Error");
-                        
+
                     }
-    
+
                 }
-    
+
                 else if (enabled == false) {
                     System.out.println("Please Activate the Card.");
-                    
+
                 }
-                
+
                 else {
                     System.out.println("Error");
                 }
-            
+
         }
 
         else if (p != pin) {
@@ -121,14 +121,14 @@ class CreditCard {
 
     public void changeCardStat(int p) {
         Scanner ip = new Scanner(System.in);
-        
+
         char inp;
-        
+
         if (p == pin) {
             if (enabled == true) {
                 System.out.println("Do you want to Deactivate the card? \n (input 'y' to deactivate else input 'n')");
                 inp = ip.next().charAt(0);
-                
+
                     if (inp == 'y') {
                         enabled = false;
                         System.out.println("The card has succesfully Deactivated");
@@ -138,12 +138,12 @@ class CreditCard {
                     else if (inp == 'n') {
                         enabled = true;
                         System.out.println("The card is not deactivated");
-                    
+
                     }
 
                     else {
                         System.out.println("Error");
-                        
+
                     }
 
                 }
@@ -165,14 +165,14 @@ class CreditCard {
 
                     else {
                         System.out.println("Error");
-                        
+
                     }
             }
 
             else {
                 System.out.println("Error");
             }
-            
+
         }
 
         else if (p != pin) {
@@ -186,10 +186,10 @@ class CreditCard {
     }
 
     public void display() {
-        System.out.println(" "); 
-        System.out.println("Card-holder Name: " + name); 
+        System.out.println(" ");
+        System.out.println("Card-holder Name: " + name);
         System.out.println("Card Number: " + cardnum);
-       
+
         if (enabled == true) {
             System.out.println("The Card is Activated");
         }
@@ -204,7 +204,7 @@ class CreditCard {
 
         System.out.println("Card Pin: " + pin);
         System.out.println("Card Expiry Month: " + expiryMonth);
-        
+
         if (cardType == 1) {
             System.out.println("Card Type: Silver" );
         }
@@ -223,8 +223,8 @@ class CreditCard {
 
         System.out.println("Current Credit: " + currentCred);
         System.out.println("Credit Limit: " + creditLim);
-        System.out.println(" "); 
-        
+        System.out.println(" ");
+
     }
 
 }
@@ -232,13 +232,13 @@ class CreditCard {
 public class Q1_CreditCard {
     public static void main(String[] args) {
         Scanner ip = new Scanner(System.in);
-        
+
         CreditCard temp = new CreditCard(null, null, false, 0, null, 0, 0, 0);
         CreditCard[] uarr = new CreditCard[1];
         uarr[0] = temp;
-        
+
         while(true) {
-            System.out.println(" "); 
+            System.out.println(" ");
             System.out.println("Menu: ");
             System.out.println("1. View Card Details");
             System.out.println("2. Add Card Details");
@@ -246,32 +246,32 @@ public class Q1_CreditCard {
             System.out.println("4. Transaction");
             System.out.println("5. Activate / Deactivate Card");
             System.out.println("6. Quit");
-            System.out.println(" "); 
+            System.out.println(" ");
 
             System.out.printf("Please enter the option number: ");
             int inp = ip.nextInt();
-            
+
             //  View Card
             if (inp == 1) {
                 uarr[0].display();
 
             }
-            
+
             //  Add Card
             if (inp == 2) {
-                System.out.println(" "); 
+                System.out.println(" ");
                 ip.nextLine();
                 System.out.printf("Please enter Card-holder Name: ");
                 String cnam = ip.nextLine();
-                
+
                 System.out.printf("Please enter Card Number: ");
-                String cnum = ip.nextLine();  
-                
+                String cnum = ip.nextLine();
+
                 boolean en = false;
-                
+
                 System.out.printf("Please enter Card Pin: ");
-                int p = ip.nextInt();     
-                
+                int p = ip.nextInt();
+
                 ip.nextLine();
                 System.out.printf("Please enter Card Expiry Month: ");
                 String expMon = ip.nextLine();
@@ -279,7 +279,7 @@ public class Q1_CreditCard {
                 System.out.printf("Please enter the Card Type ('1' for Silver, '2' for Gold, '3' for Platinum): ");
                 int cTy = ip.nextInt();
 
-                System.out.println(" "); 
+                System.out.println(" ");
 
                 double curCred = 10000;
 
@@ -295,7 +295,7 @@ public class Q1_CreditCard {
                 System.out.printf("Please enter Current Card Pin: ");
                 int pin = ip.nextInt();
                 uarr[0].changePin(pin);
-            
+
             }
 
             //  Transaction
@@ -303,7 +303,7 @@ public class Q1_CreditCard {
                 System.out.printf("Please enter Current Card Pin: ");
                 int pin = ip.nextInt();
                 uarr[0].transact(pin);
-            
+
             }
 
             //  Activate / Deactivate
@@ -311,15 +311,15 @@ public class Q1_CreditCard {
                 System.out.printf("Please enter Current Card Pin: ");
                 int pin = ip.nextInt();
                 uarr[0].changeCardStat(pin);;
-                
+
             }
 
             //  Exit
             if (inp == 6) {
                 break;
-                
+
             }
-            
+
             else {
                 System.out.println(" ");
                 System.out.println("Invalid Input");

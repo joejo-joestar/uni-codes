@@ -21,7 +21,7 @@ endmodule
 
 //testbench
 module tb_Eqn_Ckt;
-    
+
   reg ip1, ip2, ip3;
   wire op;
 
@@ -43,5 +43,5 @@ module tb_Eqn_Ckt;
   end
 
   Eqn_Ckt U1 (op, ip1, ip2, ip3);
-    
+
 endmodule

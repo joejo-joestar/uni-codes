@@ -15,5 +15,5 @@ public class Q3_Sq_Cub {
         }
 
     }
-    
+
 }

@@ -1,6 +1,6 @@
 
 module full_adder(S, C_out, A, B, C_in);
-    
+
     output S, C_out;
     input A, B, C_in;
 
