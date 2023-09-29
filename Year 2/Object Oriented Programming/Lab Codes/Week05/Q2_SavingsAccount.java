@@ -4,14 +4,14 @@ class Q2_SavingsAccount {
     static double annualInterestRate = 0.12;
     private float savingsBalance;
 
-    public Q2_SavingsAccount(float currcred) {
-        savingsBalance = currcred;
+    public Q2_SavingsAccount(float currCred) {
+        savingsBalance = currCred;
 
     }
 
     public void monthlyInterest() {
-        double monthlyinterst = (savingsBalance * annualInterestRate) / 12;
-        savingsBalance += monthlyinterst;
+        double monthlyInterst = (savingsBalance * annualInterestRate) / 12;
+        savingsBalance += monthlyInterst;
 
     }
 

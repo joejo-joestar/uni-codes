@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 class CreditCard {
     private String name;
-    private String cardnum;
+    private String cardNum;
     private boolean enabled;
     private int pin;
     private String expiryMonth;
@@ -12,7 +12,7 @@ class CreditCard {
 
     public CreditCard(String cnam, String cnum, boolean en, int p, String expMon, int cTy, double curCred, double credLim) {
         name = cnam;
-        cardnum = cnum;
+        cardNum = cnum;
         enabled = en;
         pin = p;
         expiryMonth = expMon;
@@ -48,12 +48,12 @@ class CreditCard {
 
         if (p == pin) {
             if (enabled == true) {
-                System.out.println("Input Amount to Withdraw: ");
+                System.out.print("Input Amount to Withdraw: ");
 
                 double amt = ip.nextInt();
-                double sidisc = (amt - (amt * 0.01));
-                double godisc = (amt - (amt * 0.02));
-                double pldisc = (amt - (amt * 0.03));
+                double siDisc = (amt - (amt * 0.01));
+                double goDisc = (amt - (amt * 0.02));
+                double plDisc = (amt - (amt * 0.03));
 
                 if (amt > currentCred) {
                     System.out.println(" ");
@@ -64,19 +64,19 @@ class CreditCard {
 
                 if (amt <= creditLim) {
                     if (cardType == 1) {
-                        currentCred = currentCred - sidisc;
+                        currentCred = currentCred - siDisc;
                         System.out.println("Current Credit = " + currentCred);
 
                     }
 
                     else if (cardType == 2) {
-                        currentCred = currentCred - godisc;
+                        currentCred = currentCred - goDisc;
                         System.out.println("Current Credit = " + currentCred);
 
                     }
 
                     else if (cardType == 3) {
-                        currentCred = currentCred - pldisc;
+                        currentCred = currentCred - plDisc;
                         System.out.println("Current Credit = " + currentCred);
 
                     }
@@ -191,7 +191,7 @@ class CreditCard {
     public void display() {
         System.out.println(" ");
         System.out.println("Card-holder Name: " + name);
-        System.out.println("Card Number: " + cardnum);
+        System.out.println("Card Number: " + cardNum);
 
         if (enabled == true) {
             System.out.println("The Card is Activated");

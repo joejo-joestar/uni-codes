@@ -9,8 +9,8 @@ public class Q3_Sq_Cub {
 
             System.out.println(" ");
 
-            System.out.println("The Square of " + num + " is " + sq);
-            System.out.println("The Cube of " + num + " is " + cube);
+            System.out.println("The Square of\t" + num + "\tis\t" + sq);
+            System.out.println("The Cube of\t" + num + "\tis\t" + cube);
 
         }
 

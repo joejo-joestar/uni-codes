@@ -9,7 +9,7 @@ public class Q1_Circle_Measure {
 
         Scanner inp = new Scanner(System.in);
 
-        System.out.print("PLease enter the radius of a circle: ");
+        System.out.print("Please enter the radius of a circle: ");
         rad = inp.nextInt();
 
         dia = 2 * rad;

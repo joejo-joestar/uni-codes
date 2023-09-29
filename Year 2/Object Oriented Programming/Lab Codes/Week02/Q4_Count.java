@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class Q4_Count {
     @SuppressWarnings("resource") // to ignore the resource leak warning
     public static void main(String[] args) {
-        int countpos = 0;
-        int countneg = 0;
-        int countzero = 0;
+        int countPos = 0;
+        int countNeg = 0;
+        int countZero = 0;
         Scanner inp = new Scanner(System.in);
 
         int[] nums = new int[5];
@@ -18,21 +18,21 @@ public class Q4_Count {
 
         for (int i = 0; i < 5; i++) {
             if (nums[i] > 0)
-                countpos++;
+                countPos++;
 
             else if (nums[i] < 0)
-                countneg++;
+                countNeg++;
 
             else if (nums[i] == 0)
-                countzero++;
+                countZero++;
             else {
             }
 
         }
 
-        System.out.println("Number of Positive Numbers are " + countpos);
-        System.out.println("Number of Negative Numbers are " + countneg);
-        System.out.println("Number of Zeroes are " + countzero);
+        System.out.println("Number of Positive Numbers are " + countPos);
+        System.out.println("Number of Negative Numbers are " + countNeg);
+        System.out.println("Number of Zeroes are " + countZero);
 
     }
 
