@@ -1,4 +1,4 @@
-# 🏫 Uni Codes 💻
+<h1 align="center">🏫 Uni Codes 💻</h1>
 
 This is just an unofficial repo to store most of my codes from all the different
 CSE courses :)
