@@ -1,7 +1,7 @@
 import java.util.*;
 
 class Q2_SavingsAccount {
-    static double annualInterestrate = 0.04;
+    static double annualInterestRate = 0.12;
     private float savingsBalance;
 
     public Q2_SavingsAccount(float currcred) {
@@ -10,19 +10,19 @@ class Q2_SavingsAccount {
     }
 
     public void monthlyInterest() {
-        double monthlyinterst = (savingsBalance * annualInterestrate) / 12;
+        double monthlyinterst = (savingsBalance * annualInterestRate) / 12;
         savingsBalance += monthlyinterst;
 
     }
 
     public static void modifyInterestRate(double interest) {
-        annualInterestrate = (interest / 100);
+        annualInterestRate = (interest / 100);
 
     }
 
     public void display(int person) {
         System.out.println(" ");
-        System.out.println("The annual interest rate is " + annualInterestrate);
+        System.out.println("The annual interest rate is " + annualInterestRate);
         System.out.println("Person " + person + "'s Savings Balance:" + savingsBalance);
         System.out.println(" ");
 
@@ -30,7 +30,7 @@ class Q2_SavingsAccount {
 
     public void simulate(int person) {
         System.out.println(" ");
-        System.out.println("The annual interest rate is " + annualInterestrate);
+        System.out.println("The annual interest rate is " + annualInterestRate);
         System.out.println("Person " + person + "'s Savings Balance: ");
 
         for (int j = 0; j < 12; j++) {
