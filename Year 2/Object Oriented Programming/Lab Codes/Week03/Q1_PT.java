@@ -37,6 +37,7 @@ class Elements {
 }
 
 public class Q1_PT {
+    @SuppressWarnings("resource") // to ignore the resource leak warning
     public static void main(String[] args) {
         Scanner inp = new Scanner(System.in);
 

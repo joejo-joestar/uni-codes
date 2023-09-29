@@ -15,6 +15,7 @@ class GuessGame {
     Player p2 = new Player();
     Player p3 = new Player();
 
+    @SuppressWarnings("resource") // to ignore the resource leak warning
     public void startGame() {
         int[] guess = new int[3];
         Scanner inp = new Scanner(System.in);

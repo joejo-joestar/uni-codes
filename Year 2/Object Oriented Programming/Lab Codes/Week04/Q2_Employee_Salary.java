@@ -71,6 +71,7 @@ class Employee {
 }
 
 public class Q2_Employee_Salary {
+    @SuppressWarnings("resource") // to ignore the resource leak warning
     public static void main(String[] args) {
         Scanner ip = new Scanner(System.in);
         Employee[] earr = new Employee[3];

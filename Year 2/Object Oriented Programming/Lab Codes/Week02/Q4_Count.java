@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Q4_Count {
+    @SuppressWarnings("resource") // to ignore the resource leak warning
     public static void main(String[] args) {
         int countpos = 0;
         int countneg = 0;

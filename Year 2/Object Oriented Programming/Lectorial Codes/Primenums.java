@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 class Q01_Primenums {
+    @SuppressWarnings("resource") // to ignore the resource leak warning
     public static void main(String[] args) {
         Scanner inp = new Scanner(System.in);
         int num1, num2 = 0;

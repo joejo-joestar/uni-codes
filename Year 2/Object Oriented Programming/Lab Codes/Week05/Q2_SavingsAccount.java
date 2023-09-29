@@ -43,6 +43,7 @@ class Q2_SavingsAccount {
     }
 
     public static void main(String[] args) {
+        @SuppressWarnings("resource") // to ignore the resource leak warning
         Scanner inp = new Scanner(System.in);
         Q2_SavingsAccount[] acc = new Q2_SavingsAccount[4];
 

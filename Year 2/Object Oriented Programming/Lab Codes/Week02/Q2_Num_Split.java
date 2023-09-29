@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Q2_Num_Split {
+    @SuppressWarnings("resource") // to ignore the resource leak warning
     public static void main(String[] args) {
 
         Scanner inp = new Scanner(System.in);

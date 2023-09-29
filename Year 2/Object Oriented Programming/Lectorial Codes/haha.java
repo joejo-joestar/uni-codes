@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class haha {
+    @SuppressWarnings("resource") // to ignore the resource leak warning
     public static void main(String[] args) {
         int rad;
         double dia, peri, ar;

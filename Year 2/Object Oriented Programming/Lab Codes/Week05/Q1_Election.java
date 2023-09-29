@@ -49,6 +49,7 @@ class Votes {
 }
 
 public class Q1_Election {
+    @SuppressWarnings("resource") // to ignore the resource leak warning
     public static void main(String[] args) {
         Scanner inp = new Scanner(System.in);
 

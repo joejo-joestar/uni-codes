@@ -1,6 +1,7 @@
 import java.util.*;
 
 class Largest {
+    @SuppressWarnings("resource") // to ignore the resource leak warning
     public static void main(String[] args) {
         Scanner inp = new Scanner(System.in);
         int num1, num2, num3 = 0;

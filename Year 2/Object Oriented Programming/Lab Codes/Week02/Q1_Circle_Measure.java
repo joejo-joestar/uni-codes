@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Q1_Circle_Measure {
+    @SuppressWarnings("resource") // to ignore the resource leak warning
     public static void main(String[] args) {
         int rad;
         double dia, peri, ar;

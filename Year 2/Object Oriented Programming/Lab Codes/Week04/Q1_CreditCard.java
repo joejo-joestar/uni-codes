@@ -22,6 +22,7 @@ class CreditCard {
 
     }
 
+    @SuppressWarnings("resource") // to ignore the resource leak warning
     public void changePin(int p) {
         Scanner ip = new Scanner(System.in);
         if (p == pin) {
@@ -41,6 +42,7 @@ class CreditCard {
 
     }
 
+    @SuppressWarnings("resource") // to ignore the resource leak warning
     public void transact(int p) {
         Scanner ip = new Scanner(System.in);
 
@@ -119,6 +121,7 @@ class CreditCard {
 
     }
 
+    @SuppressWarnings("resource") // to ignore the resource leak warning
     public void changeCardStat(int p) {
         Scanner ip = new Scanner(System.in);
 
@@ -230,6 +233,7 @@ class CreditCard {
 }
 
 public class Q1_CreditCard {
+    @SuppressWarnings("resource") // to ignore the resource leak warning
     public static void main(String[] args) {
         Scanner ip = new Scanner(System.in);
 
