@@ -1,8 +1,8 @@
 /*
-Code can be found here: https://edaplayground.com/x/LqTN
+  Code can be found here: https://edaplayground.com/x/LqTN
 */
 
-//main program
+// main program
 module OR_Gate (output reg Z, input E, F);
 
   always @ (E or F) begin
@@ -18,7 +18,7 @@ module OR_Gate (output reg Z, input E, F);
 endmodule
 
 
-//testbench
+// testbench
 module tb_OR_Gate;
 
   reg p, q;

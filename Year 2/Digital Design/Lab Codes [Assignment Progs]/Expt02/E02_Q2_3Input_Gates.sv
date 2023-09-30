@@ -1,9 +1,9 @@
 /*
-Code can be found here: https://edaplayground.com/x/KWiu
+  Code can be found here: https://edaplayground.com/x/KWiu
 */
 
-//main program
-	//NAND Gate
+// main program
+	// NAND Gate
 module NAND_Gate (output reg Z, input A, B, C);
 
   nand #10 NAND1 (Z, A, B, C);
@@ -11,7 +11,7 @@ module NAND_Gate (output reg Z, input A, B, C);
 endmodule
 
 
-	//XOR Gate
+	// XOR Gate
 module XOR_Gate (output reg Z, input A, B, C);
 
   xor #10 XOR1 (Z, A, B, C);
@@ -19,8 +19,8 @@ module XOR_Gate (output reg Z, input A, B, C);
 endmodule
 
 
-//testbench
-	//NAND Gate
+// testbench
+	// NAND Gate
 module tb_NAND_Gate;
 
   reg nand_ip1, nand_ip2 , nand_ip3;
@@ -28,8 +28,8 @@ module tb_NAND_Gate;
 
   initial begin
 
-    // $dumpfile ("dump.vcd");
-    // $dumpvars (1, tb_NAND_Gate);
+    // $dumpfile ("dump.vcd"); //only needed if using the online compiler
+    // $dumpvars (1, tb_NAND_Gate); //only needed if using the online compiler
 
     #000 nand_ip1 = 0; nand_ip2 = 0; nand_ip3 = 0;
     #100 nand_ip1 = 0; nand_ip2 = 0; nand_ip3 = 1;
@@ -48,7 +48,7 @@ module tb_NAND_Gate;
 endmodule
 
 
-	//XOR Gate
+	// XOR Gate
 module tb_XOR_Gate;
 
   reg xor_ip1, xor_ip2, xor_ip3;
@@ -56,8 +56,8 @@ module tb_XOR_Gate;
 
   initial begin
 
-    // $dumpfile ("dump.vcd");
-    // $dumpvars (1, tb_XOR_Gate);
+    // $dumpfile ("dump.vcd"); //only needed if using the online compiler
+    // $dumpvars (1, tb_XOR_Gate); //only needed if using the online compiler
 
     #000 xor_ip1 = 0; xor_ip2 = 0; xor_ip3 = 0;
     #100 xor_ip1 = 0; xor_ip2 = 0; xor_ip3 = 1;

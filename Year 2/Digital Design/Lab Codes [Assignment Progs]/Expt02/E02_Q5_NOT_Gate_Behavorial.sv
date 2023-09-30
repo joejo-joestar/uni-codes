@@ -1,8 +1,8 @@
 /*
-Code can be found here: https://edaplayground.com/x/tRk7
+  Code can be found here: https://edaplayground.com/x/tRk7
 */
 
-//main program
+// main program
 module NOT_Gate (output reg Z, input A);
 
   always @ (A) begin
@@ -18,7 +18,7 @@ module NOT_Gate (output reg Z, input A);
 endmodule
 
 
-//testbench
+// testbench
 module tb_NOT_Gate;
 
   reg p;

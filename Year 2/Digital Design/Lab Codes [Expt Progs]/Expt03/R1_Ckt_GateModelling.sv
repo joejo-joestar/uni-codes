@@ -1,8 +1,8 @@
 /*
-Code can be found here: https://edaplayground.com/x/YKae
+  Code can be found here: https://edaplayground.com/x/YKae
 */
 
-//main program
+// main program
 module Ckt (X, A, B, C);
 	output X;
   input A, B, C;
@@ -16,7 +16,7 @@ module Ckt (X, A, B, C);
 endmodule
 
 
-//testbench
+// testbench
 module tb_Ckt;
 
   reg a, b, c;

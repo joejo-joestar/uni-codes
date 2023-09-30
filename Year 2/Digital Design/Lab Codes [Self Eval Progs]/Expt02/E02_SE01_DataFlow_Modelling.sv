@@ -1,10 +1,10 @@
 /*
-Code can be found here: https://edaplayground.com/x/Mb6g
+  Code can be found here: https://edaplayground.com/x/Mb6g
 */
 
-//main program
+// main program
 
-	//AND Gate
+	// AND Gate
 module AND_Gate (output reg Z, input A, B);
 
   assign #10 Z = A & B;
@@ -12,7 +12,7 @@ module AND_Gate (output reg Z, input A, B);
 endmodule
 
 
-	//NAND Gate
+	// NAND Gate
 module NAND_Gate (output reg Z, input A, B);
 
   assign #10 Z = ~(A & B);
@@ -20,7 +20,7 @@ module NAND_Gate (output reg Z, input A, B);
 endmodule
 
 
-	//OR Gate
+	// OR Gate
 module OR_Gate (output reg Z, input A, B);
 
   assign #10 Z = A | B;
@@ -28,7 +28,7 @@ module OR_Gate (output reg Z, input A, B);
 endmodule
 
 
-	//NOR Gate
+	// NOR Gate
 module NOR_Gate (output reg Z, input A, B);
 
   assign #10 Z = ~(A | B);
@@ -36,7 +36,7 @@ module NOR_Gate (output reg Z, input A, B);
 endmodule
 
 
-	//XOR Gate
+	// XOR Gate
 module XOR_Gate (output reg Z, input A, B);
 
   assign #10 Z = A ^ B;
@@ -44,7 +44,7 @@ module XOR_Gate (output reg Z, input A, B);
 endmodule
 
 
-	//XNOR Gate
+	// XNOR Gate
 module XNOR_Gate (output reg Z, input A, B);
 
   assign #10 Z = ~(A ^ B);
@@ -52,8 +52,8 @@ module XNOR_Gate (output reg Z, input A, B);
 endmodule
 
 
-//testbench
-	//AND Gate
+// testbench
+	// AND Gate
 module tb_AND_Gate;
 
   reg and_a, and_b;
@@ -77,7 +77,7 @@ module tb_AND_Gate;
 endmodule
 
 
-	//NAND Gate
+	// NAND Gate
 module tb_NAND_Gate;
 
   reg nand_a, nand_b;
@@ -101,7 +101,7 @@ module tb_NAND_Gate;
 endmodule
 
 
-	//OR Gate
+	// OR Gate
 module tb_OR_Gate;
 
   reg or_a, or_b;
@@ -124,7 +124,7 @@ module tb_OR_Gate;
 
 endmodule
 
-	//NOR Gate
+	// NOR Gate
 module tb_NOR_Gate;
 
   reg nor_a, nor_b;
@@ -148,7 +148,7 @@ module tb_NOR_Gate;
 endmodule
 
 
-	//XOR Gate
+	// XOR Gate
 module tb_XOR_Gate;
 
   reg xor_a, xor_b;
@@ -172,7 +172,7 @@ module tb_XOR_Gate;
 endmodule
 
 
-	//XNOR Gate
+	// XNOR Gate
 module tb_XNOR_Gate;
 
   reg xnor_a, xnor_b;

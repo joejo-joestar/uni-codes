@@ -1,8 +1,8 @@
 /*
-Code can be found here: https://edaplayground.com/x/EkHy
+  Code can be found here: https://edaplayground.com/x/EkHy
 */
 
-//main program
+// main program
 module Eqn_Ckt (Y, A, B, C);
 
   output Y;
@@ -17,7 +17,7 @@ module Eqn_Ckt (Y, A, B, C);
 endmodule
 
 
-//testbench
+// testbench
 module tb_Eqn_Ckt;
 
   reg a, b, c;

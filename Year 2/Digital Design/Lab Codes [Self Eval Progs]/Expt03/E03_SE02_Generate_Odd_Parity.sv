@@ -1,8 +1,8 @@
 /*
-Code can be found here: https://edaplayground.com/x/QDus
+ Code can be found here: https://edaplayground.com/x/QDus
 */
 
-//main program
+//  main program
 module Generate_Parity (z, a, b, c, d);
   input a, b, c, d;
   wire p;
@@ -14,7 +14,7 @@ module Generate_Parity (z, a, b, c, d);
 endmodule
 
 
-//testbench
+//  testbench
 module tb_Generate_Parity;
 
   reg m0, m1, m2, m3;

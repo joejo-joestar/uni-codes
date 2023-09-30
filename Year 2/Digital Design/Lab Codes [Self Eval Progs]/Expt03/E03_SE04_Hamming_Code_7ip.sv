@@ -1,8 +1,8 @@
 /*
-Code can be found here: https://edaplayground.com/x/HPX8
+  Code can be found here: https://edaplayground.com/x/HPX8
 */
 
-//main program
+// main program
 module Hamming (P1, P2, P3, P4, m0, m1, m2, m3, m4, m5, m6);
   input m0, m1, m2, m3, m4, m5, m6;
   output P1, P2, P3, P4;
@@ -15,7 +15,7 @@ module Hamming (P1, P2, P3, P4, m0, m1, m2, m3, m4, m5, m6);
 endmodule
 
 
-//testbench
+// testbench
 module tb_Hamming;
 
   reg m0, m1, m2, m3, m4, m5, m6;

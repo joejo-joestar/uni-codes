@@ -1,8 +1,8 @@
 /*
-Code can be found here: https://edaplayground.com/x/ryhm
+  Code can be found here: https://edaplayground.com/x/ryhm
 */
 
-//main program
+// main program
 module Detect_Parity (z, p, a, b, c);
   input a, b, c, p;
   output z;
@@ -12,7 +12,7 @@ module Detect_Parity (z, p, a, b, c);
 endmodule
 
 
-//testbench
+// testbench
 module tb_Detect_Parity;
 
   reg bP, m0, m1, m2;
@@ -23,8 +23,8 @@ module tb_Detect_Parity;
     // $dumpfile ("dump.vcd"); //only needed if using the online compiler
     // $dumpvars (1, tb_Detect_Parity); //only needed if using the online compiler
 
-    //if op_Detect = 0, no error detected
-    //if op_Detect = 1, error detected
+    // if op_Detect = 0, no error detected
+    // if op_Detect = 1, error detected
 
     #000 bP = 0; m0 = 0; m1= 0; m2 = 0;
     #100 bP = 0; m0 = 0; m1= 0; m2 = 1;

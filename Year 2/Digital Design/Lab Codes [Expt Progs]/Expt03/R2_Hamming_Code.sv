@@ -1,8 +1,8 @@
 /*
-Code can be found here: https://edaplayground.com/x/Gf_T
+  Code can be found here: https://edaplayground.com/x/Gf_T
 */
 
-//main program
+// main program
 module Hamming (P1, P2, P3, m0, m1, m2, m3);
   input m0, m1, m2, m3;
   output P1, P2, P3;
@@ -14,7 +14,7 @@ module Hamming (P1, P2, P3, m0, m1, m2, m3);
 endmodule
 
 
-//testbench
+// testbench
 module tb_Hamming;
 
   reg m0, m1, m2, m3;

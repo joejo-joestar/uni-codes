@@ -1,8 +1,8 @@
 /*
-Code can be found here: https://edaplayground.com/x/EdaW
+  Code can be found here: https://edaplayground.com/x/EdaW
 */
 
-//main program
+// main program
 module Full_Subtractor(D, B_out, A, B, B_in);
 
   output D, B_out;
@@ -14,7 +14,7 @@ module Full_Subtractor(D, B_out, A, B, B_in);
 endmodule
 
 
-//testbench
+// testbench
 module tb_Full_Subtractor;
 
   reg a, b, borr_in;

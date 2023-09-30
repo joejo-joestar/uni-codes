@@ -1,8 +1,8 @@
 /*
-Code can be found here: https://edaplayground.com/x/9iVb
+  Code can be found here: https://edaplayground.com/x/9iVb
 */
 
-//main program
+// main program
 module Gray_Code (Z, A);
 
   output [7:0] Z;
@@ -20,7 +20,7 @@ module Gray_Code (Z, A);
 endmodule
 
 
-//testbench
+// testbench
 module tb_Gray_Code;
 
   reg [7:0] p;
@@ -31,8 +31,8 @@ module tb_Gray_Code;
     // $dumpfile ("dump.vcd"); //only needed if using the online compiler
     // $dumpvars (1, tb_Gray_Code); //only needed if using the online compiler
 
-    //binary number	: 10111011
-    //Gray Code		: 11100110
+    // binary number	: 10111011
+    // Gray Code		: 11100110
 
     #00 p = 8'b10111011;
     #800 $stop;

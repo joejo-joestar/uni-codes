@@ -1,8 +1,8 @@
 /*
-Code can be found here: https://edaplayground.com/x/gRq2
+  Code can be found here: https://edaplayground.com/x/gRq2
 */
 
-//main program
+// main program
 module Twos_Comp (Z, A);
 
   output [7:0] Z;
@@ -13,7 +13,7 @@ module Twos_Comp (Z, A);
 endmodule
 
 
-//testbench
+// testbench
 module tb_Twos_Comp;
 
   reg [7:0] p;
@@ -24,9 +24,9 @@ module tb_Twos_Comp;
     // $dumpfile ("dump.vcd"); //only needed if using the online compiler
     // $dumpvars (1, tb_Twos_Comp); //only needed if using the online compiler
 
-    //binary number	: 10111011
-    //1's comp 		: 01000100
-    //2's comp 		: 01000101
+    // binary number	: 10111011
+    // 1's comp 		: 01000100
+    // 2's comp 		: 01000101
 
     #00 p = 8'b10111011;
     #800 $stop;

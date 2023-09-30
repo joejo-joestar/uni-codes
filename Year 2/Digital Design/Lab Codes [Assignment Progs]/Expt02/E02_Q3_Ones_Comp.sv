@@ -1,8 +1,8 @@
 /*
-Code can be found here: https://edaplayground.com/x/wcLz
+  Code can be found here: https://edaplayground.com/x/wcLz
 */
 
-//main program
+// main program
 module Ones_Comp (output reg Res, input Bit);
 
   always @ (Bit) begin
@@ -18,7 +18,7 @@ module Ones_Comp (output reg Res, input Bit);
 endmodule
 
 
-//testbench
+// testbench
 module tb_Ones_Comp;
 
   reg p;

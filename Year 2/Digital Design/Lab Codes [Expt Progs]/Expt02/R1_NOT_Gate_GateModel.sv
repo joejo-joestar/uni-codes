@@ -1,8 +1,8 @@
 /*
-Code can be found here: https://edaplayground.com/x/nuc5
+  Code can be found here: https://edaplayground.com/x/nuc5
 */
 
-//main program
+// main program
 module NOT_Gate (output reg Z, input A);
 
   not #10 N1 (Z, A);
@@ -10,7 +10,7 @@ module NOT_Gate (output reg Z, input A);
 endmodule
 
 
-//testbench
+// testbench
 module tb_NOT_Gate;
 
   reg p;

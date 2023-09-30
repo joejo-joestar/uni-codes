@@ -1,8 +1,8 @@
 /*
-Code can be found here: https://edaplayground.com/x/XF2t
+  Code can be found here: https://edaplayground.com/x/XF2t
 */
 
-//main program
+// main program
 module NOT_Chain (Z, A);
 
   output Z;
@@ -19,7 +19,7 @@ module NOT_Chain (Z, A);
 endmodule
 
 
-//testbench
+// testbench
 module tb_NOT_Chain;
 
   reg p;

@@ -1,8 +1,8 @@
 /*
-Code can be found here: https://edaplayground.com/x/DuiY
+  Code can be found here: https://edaplayground.com/x/DuiY
 */
 
-//main program
+// main program
 module NAND_Gate (output reg Z, input A, B);
 
     output Z;
@@ -16,7 +16,7 @@ module NAND_Gate (output reg Z, input A, B);
 endmodule
 
 
-//testbench
+// testbench
 module tb_NAND_Gate;
 
     reg in_1, in_2;

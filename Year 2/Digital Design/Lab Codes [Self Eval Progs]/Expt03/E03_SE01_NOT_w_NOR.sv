@@ -1,8 +1,8 @@
 /*
-Code can be found here: https://edaplayground.com/x/Jq8_
+  Code can be found here: https://edaplayground.com/x/Jq8_
 */
 
-//main program
+// main program
 module NOR_Gate (output reg Z, input A);
 
   nor #1 NA1 (Z, A, A);
@@ -10,7 +10,7 @@ module NOR_Gate (output reg Z, input A);
 endmodule
 
 
-//testbench
+// testbench
 module tb_NOR_Gate;
 
   reg p;

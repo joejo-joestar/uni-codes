@@ -1,8 +1,8 @@
 /*
-Code can be found here: https://edaplayground.com/x/hzDc
+  Code can be found here: https://edaplayground.com/x/hzDc
 */
 
-//main program
+// main program
 module NAND_Gate (Z, A, B);
 
   output Z;
@@ -17,7 +17,7 @@ module NAND_Gate (Z, A, B);
 endmodule
 
 
-//testbench
+// testbench
 module tb_NAND_Gate;
 
    reg in_1, in_2;

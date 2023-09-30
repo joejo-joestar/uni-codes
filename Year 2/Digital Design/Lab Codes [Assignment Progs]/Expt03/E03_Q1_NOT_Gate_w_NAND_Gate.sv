@@ -1,8 +1,8 @@
 /*
-Code can be found here: https://edaplayground.com/x/McG_
+  Code can be found here: https://edaplayground.com/x/McG_
 */
 
-//main program
+// main program
 module NAND_Gate (output reg Z, input A);
 
   nand #1 NA1 (Z, A, A);
@@ -10,7 +10,7 @@ module NAND_Gate (output reg Z, input A);
 endmodule
 
 
-//testbench
+// testbench
 module tb_NAND_Gate;
 
   reg p;

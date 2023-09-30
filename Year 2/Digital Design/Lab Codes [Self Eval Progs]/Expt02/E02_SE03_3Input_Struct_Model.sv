@@ -1,8 +1,8 @@
 /*
-Code can be found here: https://edaplayground.com/x/MaXw
+  Code can be found here: https://edaplayground.com/x/MaXw
 */
 
-//main program
+// main program
 
   // 2ip AND Gate
 module andgate (output reg out, input in1, in2);
@@ -19,7 +19,7 @@ module orgate (output reg out, input in1, in2);
 endmodule
 
 
-	//3ip AND Gate
+	// 3ip AND Gate
 module AND_Gate (output reg Z, input A, B, C);
 
   wire p;
@@ -30,7 +30,7 @@ module AND_Gate (output reg Z, input A, B, C);
 endmodule
 
 
-	//3ip OR Gate
+	// 3ip OR Gate
 module OR_Gate (output reg Z, input A, B, C);
 
   wire p;
@@ -42,8 +42,8 @@ endmodule
 
 
 
-//testbench
-	//OR Gate
+// testbench
+	// OR Gate
 module tb_AND_Gate;
 
   reg and_ip1, and_ip2, and_ip3;
@@ -71,7 +71,7 @@ module tb_AND_Gate;
 endmodule
 
 
-	//OR Gate
+	// OR Gate
 module tb_OR_Gate;
 
   reg or_ip1, or_ip2, or_ip3;
