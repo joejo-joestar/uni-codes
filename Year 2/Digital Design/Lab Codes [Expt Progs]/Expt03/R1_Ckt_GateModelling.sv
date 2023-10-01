@@ -24,7 +24,7 @@ module tb_Ckt;
 
   initial begin
 
-	  // $dumpfile ("dump.vcd"); //only needed if using the online compiler
+    // $dumpfile ("dump.vcd"); //only needed if using the online compiler
     // $dumpvars (1, tb_Ckt); //only needed if using the online compiler
 
  	  #000 a = 0; b = 0; c = 0;
