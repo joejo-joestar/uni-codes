@@ -54,6 +54,6 @@ Note: These codes can be run in [EDA Playground](https://edaplayground.com).
 
 Use the settings as shown below:
 
-<img title="" src="file:///C:/Users/joecn/Documents/GitHub/uni-codes/Year%202/Digital%20Design/Media/langnlibspart1.png" alt="langnlibspart1.png" data-align="center">
+<img title="" src="https://github.com/joejo-joestar/uni-codes/blob/main/Year%202/Digital%20Design/Media/langnlibspart1.png" alt="Language settings" data-align="center">
 
-<img src="file:///C:/Users/joecn/Documents/GitHub/uni-codes/Year%202/Digital%20Design/Media/toolsnsimspart2.png" title="" alt="toolsnsimspart2.png" data-align="center">
+<img src="https://github.com/joejo-joestar/uni-codes/blob/main/Year%202/Digital%20Design/Media/toolsnsimspart2.png" title="" alt="Tool and Simu settings" data-align="center">
