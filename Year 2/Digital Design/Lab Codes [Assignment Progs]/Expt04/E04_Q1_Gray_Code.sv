@@ -8,14 +8,14 @@ module Gray_Code (Z, A);
   output [7:0] Z;
   input [7:0] A;
 
-  assign Z[0] = (A[0] ^ A[1]);
-  assign Z[1] = (A[1] ^ A[2]);
-  assign Z[2] = (A[2] ^ A[3]);
-  assign Z[3] = (A[3] ^ A[4]);
-  assign Z[4] = (A[4] ^ A[5]);
-  assign Z[5] = (A[5] ^ A[6]);
-  assign Z[6] = (A[6] ^ A[7]);
   assign Z[7] = (A[7]);
+  assign Z[6] = (A[6] ^ A[7]);
+  assign Z[5] = (A[5] ^ A[6]);
+  assign Z[4] = (A[4] ^ A[5]);
+  assign Z[3] = (A[3] ^ A[4]);
+  assign Z[2] = (A[2] ^ A[3]);
+  assign Z[1] = (A[1] ^ A[2]);
+  assign Z[0] = (A[0] ^ A[1]);
 
 endmodule
 
