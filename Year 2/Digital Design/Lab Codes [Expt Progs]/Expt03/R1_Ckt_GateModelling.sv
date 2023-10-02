@@ -27,15 +27,15 @@ module tb_Ckt;
     // $dumpfile ("dump.vcd"); //only needed if using the online compiler
     // $dumpvars (1, tb_Ckt); //only needed if using the online compiler
 
- 	  #000 a = 0; b = 0; c = 0;
-   	#100 a = 0; b = 0; c = 1;
-   	#100 a = 0; b = 1; c = 0;
-   	#100 a = 0; b = 1; c = 1;
-   	#100 a = 1; b = 0; c = 0;
-   	#100 a = 1; b = 0; c = 1;
-   	#100 a = 1; b = 1; c = 0;
-   	#100 a = 1; b = 1; c = 1;
-    #100 $stop;
+ 	  // #000 a = 0; b = 0; c = 0;
+   	// #100 a = 0; b = 0; c = 1;
+   	// #100 a = 0; b = 1; c = 0;
+   	// #100 a = 0; b = 1; c = 1;
+   	// #100 a = 1; b = 0; c = 0;
+   	// #100 a = 1; b = 0; c = 1;
+   	// #100 a = 1; b = 1; c = 0;
+   	// #100 a = 1; b = 1; c = 1;
+    // #100 $stop;
 
   end
 

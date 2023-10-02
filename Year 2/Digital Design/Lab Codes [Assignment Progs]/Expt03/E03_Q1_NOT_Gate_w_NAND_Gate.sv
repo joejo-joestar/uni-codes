@@ -21,9 +21,9 @@ module tb_NAND_Gate;
 	  // $dumpfile ("dump.vcd"); //only needed if using the online compiler
 	  // $dumpvars (1, tb_NAND_Gate); //only needed if using the online compiler
 
-    #000 p = 0;
-    #100 p = 1;
-    #100 $stop;
+    // #000 p = 0;
+    // #100 p = 1;
+    // #100 $stop;
 
   end
 

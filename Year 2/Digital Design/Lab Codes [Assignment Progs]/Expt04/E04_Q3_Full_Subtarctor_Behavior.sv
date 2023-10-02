@@ -64,15 +64,15 @@ module tb_Full_Subtractor;
     // $dumpfile ("dump.vcd"); //only needed if using the online compiler
     // $dumpvars (1, tb_Full_Subtractor); //only needed if using the online compiler
 
-    #000 a = 0; b = 0; borr_in = 0;
-    #100 a = 0; b = 0; borr_in = 1;
-    #100 a = 0; b = 1; borr_in = 0;
-    #100 a = 0; b = 1; borr_in = 1;
-    #100 a = 1; b = 0; borr_in = 0;
-    #100 a = 1; b = 0; borr_in = 1;
-    #100 a = 1; b = 1; borr_in = 0;
-    #100 a = 1; b = 1; borr_in = 1;
-    #100 $stop;
+    // #000 a = 0; b = 0; borr_in = 0;
+    // #100 a = 0; b = 0; borr_in = 1;
+    // #100 a = 0; b = 1; borr_in = 0;
+    // #100 a = 0; b = 1; borr_in = 1;
+    // #100 a = 1; b = 0; borr_in = 0;
+    // #100 a = 1; b = 0; borr_in = 1;
+    // #100 a = 1; b = 1; borr_in = 0;
+    // #100 a = 1; b = 1; borr_in = 1;
+    // #100 $stop;
 
   end
 

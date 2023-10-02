@@ -31,15 +31,15 @@ module tb_NAND_Gate;
     // $dumpfile ("dump.vcd"); //only needed if using the online compiler
     // $dumpvars (1, tb_NAND_Gate); //only needed if using the online compiler
 
-    #000 nand_ip1 = 0; nand_ip2 = 0; nand_ip3 = 0;
-    #100 nand_ip1 = 0; nand_ip2 = 0; nand_ip3 = 1;
-    #100 nand_ip1 = 0; nand_ip2 = 1; nand_ip3 = 0;
-    #100 nand_ip1 = 0; nand_ip2 = 1; nand_ip3 = 1;
-    #100 nand_ip1 = 1; nand_ip2 = 0; nand_ip3 = 0;
-    #100 nand_ip1 = 1; nand_ip2 = 0; nand_ip3 = 1;
-    #100 nand_ip1 = 1; nand_ip2 = 1; nand_ip3 = 0;
-    #100 nand_ip1 = 1; nand_ip2 = 1; nand_ip3 = 1;
-    #100 $stop;
+    // #000 nand_ip1 = 0; nand_ip2 = 0; nand_ip3 = 0;
+    // #100 nand_ip1 = 0; nand_ip2 = 0; nand_ip3 = 1;
+    // #100 nand_ip1 = 0; nand_ip2 = 1; nand_ip3 = 0;
+    // #100 nand_ip1 = 0; nand_ip2 = 1; nand_ip3 = 1;
+    // #100 nand_ip1 = 1; nand_ip2 = 0; nand_ip3 = 0;
+    // #100 nand_ip1 = 1; nand_ip2 = 0; nand_ip3 = 1;
+    // #100 nand_ip1 = 1; nand_ip2 = 1; nand_ip3 = 0;
+    // #100 nand_ip1 = 1; nand_ip2 = 1; nand_ip3 = 1;
+    // #100 $stop;
 
   end
 

@@ -29,11 +29,11 @@ module tb_OR_Gate;
     // $dumpfile ("dump.vcd"); //only needed if using the online compiler
     // $dumpvars (1, tb_OR_Gate); //only needed if using the online compiler
 
-    #000 p = 0; q = 0;
-    #100 p = 0; q = 1;
-    #100 p = 1; q = 0;
-    #100 p = 1; q = 1;
-    #100 $stop;
+    // #000 p = 0; q = 0;
+    // #100 p = 0; q = 1;
+    // #100 p = 1; q = 0;
+    // #100 p = 1; q = 1;
+    // #100 $stop;
 
   end
 

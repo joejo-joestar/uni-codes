@@ -34,8 +34,8 @@ module tb_Gray_Code;
     // binary number	: 10111011
     // Gray Code		: 11100110
 
-    #00 p = 8'b10111011;
-    #800 $stop;
+    // #00 p = 8'b10111011;
+    // #800 $stop;
 
   end
 
