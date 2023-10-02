@@ -44,7 +44,7 @@ There are 4 Main Models that can be followed to write any verilog code depending
 
 - Structural modelling uses **multiple modules** (similar to methods or functions in other programming languages) defined in the file *(or different programs(unsure))*
 
-- Any of the above mentioed modelling can be used to define these modules
+- Any of the above mentioned modelling can be used to define these modules
 
 ---
 
@@ -56,4 +56,4 @@ Use the settings as shown below:
 
 <img title="" src="/Year%202/Digital%20Design/Media/langnlibspart1.png" alt="Language settings" data-align="center">
 
-<img src="/Year%202/Digital%20Design/Media/toolsnsimspart2.png" title="" alt="Tool and Simu settings" data-align="center">
+<img src="/Year%202/Digital%20Design/Media/toolsnsimspart2.png" title="" alt="Tool and Simulation settings" data-align="center">
