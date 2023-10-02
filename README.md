@@ -11,7 +11,7 @@ CSE courses :)
   
   - [Digital Design Lab (CS F215)](https://github.com/joejo-joestar/uni_codes/tree/main/Year%202/Digital%20Design) 
   
-  - [Oject Oriented Programming Lab (CS F213)](https://github.com/joejo-joestar/uni_codes/tree/main/Year%202/Object%20Oriented%20Programming)
+  - [Object Oriented Programming Lab (CS F213)](https://github.com/joejo-joestar/uni_codes/tree/main/Year%202/Object%20Oriented%20Programming)
 
 ## Authors
 

@@ -44,7 +44,7 @@ There are 4 Main Models that can be followed to write any verilog code depending
 
 - Structural modelling uses **multiple modules** (similar to methods or functions in other programming languages) defined in the file *(or different programs(unsure))*
 
-- Any of the above mentioed modelling can be used to define these modules
+- Any of the above mentioned modelling can be used to define these modules
 
 ---
 
@@ -54,6 +54,6 @@ Note: These codes can be run in [EDA Playground](https://edaplayground.com).
 
 Use the settings as shown below:
 
-<img title="" src="https://github.com/joejo-joestar/uni-codes/blob/main/Year%202/Digital%20Design/Media/langnlibspart1.png" alt="Language settings" data-align="center">
+<img src="/Year%202/Digital%20Design/Media/langnlibspart1.png" alt="Language settings" title="Language settings" data-align="center">
 
-<img src="https://github.com/joejo-joestar/uni-codes/blob/main/Year%202/Digital%20Design/Media/toolsnsimspart2.png" title="" alt="Tool and Simu settings" data-align="center">
+<img src="/Year%202/Digital%20Design/Media/toolsnsimspart2.png" title="Tools & Simulators settings" alt="Tools & Simulators settings" data-align="center">
