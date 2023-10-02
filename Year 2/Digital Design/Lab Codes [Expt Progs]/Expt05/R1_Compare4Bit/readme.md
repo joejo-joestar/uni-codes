@@ -1,6 +1,6 @@
 # Pin Layout for the 4-Bit Comparator
 
-<img src="/Year%202/Digital%20Design/Media/E05_Run1_PinLayout.png" title="" alt="E04_Run1_PinLayout.png" data-align="center">
+<img src="/Year%202/Digital%20Design/Media/E05_Run1_PinLayout.png" alt="Pin Layout for the 4-Bit Comparator" title="Pin Layout for the 4-Bit Comparator" data-align="center">
 
 # Output:
 

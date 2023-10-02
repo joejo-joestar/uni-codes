@@ -54,6 +54,6 @@ Note: These codes can be run in [EDA Playground](https://edaplayground.com).
 
 Use the settings as shown below:
 
-<img title="" src="/Year%202/Digital%20Design/Media/langnlibspart1.png" alt="Language settings" data-align="center">
+<img src="/Year%202/Digital%20Design/Media/langnlibspart1.png" alt="Language settings" title="Language settings" data-align="center">
 
-<img src="/Year%202/Digital%20Design/Media/toolsnsimspart2.png" title="" alt="Tool and Simulation settings" data-align="center">
+<img src="/Year%202/Digital%20Design/Media/toolsnsimspart2.png" title="Tools & Simulators settings" alt="Tools & Simulators settings" data-align="center">
