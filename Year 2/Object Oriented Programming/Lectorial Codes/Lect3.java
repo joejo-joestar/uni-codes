@@ -1,22 +1,22 @@
 //         // q1.
 // class Number {
-//         public int i = 15;
+//     public int i = 15;
 // }
 // public class Lect3 {
-//         public static void main(String[] args) {
-//                 Lect3 t = new Lect3();
-//                 t.change();
-//         }
-//         public void change() {
-//                 int i = 0;
-//                 Number n = new Number();
-//                 n.i = 25;
-//                 Number n2 = new Number();
-//                 n2 = n;
-//                 Number n3 = new Number();
-//                 n = n3;
-//                 System.out.println(n.i + ", " + n2.i + ", " + n3.i);
-//         }
+//     public static void main(String[] args) {
+//         Lect3 t = new Lect3();
+//         t.change();
+//     }
+//     public void change() {
+//         int i = 0;
+//         Number n = new Number();
+//         n.i = 25;
+//         Number n2 = new Number();
+//         n2 = n;
+//         Number n3 = new Number();
+//         n = n3;
+//         System.out.println(n.i + ", " + n2.i + ", " + n3.i);
+//     }
 // }
 
 
@@ -26,18 +26,18 @@
 //         public int i = 15;
 // }
 // public class Lect3 {
-//         public static void main(String[] args) {
-//                 Lect3 t = new Lect3();
-//                 Number n = new Number();
-//                 t.change(n);
-//         }
-//         public void change(Number n) {
-//                 int i = 0;
-//                 Number n2 = new Number();
-//                 n2.i = 20;
-//                 n2 = n;
-//                 System.out.println(n.i + ", " + n2.i);
-//         }
+//     public static void main(String[] args) {
+//         Lect3 t = new Lect3();
+//         Number n = new Number();
+//         t.change(n);
+//     }
+//     public void change(Number n) {
+//         int i = 0;
+//         Number n2 = new Number();
+//         n2.i = 20;
+//         n2 = n;
+//         System.out.println(n.i + ", " + n2.i);
+//     }
 // }
 
 
@@ -261,48 +261,48 @@
 // }
 
 //      // q11b.
-class Complex {
-        int real, imag;
-        Complex (int re, int im) {
-                real = re;
-                imag = im;
-        }
-        Complex (String cmpx) {
-                String[] split = cmpx.split("\\s*\\+\\s*|\\s*\\-\\s*|\\s*i\\s*");
-                real = Integer.parseInt(split[0]);
-                imag = Integer.parseInt(split[2]);
-        }
-        Complex (Complex c) {
-                real = c.real;
-                imag = c.imag;
-        }
-        public void add(Complex c1, Complex c2) {
-                String sum;
-                sum = "(" + (c1.real + c2.real) + ")" + "(" + (c1.imag + c2.imag) + "i)";
-                System.out.println("the sum = " + sum);
-        }
-        public void sub(Complex c1, Complex c2) {
-                String diff;
-                diff = "(" + (c1.real - c2.real) + ")" + "(" + (c1.imag - c2.imag) + "i)";
-                System.out.println("the difference = " + diff);
-        }
-        public void mul(Complex c1, Complex c2) {
-                String prod;
-                prod = "(" + ((c1.real * c2.real) - (c1.imag * c2.imag)) + ")" + "(" + ((c1.real * c2.imag) + (c1.imag * c2.real)) + "i)";
-                System.out.println("the product = " + prod);
-        }
-        public void div(Complex c1, Complex c2) {
-                String quo;
-                quo = "(" + ((c1.real * c2.real) - (c1.imag * c2.imag)) + ")" + "(" + ((c1.real * c2.imag) + (c1.imag * c2.real)) + "i)";
-                System.out.println("the quotient = " + quo);
-        }
-}
-public class Lect3 {
-        Complex c1 = new Complex(1, 3);
-        Complex c2 = new Complex("2 + 3i");
-        Complex c3 = new Complex(c1);
-//         c1.add(c1, c2);
-//         c1.add(3, 6); // c1 = c1 + complex(3,6);
-//         c4 = c1.add(c3); //c4 = c1 + c3
-//         c1.display();
-}
+// class Complex {
+//         int real, imag;
+//         Complex (int re, int im) {
+//                 real = re;
+//                 imag = im;
+//         }
+//         Complex (String cmpx) {
+//                 String[] split = cmpx.split("\\s*\\+\\s*|\\s*\\-\\s*|\\s*i\\s*");
+//                 real = Integer.parseInt(split[0]);
+//                 imag = Integer.parseInt(split[2]);
+//         }
+//         Complex (Complex c) {
+//                 real = c.real;
+//                 imag = c.imag;
+//         }
+//         public void add(Complex c1, Complex c2) {
+//                 String sum;
+//                 sum = "(" + (c1.real + c2.real) + ")" + "(" + (c1.imag + c2.imag) + "i)";
+//                 System.out.println("the sum = " + sum);
+//         }
+//         public void sub(Complex c1, Complex c2) {
+//                 String diff;
+//                 diff = "(" + (c1.real - c2.real) + ")" + "(" + (c1.imag - c2.imag) + "i)";
+//                 System.out.println("the difference = " + diff);
+//         }
+//         public void mul(Complex c1, Complex c2) {
+//                 String prod;
+//                 prod = "(" + ((c1.real * c2.real) - (c1.imag * c2.imag)) + ")" + "(" + ((c1.real * c2.imag) + (c1.imag * c2.real)) + "i)";
+//                 System.out.println("the product = " + prod);
+//         }
+//         public void div(Complex c1, Complex c2) {
+//                 String quo;
+//                 quo = "(" + ((c1.real * c2.real) - (c1.imag * c2.imag)) + ")" + "(" + ((c1.real * c2.imag) + (c1.imag * c2.real)) + "i)";
+//                 System.out.println("the quotient = " + quo);
+//         }
+// }
+// public class Lect3 {
+//         Complex c1 = new Complex(1, 3);
+//         Complex c2 = new Complex("2 + 3i");
+//         Complex c3 = new Complex(c1);
+// //         c1.add(c1, c2);
+// //         c1.add(3, 6); // c1 = c1 + complex(3,6);
+// //         c4 = c1.add(c3); //c4 = c1 + c3
+// //         c1.display();
+// }

@@ -1,17 +1,17 @@
 import java.util.*;
 
-class Q2_SavingsAccount {
+class Interest {
     static double annualInterestRate = 0.12;
     private float savingsBalance;
 
-    public Q2_SavingsAccount(float currCred) {
-        savingsBalance = currCred;
+    public Interest(float currentCred) {
+        savingsBalance = currentCred;
 
     }
 
     public void monthlyInterest() {
-        double monthlyInterst = (savingsBalance * annualInterestRate) / 12;
-        savingsBalance += monthlyInterst;
+        double monthlyInterest = (savingsBalance * annualInterestRate) / 12;
+        savingsBalance += monthlyInterest;
 
     }
 
@@ -42,14 +42,18 @@ class Q2_SavingsAccount {
 
     }
 
+}
+
+class Q2_SavingsAccount {
     public static void main(String[] args) {
         @SuppressWarnings("resource") // to ignore the resource leak warning
+
         Scanner inp = new Scanner(System.in);
-        Q2_SavingsAccount[] acc = new Q2_SavingsAccount[4];
+        Interest[] acc = new Interest[4];
 
         for (int i = 0; i < 3; i++) {
             System.out.print("Please enter Person " + (i + 1) + "'s Savings Balance: ");
-            acc[i] = new Q2_SavingsAccount(inp.nextFloat());
+            acc[i] = new Interest(inp.nextFloat());
 
             while (true) {
                 System.out.println(
@@ -63,9 +67,9 @@ class Q2_SavingsAccount {
                 }
 
                 else if (ip == 2) {
-                    System.out.print("Please enter the new interst rate: ");
+                    System.out.print("Please enter the new interest rate: ");
                     double interest = inp.nextDouble();
-                    modifyInterestRate(interest);
+                    Interest.modifyInterestRate(interest);
 
                 }
 

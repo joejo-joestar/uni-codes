@@ -152,3 +152,72 @@
 //         System.out.println(b);
 //     }
 // }
+
+
+// public class Lect2 {
+//         public static void main (String[] args) {
+//                 for (int i = 0; i < 5; i++){
+//                         for (int j = 0; j < 5; j++){
+//                                 if(i == j)
+//                                         break;
+//                                 System.out.println("Hello" + i + j);
+//                         }
+//                 }
+//         }
+// }
+
+
+// public class Lect2 {
+//     public static void main (String[] args) {
+//         for (int i = 0; i < 255; i++){
+//             System.out.println(i + ": " + (char)i);
+//         }
+//     }
+// }
+
+
+// public class Lect2 {
+//     public static void main (String[] args) {
+//         int val;
+//         if (val > 4) {
+//             System.out.println("Test A");
+//         }
+//         else if (val >= 9) {
+//             System.out.println("Test B");
+//         }
+//         else {
+//             System.out.println("Test C");
+//         }
+//     }
+// }
+
+
+// public class Lect2 {
+//     public static void main (String[] args) {
+//         int n = 0;
+//         while(n++ < 2)
+//             System.out.println(n);
+//     }
+// }
+
+
+// public class Lect2 {
+//     public static void main (String[] args) {
+//         int i = 0, j = 10;
+//         while(i++ < j--)
+//             System.out.println(i +j);
+//     }
+// }
+
+
+public class Lect2 {
+    public static void main (String[] args) {
+        char c = 'b';
+        switch(c) {
+            default: System.out.println("not a character");
+            case 'a': System.out.println("apple");
+            case 'b': System.out.println("ball");
+            case 'c': System.out.println("cat");
+        }
+    }
+}
