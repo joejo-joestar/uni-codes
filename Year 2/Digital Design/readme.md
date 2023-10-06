@@ -46,6 +46,8 @@ There are 4 Main Models that can be followed to write any verilog code depending
 
 - Any of the above mentioned modelling can be used to define these modules
 
+<br>
+
 ---
 
 ## FYI 2
