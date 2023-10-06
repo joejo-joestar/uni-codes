@@ -96,14 +96,14 @@ Use the settings as shown below:
 
   EPWave defaults waveform signals to Hexadecimal (Output of [this code](Year%202/Digital%20Design/Lab%20Codes%20%5BSelf%20Eval%20Progs%5D/Expt04/SE09_GrayCodetoBinary.sv)):
 
-<img title="" src="file:///Year%202/Digital%20Design/Media/EPWave_Hex_op.png" alt="EPWave_Hex_op.png" data-align="center">
+<img src="/Year%202/Digital%20Design/Media/EPWave_Hex_op.png" alt="EPWave Hex Output" title="EPWave Hex Output" data-align="center">
 
 To Display the waveform in Binary, Switch from `Hex` to `Binary` in the `Radix` menu
 
-<img title="" src="file:///Year%202/Digital%20Design/Media/EPWave_Hex_Radix.png" alt="EPWave_Hex_Radix.png" data-align="center">
+<img src="/Year%202/Digital%20Design/Media/EPWave_Hex_Radix.png" alt="EPWave Hex Radix" title="EPWave Hex Radix" data-align="center">
 
-<img title="" src="file:///Year%202/Digital%20Design/Media/EPWave_Binary_Radix.png" alt="EPWave_Binary_Radix.png" data-align="center">
+<img src="/Year%202/Digital%20Design/Media/EPWave_Binary_Radix.png" alt="EPWave Binary Radix" title="EPWave Binary Radix" data-align="center">
 
 The final output should be
 
-<img title="" src="file:///Year%202/Digital%20Design/Media/EPWave_Binary_op.png" alt="EPWave_Binary_op.png" data-align="center">
+<img src="/Year%202/Digital%20Design/Media/EPWave_Binary_op.png" alt="EPWave Binary Output" title="EPWave Binary Output" data-align="center">
