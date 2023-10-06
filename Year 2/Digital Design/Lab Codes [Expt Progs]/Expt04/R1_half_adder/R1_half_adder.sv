@@ -1,11 +1,11 @@
 
 module half_adder(S, C, A, B);
 
-    output S, C;
-    input A, B;
+  output S, C;
+  input A, B;
 
-    assign S = A ^ B;
-    assign C = A & B;
+  assign S = A ^ B;
+  assign C = A & B;
 
 endmodule
 

@@ -2,7 +2,7 @@
   Code can be found here: https://edaplayground.com/x/fAu2
 */
 
-// main progam
+// main program
 module Full_Subtractor(D, B_out, A, B, B_in);
 
   output D, B_out;

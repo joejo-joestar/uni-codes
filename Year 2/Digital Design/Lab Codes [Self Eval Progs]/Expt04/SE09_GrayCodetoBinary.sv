@@ -2,7 +2,7 @@
   Code can be found here: https://edaplayground.com/x/uNTW
 */
 
-// main progam
+// main program
 module GrayCode2Binary (Z, A);
 
   output [7:0] Z;

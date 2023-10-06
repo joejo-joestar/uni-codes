@@ -2,7 +2,7 @@
   Code can be found here: https://edaplayground.com/x/anaV
 */
 
-// main progam
+// main program
 module Half_Subtractor (D, B_out, A, B);
 
   output D, B_out;

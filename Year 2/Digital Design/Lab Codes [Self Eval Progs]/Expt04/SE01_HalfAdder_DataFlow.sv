@@ -2,7 +2,7 @@
   Code can be found here: https://edaplayground.com/x/dw6w
 */
 
-// main progam
+// main program
 module Half_Adder (S, C, A, B);
 
   output S, C;

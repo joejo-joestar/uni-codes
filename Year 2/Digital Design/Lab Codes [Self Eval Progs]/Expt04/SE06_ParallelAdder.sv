@@ -2,7 +2,7 @@
   Code can be found here: https://edaplayground.com/x/qJ49
 */
 
-// main progam
+// main program
 module full_adder(S, C_out, A, B, C_in);
 
   output S, C_out;
