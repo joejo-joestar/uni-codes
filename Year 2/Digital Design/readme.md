@@ -33,9 +33,9 @@ There are 4 Main Models that can be followed to write any verilog code depending
 - Behavioral modelling uses `if... else` or `case` statements
 
 - These statements are defined inside of loops
-
+  
   - `always` loop: executes repeatedly after starting at time 0
-
+  
   - `initial` loop: executes only once after starting at time 0
 
 <br>
@@ -99,7 +99,19 @@ num2 = 8'd01234567;
 [0:7]num2 -> [0 1 2 3 4 5 6 7]
 ```
 
-The position of '7' in both cases being the most significant bit and of '0' is the least significant bit
+Most Significant Bits: 
+
+- `num1 -> 7` 
+
+- `num2 -> 0`
+
+Least Significant Bits:
+
+- `num1 -> 0`
+
+- `num2 -> 7`
+
+*i.e.,* when defining, `[(pos of msb):(pos of lsb)]`
 
 <br>
 
@@ -113,9 +125,9 @@ Use the settings as shown below:
 
 <p align="center">
 
-  <img src="/Year%202/Digital%20Design/Media/langnlibspart1.png" alt="Language settings" title="Language settings" data-align="center">
+<img src="/Year%202/Digital%20Design/Media/langnlibspart1.png" alt="Language settings" title="Language settings" data-align="center">
 
-  <img src="/Year%202/Digital%20Design/Media/toolsnsimspart2.png" title="Tools & Simulators settings" alt="Tools & Simulators settings" data-align="center">
+<img src="/Year%202/Digital%20Design/Media/toolsnsimspart2.png" title="Tools & Simulators settings" alt="Tools & Simulators settings" data-align="center">
 
 </p>
 
@@ -129,7 +141,7 @@ EPWave defaults waveform signals to Hexadecimal (Output of [this code](Year%202/
 
 <p align="center">
 
-  <img src="/Year%202/Digital%20Design/Media/EPWave_Hex_op.png" alt="EPWave Hex Output" title="EPWave Hex Output" data-align="center">
+<img src="/Year%202/Digital%20Design/Media/EPWave_Hex_op.png" alt="EPWave Hex Output" title="EPWave Hex Output" data-align="center">
 
 </p>
 
@@ -137,9 +149,9 @@ To Display the waveform in Binary, Switch from `Hex` to `Binary` in the `Radix` 
 
 <p align="center">
 
-  <img src="/Year%202/Digital%20Design/Media/EPWave_Hex_Radix.png" alt="EPWave Hex Radix" title="EPWave Hex Radix" data-align="center">
+<img src="/Year%202/Digital%20Design/Media/EPWave_Hex_Radix.png" alt="EPWave Hex Radix" title="EPWave Hex Radix" data-align="center">
 
-  <img src="/Year%202/Digital%20Design/Media/EPWave_Binary_Radix.png" alt="EPWave Binary Radix" title="EPWave Binary Radix" data-align="center">
+<img src="/Year%202/Digital%20Design/Media/EPWave_Binary_Radix.png" alt="EPWave Binary Radix" title="EPWave Binary Radix" data-align="center">
 
 </p>
 
@@ -147,6 +159,6 @@ The final output should be
 
 <p align="center">
 
-  <img src="/Year%202/Digital%20Design/Media/EPWave_Binary_op.png" alt="EPWave Binary Output" title="EPWave Binary Output" data-align="center">
+<img src="/Year%202/Digital%20Design/Media/EPWave_Binary_op.png" alt="EPWave Binary Output" title="EPWave Binary Output" data-align="center">
 
 </p>
