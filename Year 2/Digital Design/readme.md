@@ -2,6 +2,8 @@
 
 All the codes written for Digital Design course in Year 2 Sem 1.
 
+<br>
+
 ---
 
 ## FYI 1
@@ -31,9 +33,9 @@ There are 4 Main Models that can be followed to write any verilog code depending
 - Behavioral modelling uses `if... else` or `case` statements
 
 - These statements are defined inside of loops
-  
+
   - `always` loop: executes repeatedly after starting at time 0
-  
+
   - `initial` loop: executes only once after starting at time 0
 
 <br>
@@ -46,64 +48,105 @@ There are 4 Main Models that can be followed to write any verilog code depending
 
 - Any of the above mentioned modelling can be used to define these modules
 
+<br>
+
 ---
 
 ## FYI 2
 
-n-bit binary numbers can be initialised as 
+n-bit binary numbers can be initialized as
 
-```vhdl
-input[n:0] num1, num2;
-output[n:0] num3, num4;
+```verilog
+input[(n-1):0] num1, num2;
+output[(n-1):0] num3, num4;
 // num1, num2, num3 and num4 here are both n-bit inputs/outputs
 ```
 
 or
 
-```vhdl
-input [n:0]num1, num2;
-output [n:0]num3, num4;
+```verilog
+input [(n-1):0]num1, num2;
+output [(n-1):0]num3, num4;
 // here, num1 and num3 is an n-bit input/output but num2 and num4 is not
 ```
 
 These numbers can be specified as
 
-```vhdl
+```verilog
 num = n'bxxxx    // n-bit binary number
 num = n'dxxxx    // n-bit decimal number
 num = n'hxxxx    // n-bit hexadecimal number
 num = n'oxxxx    // n-bit octal number
-// ('x' stands for unkown logic values)
+// ('x' stands for unknown logic values)
 ```
+
 <br>
 
+for eg:
+
+```verilog
+output reg [3:0]num1; // 4-bit number
+num1 = 4'd0123;
+
+output reg [7:0]num2; // 8-bit number
+num2 = 8'd01234567;
+```
+
+**Note:** `[7:0]` and `[0:7]` are different
+
+```verilog
+[7:0]num1 -> [7 6 5 4 3 2 1 0]
+[0:7]num2 -> [0 1 2 3 4 5 6 7]
+```
+
+The position of '7' in both cases being the most significant bit and of '0' is the least significant bit
+
+<br>
 
 ---
 
 ## How to Run the Code
 
-Note: These codes can be run in [EDA Playground](https://edaplayground.com). 
+**Note:** These codes can be run in [EDA Playground](https://edaplayground.com).
 
 Use the settings as shown below:
 
-<img src="/Year%202/Digital%20Design/Media/langnlibspart1.png" alt="Language settings" title="Language settings" data-align="center">
+<p align="center">
 
-<img src="/Year%202/Digital%20Design/Media/toolsnsimspart2.png" title="Tools & Simulators settings" alt="Tools & Simulators settings" data-align="center">
+  <img src="/Year%202/Digital%20Design/Media/langnlibspart1.png" alt="Language settings" title="Language settings" data-align="center">
+
+  <img src="/Year%202/Digital%20Design/Media/toolsnsimspart2.png" title="Tools & Simulators settings" alt="Tools & Simulators settings" data-align="center">
+
+</p>
+
+<br>
 
 ---
 
 ## To View Binary Output in EPWave
 
-  EPWave defaults waveform signals to Hexadecimal (Output of [this code](Year%202/Digital%20Design/Lab%20Codes%20%5BSelf%20Eval%20Progs%5D/Expt04/SE09_GrayCodetoBinary.sv)):
+EPWave defaults waveform signals to Hexadecimal (Output of [this code](Year%202/Digital%20Design/Lab%20Codes%20%5BSelf%20Eval%20Progs%5D/Expt04/SE09_GrayCodetoBinary.sv)):
 
-<img src="/Year%202/Digital%20Design/Media/EPWave_Hex_op.png" alt="EPWave Hex Output" title="EPWave Hex Output" data-align="center">
+<p align="center">
+
+  <img src="/Year%202/Digital%20Design/Media/EPWave_Hex_op.png" alt="EPWave Hex Output" title="EPWave Hex Output" data-align="center">
+
+</p>
 
 To Display the waveform in Binary, Switch from `Hex` to `Binary` in the `Radix` menu
 
-<img src="/Year%202/Digital%20Design/Media/EPWave_Hex_Radix.png" alt="EPWave Hex Radix" title="EPWave Hex Radix" data-align="center">
+<p align="center">
 
-<img src="/Year%202/Digital%20Design/Media/EPWave_Binary_Radix.png" alt="EPWave Binary Radix" title="EPWave Binary Radix" data-align="center">
+  <img src="/Year%202/Digital%20Design/Media/EPWave_Hex_Radix.png" alt="EPWave Hex Radix" title="EPWave Hex Radix" data-align="center">
+
+  <img src="/Year%202/Digital%20Design/Media/EPWave_Binary_Radix.png" alt="EPWave Binary Radix" title="EPWave Binary Radix" data-align="center">
+
+</p>
 
 The final output should be
 
-<img src="/Year%202/Digital%20Design/Media/EPWave_Binary_op.png" alt="EPWave Binary Output" title="EPWave Binary Output" data-align="center">
+<p align="center">
+
+  <img src="/Year%202/Digital%20Design/Media/EPWave_Binary_op.png" alt="EPWave Binary Output" title="EPWave Binary Output" data-align="center">
+  
+</p>

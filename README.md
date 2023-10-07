@@ -1,17 +1,20 @@
 <h1 align="center">🏫 Uni Codes 💻</h1>
 
-This is just an unofficial repo to store most of my codes from all the different
-CSE courses :)
+This is just an unofficial repo to store most of my codes from all the different CSE courses :)
+
+<br>
 
 ## Navigate
 
-- Explore the [Year 1](Year%201/) for Programs in C for Computer Programming Lab (CS F111) 
+- Explore the [Year 1](Year%201/) for Programs in C for Computer Programming Lab (CS F111)
 
-- Explore the [Year 2](Year%202/) for Programs in 
-  
-  - [Digital Design Lab (CS F215)](https://github.com/joejo-joestar/uni_codes/tree/main/Year%202/Digital%20Design) 
-  
+- Explore the [Year 2](Year%202/) for Programs in
+
+  - [Digital Design Lab (CS F215)](https://github.com/joejo-joestar/uni_codes/tree/main/Year%202/Digital%20Design)
+
   - [Object Oriented Programming Lab (CS F213)](https://github.com/joejo-joestar/uni_codes/tree/main/Year%202/Object%20Oriented%20Programming)
+
+<br>
 
 ## Authors
 
