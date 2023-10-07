@@ -148,5 +148,5 @@ The final output should be
 <p align="center">
 
   <img src="/Year%202/Digital%20Design/Media/EPWave_Binary_op.png" alt="EPWave Binary Output" title="EPWave Binary Output" data-align="center">
-  
+
 </p>
