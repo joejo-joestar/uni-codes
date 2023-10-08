@@ -31,7 +31,7 @@ class Purse {
 
     // deducting money
     public void removeDirham(int num) {
-        if (num < dirham) {
+        if (num <= total) {
             dirham -= num;
 
         }
@@ -44,7 +44,9 @@ class Purse {
     }
 
     public void removeFils50(int num) {
-        if (num < dirham) {
+        float check = num * .5f;
+
+        if (check <= total) {
             fils50 -= num;
 
         }
@@ -57,7 +59,9 @@ class Purse {
     }
 
     public void removeFils25(int num) {
-        if (num < dirham) {
+        float check = num * .25f;
+
+        if (check <= total) {
             fils25 -= num;
 
         }
@@ -71,7 +75,7 @@ class Purse {
 
     public void totalCash() {
         total = dirham + (.5f * fils50) + (.25f * fils25);
-        // addDirham(total);1
+
         System.out.println("The total money in the wallet is " + total + " Dhs");
 
     }
