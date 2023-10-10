@@ -64,8 +64,8 @@ module tbBCDAdder;
 
   initial begin
 
-    $dumpfile ("dump.vcd"); //only needed if using the online compiler
-    $dumpvars (1, tbBCDAdder); //only needed if using the online compiler
+    // $dumpfile ("dump.vcd"); //only needed if using the online compiler
+    // $dumpvars (1, tbBCDAdder); //only needed if using the online compiler
 
     // 3 + 5 = 8
     #000 in1 = 4'b0011; in2 = 4'b0101;
