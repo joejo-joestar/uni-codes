@@ -1,6 +1,6 @@
 # Logic Circuit of a BCD Adder
 
-<img title="4 to 8 Bit Decoder" src="file:///Year%202/Digital%20Design/Media/BCDAdder.png" alt="4 to 16 Bit Decoder" data-align="center">
+<img title="BCD Adder" src="/Year%202/Digital%20Design/Media/BCDAdder.png" alt="BCD Adder" data-align="center">
 
 ---
 
