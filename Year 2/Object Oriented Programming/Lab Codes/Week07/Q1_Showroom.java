@@ -1,12 +1,12 @@
 import java.util.*;
 
 class Car {
-    private String vehicle;
+    private String vehicleId;
     private float[] cost = new float[3];
     private float total, grandTotal;
 
-    public Car(String vehicle, float base, float exercise, float salesTax) {
-        this.vehicle = vehicle;
+    public Car(String vehicleId, float base, float exercise, float salesTax) {
+        this.vehicleId = vehicleId;
         cost[0] = base;
         cost[1] = exercise;
         cost[2] = salesTax;
@@ -23,8 +23,8 @@ class Car {
 
     }
 
-    public String getVehicle() {
-        return vehicle;
+    public String getVehicleId() {
+        return vehicleId;
     }
 
     public float getTotal() {
@@ -51,8 +51,8 @@ public class Q1_Showroom {
 
         }
 
-        System.out.println("The Car with the Highest Grand Total is ");
-        System.out.println("Vehicle: " + max.getVehicle());
+        System.out.println("\nThe Car with the Highest Grand Total is ");
+        System.out.println("Vehicle: " + max.getVehicleId());
         System.out.println("Total: " + max.getTotal());
         System.out.println("Grand Total: " + max.getGrandTotal());
     }
