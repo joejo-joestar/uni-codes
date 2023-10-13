@@ -1,9 +1,3 @@
-// incomplete code
-// incomplete code
-// incomplete code
-// incomplete code
-// incomplete code
-
 import java.util.*;
 
 class DuplicateChecker {
@@ -17,8 +11,8 @@ class DuplicateChecker {
     }
 
     public void duplicates() {
+
         arrDupe = new int[arr.length];
-        arrCount = new int[arrDupe.length];
         boolean[] flag = new boolean[arr.length];
         int dupeCount = 0;
 
@@ -44,6 +38,8 @@ class DuplicateChecker {
 
         }
         arrDupe = Arrays.copyOfRange(arrDupe, 0, dupeCount);
+
+        arrCount = new int[arrDupe.length];
 
         for (int i = 0; i < arrDupe.length; i++) {
             for (int j = 0; j < arr.length; j++) {
@@ -76,7 +72,7 @@ public class Q2_ArrayElements {
 
         System.out.println("\nThe Duplicate Elements are: ");
 
-        for (int i = 0; i < arrCount.length; i++) {
+        for (int i = 0; i < arrDupe.length; i++) {
             System.out.println("The Element " + "'" + arrDupe[i] + "'" + " has " + arrCount[i] + " Duplicates");
 
         }
