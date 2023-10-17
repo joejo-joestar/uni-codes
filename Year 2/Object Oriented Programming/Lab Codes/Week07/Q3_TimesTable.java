@@ -6,9 +6,9 @@ class Calculate {
 
         for (int row = 1; row <= limit; row++) {
             for (int col = 1; col <= 10; col++) {
-                System.out.print("| " + (row * col) + "\t|");
+                System.out.print("| " + (row * col) + "\t");
             }
-            System.out.println();
+            System.out.println("|");
         }
 
     }
@@ -23,7 +23,8 @@ public class Q3_TimesTable {
 
         System.out.print("Please enter the table to print: ");
         Calculate.printTable(joe.nextInt());
-
+        
     }
 
 }
+
