@@ -11,7 +11,6 @@ class DuplicateChecker {
     }
 
     public void duplicates() {
-
         arrDupe = new int[arr.length];
         boolean[] flag = new boolean[arr.length];
         int dupeCount = 0;

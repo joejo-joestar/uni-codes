@@ -3,9 +3,12 @@
 *.class
 *.exe
 *.json
-*.drawio
 Year 2/Digital Design/Media/testtest.sv
 *.bkp
 *.dtmp
 Year 2/Object Oriented Programming/Lectorial Codes/Test.java
 Year 2/Object Oriented Programming/Lectorial Codes/ArraylistTry.java
+Year 2/Object Oriented Programming/Lab Codes/Week08/Q1_FlightDestTester.java
+Year 2/Object Oriented Programming/Lab Codes/Week08/Q2_LibraryTester.java
+Year 2/Digital Design/Lab Codes \[Assignment Progs\]/Expt06/Q02_XORwMultiplexer.sv
+Year 2/Digital Design/Lab Codes \[Assignment Progs\]/Expt06/Q01_Multiplexer4to1.sv
