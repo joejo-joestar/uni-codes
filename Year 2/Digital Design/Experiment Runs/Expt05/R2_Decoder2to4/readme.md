@@ -1,6 +1,6 @@
 # Pin Layout for the 2 to 4 Bit Decoder
 
-<img src="./Year%202/Digital%20Design/.assets/E05_Run2_PinLayout.png" alt="Pin Layout for the 2 to 4 Bit Decoder" title="Pin Layout for the 2 to 4 Bit Decoder" data-align="center">
+<img src="/Year%202/Digital%20Design/.assets/E05_Run2_PinLayout.png" alt="Pin Layout for the 2 to 4 Bit Decoder" title="Pin Layout for the 2 to 4 Bit Decoder" data-align="center">
 
 # Output:
 

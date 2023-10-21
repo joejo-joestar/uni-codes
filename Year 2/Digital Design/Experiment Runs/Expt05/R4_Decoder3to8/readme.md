@@ -1,6 +1,6 @@
 # Pin Layout for the 3 to 8 Bit Decoder
 
-<img src="./Year%202/Digital%20Design/.assets/E05_Run4_PinLayout.png" alt="Pin Layout for the 3 to 8 Bit Decoder" title="Pin Layout for the 3 to 8 Bit Decoder" data-align="center">
+<img src="/Year%202/Digital%20Design/.assets/E05_Run4_PinLayout.png" alt="Pin Layout for the 3 to 8 Bit Decoder" title="Pin Layout for the 3 to 8 Bit Decoder" data-align="center">
 
 # Output:
 

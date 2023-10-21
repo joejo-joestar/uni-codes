@@ -12,7 +12,7 @@ There are 4 Main Models that can be followed to write any verilog code depending
 
 #### Gate Level Modelling:
 
-- As seen in [**this code**](./Year%202/Digital%20Design/Experiment%20Runs/Expt03/R1_Ckt_GateModelling.sv)
+- As seen in [**this code**](./Experiment%20Runs/Expt03/R1_Ckt_GateModelling.sv)
 
 - Gate level modelling uses predefined modules, mainly the basic and universal gates
 
@@ -20,7 +20,7 @@ There are 4 Main Models that can be followed to write any verilog code depending
 
 #### Dataflow Modelling:
 
-- As seen in [**this code**](./Year%202/Digital%20Design/Assignment%20Programs/Expt03/Q02_Eqn_Ckt_Dataflow.sv)
+- As seen in [**this code**](./Assignment%20Programs/Expt03/Q02_Eqn_Ckt_Dataflow.sv)
 
 - Dataflow modelling uses the `assign` keyword followed by an equation made from **Bitwise** or **Logical** Operators
 
@@ -28,23 +28,23 @@ There are 4 Main Models that can be followed to write any verilog code depending
 
 #### Behavioral Modelling:
 
-- As seen in [**this code**](./Year%202/Digital%20Design/Assignment%20Programs/Expt04/Q03_Full_Subtarctor_Behavior.sv)
+- As seen in [**this code**](./Assignment%20Programs/Expt04/Q03_Full_Subtarctor_Behavior.sv)
 
 - Behavioral modelling uses `if... else` or `case` statements
 
 - These statements are defined inside of loops
-  
+
   - `always` loop: executes repeatedly after starting at time 0
-  
+
   - `initial` loop: executes only once after starting at time 0
 
 <br>
 
 #### Structural Modelling:
 
-- As seen in [**this code**](./Year%202/Digital%20Design/Self%20Evaluation%20Programs/Expt04/SE05_FullSubber_Struct.sv) and [**this code**](.Year%202/Digital%20Design/Experiment%20Runs/Expt04/R3_parallel_adder)
+- As seen in [**this code**](./Self%20Evaluation%20Programs/Expt04/SE05_FullSubber_Struct.sv) and [**this code**](./Experiment%20Runs/Expt04/R3_parallel_adder)
 
-- Structural modelling uses **multiple modules** (similar to methods or functions in other programming languages) defined in the file *(or different programs(unsure))*
+- Structural modelling uses **multiple modules** (similar to methods or functions in other programming languages) defined in the file _(or different programs)_
 
 - Any of the above mentioned modelling can be used to define these modules
 
@@ -99,9 +99,9 @@ num2 = 8'd01234567;
 [0:7]num2 -> [0 1 2 3 4 5 6 7]
 ```
 
-Most Significant Bits: 
+Most Significant Bits:
 
-- `num1 -> 7` 
+- `num1 -> 7`
 
 - `num2 -> 0`
 
@@ -111,7 +111,7 @@ Least Significant Bits:
 
 - `num2 -> 7`
 
-*i.e.,* when defining, `[(pos of msb):(pos of lsb)]`
+_i.e.,_ when defining, `[(pos of msb):(pos of lsb)]`
 
 <br>
 

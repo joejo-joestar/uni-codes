@@ -1,6 +1,6 @@
 # Pin Layout for the Full Adder
 
-<img src="./Year%202/Digital%20Design/.assets/E04_Run2_PinLayout.png" alt="Pin Layout for the Full Adder" title="Pin Layout for the Full Adder" data-align="center">
+<img src="/Year%202/Digital%20Design/.assets/E04_Run2_PinLayout.png" alt="Pin Layout for the Full Adder" title="Pin Layout for the Full Adder" data-align="center">
 
 # Output:
 
