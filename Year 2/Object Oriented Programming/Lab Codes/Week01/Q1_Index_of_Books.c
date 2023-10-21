@@ -86,7 +86,7 @@ void main()
 
             else
             {
-                printf("\nBook Doesnt Exist! \n \n");
+                printf("\nBook doesn't Exist! \n \n");
             }
         }
 
@@ -122,7 +122,7 @@ void main()
 
             else
             {
-                printf("Book Doesnt Exist!\n\n");
+                printf("Book doesn't Exist!\n\n");
             }
         }
 
@@ -150,7 +150,7 @@ void main()
 
             else
             {
-                printf("Book Doesnt Exist!\n\n");
+                printf("Book doesn't Exist!\n\n");
             }
         }
 
