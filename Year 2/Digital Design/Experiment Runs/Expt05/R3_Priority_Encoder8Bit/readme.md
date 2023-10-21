@@ -1,6 +1,6 @@
 # Pin Layout for the 8 - Bit Priority Encoder
 
-<img src="/Year%202/Digital%20Design/Media/E05_Run3_PinLayout.png" alt="Pin Layout for the 8 - Bit Priority Encoder" title="Pin Layout for the 8 - Bit Priority Encoder" data-align="center">
+<img src="./Year%202/Digital%20Design/.assets/E05_Run3_PinLayout.png" alt="Pin Layout for the 8 - Bit Priority Encoder" title="Pin Layout for the 8 - Bit Priority Encoder" data-align="center">
 
 # Output:
 

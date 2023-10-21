@@ -1,6 +1,6 @@
 # Logic Circuit of a BCD Adder
 
-<img title="BCD Adder" src="/Year%202/Digital%20Design/Media/BCDAdder.png" alt="BCD Adder" data-align="center">
+<img title="BCD Adder" src="/Year%202/Digital%20Design/.assets/BCDAdder.png" alt="BCD Adder" data-align="center">
 
 ---
 

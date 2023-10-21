@@ -12,7 +12,7 @@ There are 4 Main Models that can be followed to write any verilog code depending
 
 #### Gate Level Modelling:
 
-- As seen in [**this code**](https://github.com/joejo-joestar/uni-codes/blob/main/Year%202/Digital%20Design/Lab%20Codes%20%5BExpt%20Progs%5D/Expt03/R1_Ckt_GateModelling.sv)
+- As seen in [**this code**](./Year%202/Digital%20Design/Experiment%20Runs/Expt03/R1_Ckt_GateModelling.sv)
 
 - Gate level modelling uses predefined modules, mainly the basic and universal gates
 
@@ -20,7 +20,7 @@ There are 4 Main Models that can be followed to write any verilog code depending
 
 #### Dataflow Modelling:
 
-- As seen in [**this code**](https://github.com/joejo-joestar/uni-codes/blob/main/Year%202/Digital%20Design/Lab%20Codes%20%5BAssignment%20Progs%5D/Expt03/E03_Q2_Eqn_Ckt_Dataflow.sv)
+- As seen in [**this code**](./Year%202/Digital%20Design/Assignment%20Programs/Expt03/Q02_Eqn_Ckt_Dataflow.sv)
 
 - Dataflow modelling uses the `assign` keyword followed by an equation made from **Bitwise** or **Logical** Operators
 
@@ -28,7 +28,7 @@ There are 4 Main Models that can be followed to write any verilog code depending
 
 #### Behavioral Modelling:
 
-- As seen in [**this code**](https://github.com/joejo-joestar/uni-codes/blob/main/Year%202/Digital%20Design/Lab%20Codes%20%5BAssignment%20Progs%5D/Expt04/E04_Q3_Full_Subtarctor_Behavior.sv)
+- As seen in [**this code**](./Year%202/Digital%20Design/Assignment%20Programs/Expt04/Q03_Full_Subtarctor_Behavior.sv)
 
 - Behavioral modelling uses `if... else` or `case` statements
 
@@ -42,7 +42,7 @@ There are 4 Main Models that can be followed to write any verilog code depending
 
 #### Structural Modelling:
 
-- As seen in [**this code**](https://github.com/joejo-joestar/uni-codes/blob/main/Year%202/Digital%20Design/Lab%20Codes%20%5BSelf%20Eval%20Progs%5D/Expt04/E04_SE05_FullSubber_Struct.sv) and [**this code**](https://github.com/joejo-joestar/uni-codes/blob/main/Year%202/Digital%20Design/Lab%20Codes%20%5BExpt%20Progs%5D/Expt04/R3_parallel_adder/R3_prallel_adder.sv)
+- As seen in [**this code**](./Year%202/Digital%20Design/Self%20Evaluation%20Programs/Expt04/SE05_FullSubber_Struct.sv) and [**this code**](.Year%202/Digital%20Design/Experiment%20Runs/Expt04/R3_parallel_adder)
 
 - Structural modelling uses **multiple modules** (similar to methods or functions in other programming languages) defined in the file *(or different programs(unsure))*
 

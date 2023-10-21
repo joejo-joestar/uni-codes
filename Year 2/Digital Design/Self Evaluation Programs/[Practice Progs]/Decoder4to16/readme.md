@@ -1,6 +1,6 @@
 # Logic Circuit for a 4 to 16 Bit Decoder
 
-<img src="/Year%202/Digital%20Design/Media/Decoder4to16.png" alt="4 to 16 Bit Decoder" title="4 to 8 Bit Decoder" data-align="center">
+<img src="/Year%202/Digital%20Design/.assets/Decoder4to16.png" alt="4 to 16 Bit Decoder" title="4 to 8 Bit Decoder" data-align="center">
 
 ---
 
