@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Q2_AvgArray {
+public class Q2_ArrayTester {
 
     public static void min(int lim, float[] arr) {
         float min = arr[0];

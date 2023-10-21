@@ -10,15 +10,16 @@ class CreditCard {
     private double currentCred;
     double creditLim;
 
-    public CreditCard(String cnam, String cnum, boolean en, int p, String expMon, int cTy, double curCred, double credLim) {
-        name = cnam;
-        cardNum = cnum;
-        enabled = en;
-        pin = p;
-        expiryMonth = expMon;
-        cardType = cTy;
-        currentCred = curCred;
-        creditLim = credLim;
+    public CreditCard(String name, String cardNum, boolean enabled, int pin,
+            String expiryMonth, int cardType, double currentCred, double creditLim) {
+        this.name = name;
+        this.cardNum = cardNum;
+        this.enabled = enabled;
+        this.pin = pin;
+        this.expiryMonth = expiryMonth;
+        this.cardType = cardType;
+        this.currentCred = currentCred;
+        this.creditLim = creditLim;
 
     }
 
@@ -29,7 +30,7 @@ class CreditCard {
             System.out.printf("Please enter New Card Pin: ");
             int newPin = ip.nextInt();
             pin = newPin;
-            System.out.println("The pin has been succesfully changed!");
+            System.out.println("The pin has been successfully changed!");
         }
 
         else if (p != pin) {
@@ -56,9 +57,9 @@ class CreditCard {
                 double plDisc = (amt - (amt * 0.03));
 
                 if (amt > currentCred) {
-                    System.out.println(" ");
+                    System.out.println();
                     System.out.println("Insufficient Funds");
-                    System.out.println(" ");
+                    System.out.println();
 
                 }
 
@@ -129,12 +130,13 @@ class CreditCard {
 
         if (p == pin) {
             if (enabled == true) {
-                System.out.println("Do you want to Deactivate the card? \n (input 'y' to deactivate else input 'n')");
+                System.out.println("Do you want to Deactivate the card? " +
+                        "\n (input 'y' to deactivate else input 'n')");
                 inp = ip.next().charAt(0);
 
                 if (inp == 'y') {
                     enabled = false;
-                    System.out.println("The card has succesfully Deactivated");
+                    System.out.println("The card has successfully Deactivated");
 
                 }
 
@@ -152,12 +154,13 @@ class CreditCard {
             }
 
             else if (enabled == false) {
-                System.out.println("Do you want to Activate the card? \n (input 'y' to activate else input 'n')");
+                System.out.println("Do you want to Activate the card? " +
+                        "\n (input 'y' to activate else input 'n')");
                 inp = ip.next().charAt(0);
 
                 if (inp == 'y') {
                     enabled = true;
-                    System.out.println("The card has succesfully Activated");
+                    System.out.println("The card has successfully Activated");
 
                 }
 
@@ -238,38 +241,38 @@ public class Q1_CreditCard {
         Scanner ip = new Scanner(System.in);
 
         CreditCard temp = new CreditCard(null, null, false, 0, null, 0, 0, 0);
-        CreditCard[] uarr = new CreditCard[1];
-        uarr[0] = temp;
+        CreditCard[] userArr = new CreditCard[1];
+        userArr[0] = temp;
 
         while (true) {
-            System.out.println(" ");
-            System.out.println("Menu: ");
-            System.out.println("1. View Card Details");
-            System.out.println("2. Add Card Details");
-            System.out.println("3. Change Pin");
-            System.out.println("4. Transaction");
-            System.out.println("5. Activate / Deactivate Card");
-            System.out.println("6. Quit");
-            System.out.println(" ");
+            System.out.println();
+            System.out.println("Menu:" +
+                    "\n\t1. View Card Details" +
+                    "\n\t2. Add Card Details" +
+                    "\n\t3. Change Pin" +
+                    "\n\t4. Transaction" +
+                    "\n\t5. Activate / Deactivate Card" +
+                    "\n\t6. Quit");
+            System.out.println();
 
             System.out.printf("Please enter the option number: ");
             int inp = ip.nextInt();
 
             // View Card
             if (inp == 1) {
-                uarr[0].display();
+                userArr[0].display();
 
             }
 
             // Add Card
             if (inp == 2) {
-                System.out.println(" ");
+                System.out.println();
                 ip.nextLine();
                 System.out.printf("Please enter Card-holder Name: ");
-                String cnam = ip.nextLine();
+                String cNam = ip.nextLine();
 
                 System.out.printf("Please enter Card Number: ");
-                String cnum = ip.nextLine();
+                String cNum = ip.nextLine();
 
                 boolean en = false;
 
@@ -283,14 +286,14 @@ public class Q1_CreditCard {
                 System.out.printf("Please enter the Card Type ('1' for Silver, '2' for Gold, '3' for Platinum): ");
                 int cTy = ip.nextInt();
 
-                System.out.println(" ");
+                System.out.println();
 
                 double curCred = 10000;
 
                 double credLim = 1000;
 
-                CreditCard u1 = new CreditCard(cnam, cnum, en, p, expMon, cTy, curCred, credLim);
-                uarr[0] = u1;
+                CreditCard u1 = new CreditCard(cNam, cNum, en, p, expMon, cTy, curCred, credLim);
+                userArr[0] = u1;
 
             }
 
@@ -298,7 +301,7 @@ public class Q1_CreditCard {
             if (inp == 3) {
                 System.out.printf("Please enter Current Card Pin: ");
                 int pin = ip.nextInt();
-                uarr[0].changePin(pin);
+                userArr[0].changePin(pin);
 
             }
 
@@ -306,7 +309,7 @@ public class Q1_CreditCard {
             if (inp == 4) {
                 System.out.printf("Please enter Current Card Pin: ");
                 int pin = ip.nextInt();
-                uarr[0].transact(pin);
+                userArr[0].transact(pin);
 
             }
 
@@ -314,7 +317,7 @@ public class Q1_CreditCard {
             if (inp == 5) {
                 System.out.printf("Please enter Current Card Pin: ");
                 int pin = ip.nextInt();
-                uarr[0].changeCardStat(pin);
+                userArr[0].changeCardStat(pin);
                 ;
 
             }
@@ -326,9 +329,9 @@ public class Q1_CreditCard {
             }
 
             else {
-                System.out.println(" ");
+                System.out.println();
                 System.out.println("Invalid Input");
-                System.out.println(" ");
+                System.out.println();
 
             }
         }

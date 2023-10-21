@@ -90,14 +90,21 @@ public class Q3_PurseTester {
         Purse objPurse = new Purse(0, 0, 0);
 
         while (true) {
-            System.out.println("Option: \n\t1. Add Money \n\t2. Withdraw Money \n\t3. Check Balance \n\t4. Quit");
+            System.out.println("Option:" +
+                    "\n\t1. Add Money" +
+                    "\n\t2. Withdraw Money" +
+                    "\n\t3. Check Balance" +
+                    "\n\t4. Quit");
             System.out.print("Please Enter the option: ");
             int option = ip.nextInt();
 
             if (option == 1) {
                 while (true) {
-                    System.out.println(
-                            "Option: \n\t1. Add the number of Dirhams \n\t2. Add the number of 50 fils \n\t3. Add the number of 25 fils \n\t4. Quit");
+                    System.out.println("Option:" +
+                            "\n\t1. Add the number of Dirhams" +
+                            "\n\t2. Add the number of 50 fils" +
+                            "\n\t3. Add the number of 25 fils" +
+                            "\n\t4. Quit");
                     System.out.print("Please Enter the option: ");
                     int addOption = ip.nextInt();
 
@@ -139,7 +146,11 @@ public class Q3_PurseTester {
             else if (option == 2) {
                 while (true) {
                     System.out.println(
-                            "Option: \n\t1. Withdraw the number of Dirhams \n\t2. Withdraw the number of 50 fils \n\t3. Withdraw the number of 25 fils \n\t4. Quit");
+                            "Option:" +
+                                    "\n\t1. Withdraw the number of Dirhams" +
+                                    "\n\t2. Withdraw the number of 50 fils" +
+                                    "\n\t3. Withdraw the number of 25 fils" +
+                                    "\n\t4. Quit");
                     System.out.print("Please Enter the option: ");
                     int addOption = ip.nextInt();
 

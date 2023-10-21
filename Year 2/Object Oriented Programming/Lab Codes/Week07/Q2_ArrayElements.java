@@ -72,7 +72,8 @@ public class Q2_ArrayElements {
         System.out.println("\nThe Duplicate Elements are: ");
 
         for (int i = 0; i < arrDupe.length; i++) {
-            System.out.println("The Element " + "'" + arrDupe[i] + "'" + " has " + arrCount[i] + " Duplicates");
+            System.out.println("The Element " + "'" + arrDupe[i] + "'" +
+                    " has " + arrCount[i] + " Duplicates");
 
         }
 

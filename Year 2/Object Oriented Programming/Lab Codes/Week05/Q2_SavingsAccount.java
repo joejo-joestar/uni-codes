@@ -56,8 +56,11 @@ class Q2_SavingsAccount {
             acc[i] = new Interest(inp.nextFloat());
 
             while (true) {
-                System.out.println(
-                        "Menu: \n 1. Check Current Balance \n 2. Change Interest Rate \n 3. Simulate Savings Balance for 12 months \n 4. Quit");
+                System.out.println("Menu: " +
+                                "\n\t 1. Check Current Balance " +
+                                "\n\t 2. Change Interest Rate " +
+                                "\n\t 3. Simulate Savings Balance for 12 months " +
+                                "\n\t 4. Quit");
                 System.out.print("Please enter the menu option: ");
                 int ip = inp.nextInt();
 

@@ -20,7 +20,14 @@ void main()
     while (1)
     {
         int num = count;
-        printf("Menu:\n  1. View Books\n  2. Add Book\n  3. Search Book\n  4. Edit Book Details\n  5. Delete Book\n  6. Quit \n");
+        printf("Menu:\n
+          1. View Books\n
+          2. Add Book\n
+            3. Search Book\n
+            4. Edit Book Details\n
+            5. Delete Book\n
+            6. Quit \n
+          ");
         printf("Please enter the desired option: ");
         scanf("%d", &menu_op);
 

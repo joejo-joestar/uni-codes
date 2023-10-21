@@ -44,7 +44,7 @@ class GuessGame {
             System.out.println("Player 3 Wins!");
         }
         if ((win != p1.num) && (win != p2.num) && (win != p3.num)) {
-            System.out.println("Noone Wins, The Number was " + win);
+            System.out.println("No one Wins, The Number was " + win);
         }
 
     }

@@ -30,19 +30,21 @@ class Area {
     public void display(int index, float area) {
 
         if (index == 1) {
-            System.out.println("The Area of Square with side of length " + side1 + " is " + area);
+            System.out.println("The Area of Square with side of length " +
+                    side1 + " is " + area);
 
         }
 
         else if (index == 2) {
-            System.out.println("The Area of the Circle with radius of length " + side1 + " is " + area);
+            System.out.println("The Area of the Circle with radius of length " +
+                    side1 + " is " + area);
 
         }
 
         else if (index == 3) {
-            System.out.println(
-                    "The Area of the rectangle with side 1 of length " + side1 + " and side 2 of length " + side2
-                            + " is " + area);
+            System.out.println("The Area of the rectangle with side 1 of length " +
+                    side1 + " and side 2 of length " + side2 +
+                    " is " + area);
 
         }
 
@@ -57,8 +59,10 @@ public class Q1_AreaTester {
         Scanner ip = new Scanner(System.in);
         Area obj = new Area();
 
-        System.out.println(
-                "Option: \n\t1. Calculate the area of a Square \n\t2. Calculate the area of a Circle \n\t3. Calculate the area of a Rectangle");
+        System.out.println("Option: " +
+                "\n\t1. Calculate the area of a Square " +
+                "\n\t2. Calculate the area of a Circle " +
+                "\n\t3. Calculate the area of a Rectangle");
         System.out.print("Please Enter the option to calculate: ");
         int option = ip.nextInt();
 

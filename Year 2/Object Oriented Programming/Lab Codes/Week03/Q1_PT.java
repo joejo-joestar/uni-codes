@@ -1,33 +1,33 @@
 import java.util.Scanner;
 
 class Elements {
-    int anum;
+    int aNum;
     String name, sym, type;
-    double aweight;
+    double aWeight;
 
     Elements(int an, String na, String sy, String ty, double aw) {
-        anum = an;
+        aNum = an;
         name = na;
         sym = sy;
         type = ty;
-        aweight = aw;
+        aWeight = aw;
 
     }
 
     public void display() {
-        System.out.println(" ");
-        System.out.println("Atomic Number: " + anum);
+        System.out.println();
+        System.out.println("Atomic Number: " + aNum);
         System.out.println("Element Name: " + name);
         System.out.println("Chemical Symbol: " + sym);
         System.out.println("Element Type/Class: " + type);
-        System.out.println("Atomic Weight: " + aweight);
-        System.out.println(" ");
+        System.out.println("Atomic Weight: " + aWeight);
+        System.out.println();
 
     }
 
     public void sort() {
 
-        if (aweight > 15) {
+        if (aWeight > 15) {
             display();
 
         }
@@ -47,10 +47,10 @@ public class Q1_PT {
         Elements[] arr = new Elements[num];
 
         for (int i = 0; i < num; i++) {
-            System.out.println(" ");
+            System.out.println();
 
             System.out.print("Please enter the Atomic number of the element: ");
-            int anum = inp.nextInt();
+            int aNum = inp.nextInt();
 
             inp.nextLine();
 
@@ -64,15 +64,15 @@ public class Q1_PT {
             String type = inp.nextLine();
 
             System.out.print("Please enter the Atomic Weight of the element: ");
-            Double aweight = inp.nextDouble();
+            Double aWeight = inp.nextDouble();
 
-            arr[i] = new Elements(anum, name, sym, type, aweight);
+            arr[i] = new Elements(aNum, name, sym, type, aWeight);
 
             // arr[i].display();
 
         }
 
-        System.out.println(" ");
+        System.out.println();
         System.out.println("The Elements with Atomic Weight over 15amu are: ");
         for (int i = 0; i < num; i++) {
             arr[i].sort();

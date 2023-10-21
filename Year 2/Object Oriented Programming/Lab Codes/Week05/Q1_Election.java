@@ -3,13 +3,12 @@ import java.util.Scanner;
 class Votes {
     int[] vote = new int[10000];
     int voters;
-    // int totvotecount;
-    int countc1 = 0;
-    int countc2 = 0;
-    int countc3 = 0;
-    int countc4 = 0;
-    int countc5 = 0;
-    int countvoid = 0;
+    int countC1 = 0;
+    int countC2 = 0;
+    int countC3 = 0;
+    int countC4 = 0;
+    int countC5 = 0;
+    int countVoid = 0;
 
     public Votes(int[] vote) {
         this.vote = vote;
@@ -20,17 +19,17 @@ class Votes {
 
         for (int i = 0; i < voters; i++) {
             if (vote[i] == 1) {
-                countc1++;
+                countC1++;
             } else if (vote[i] == 2) {
-                countc2++;
+                countC2++;
             } else if (vote[i] == 3) {
-                countc3++;
+                countC3++;
             } else if (vote[i] == 4) {
-                countc4++;
+                countC4++;
             } else if (vote[i] == 5) {
-                countc5++;
+                countC5++;
             } else {
-                countvoid++;
+                countVoid++;
             }
 
         }
@@ -39,12 +38,12 @@ class Votes {
 
     public void display() {
         System.out.println(" ");
-        System.out.println("Candidate 1 has " + countc1 + " votes");
-        System.out.println("Candidate 2 has " + countc2 + " votes");
-        System.out.println("Candidate 3 has " + countc3 + " votes");
-        System.out.println("Candidate 4 has " + countc4 + " votes");
-        System.out.println("Candidate 5 has " + countc5 + " votes");
-        System.out.println("There were " + countvoid + " spoilt votes");
+        System.out.println("Candidate 1 has " + countC1 + " votes");
+        System.out.println("Candidate 2 has " + countC2 + " votes");
+        System.out.println("Candidate 3 has " + countC3 + " votes");
+        System.out.println("Candidate 4 has " + countC4 + " votes");
+        System.out.println("Candidate 5 has " + countC5 + " votes");
+        System.out.println("There were " + countVoid + " spoilt votes");
     }
 }
 
@@ -53,7 +52,12 @@ public class Q1_Election {
     public static void main(String[] args) {
         Scanner inp = new Scanner(System.in);
 
-        System.out.print("Candidates: \n 1. Candidate 1 \n 2. Candidate 2 \n 3. Candidate 3 \n 4. Candidate 4 \n 5. Candidate 5");
+        System.out.print("Candidates: " +
+                "\n\t1. Candidate 1 " +
+                "\n\t 2. Candidate 2 " +
+                "\n\t 3. Candidate 3 " +
+                "\n\t 4. Candidate 4 " +
+                "\n\t 5. Candidate 5");
         System.out.print("Please enter the number of voters: ");
         int voters = inp.nextInt();
 
