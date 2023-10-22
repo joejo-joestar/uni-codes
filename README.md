@@ -20,3 +20,8 @@ This is just an unofficial repo to store most of my codes from all the different
 
 - Created and maintained primarily by Joseph Cijo ([@joejo-joestar](https://github.com/joejo-joestar))
 - Additional contributions by Sreenikethan I ([@SreenikethanI](https://github.com/SreenikethanI))
+
+<br>
+<p align = "center">
+<img src="/Year%202/Digital%20Design/.assets/InBreadCar.png" alt="In Bread Car" title="In Bread Car">
+</p>
