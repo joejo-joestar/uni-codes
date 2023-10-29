@@ -11,7 +11,7 @@ All the codes written for Digital Design course in Year 2 Sem 1.
 - [Types of Modelling Verilog Codes](/Year%202/Digital%20Design/.FYI1.md)
 - [MultiBit Numbers](/Year%202/Digital%20Design/.FYI2.md)
 - [Basic Gates with Universal Gates](/Year%202/Digital%20Design/.FYI3.md)
-- [Boolean Equations](/Year%202/Digital%20Design/.FYI4.md)
+- [Boolean Operations](/Year%202/Digital%20Design/.FYI4.md)
 
 <br>
 
