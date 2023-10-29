@@ -2,120 +2,14 @@
 
 All the codes written for Digital Design course in Year 2 Sem 1.
 
-<br>
+## <br>
 
----
+## FYIs
 
-## FYI 1
-
-There are 4 Main Models that can be followed to write any verilog code depending on their cases:
-
-#### Gate Level Modelling:
-
-- As seen in [**this code**](./Experiment%20Runs/Expt03/R1_Ckt_GateModelling.sv)
-
-- Gate level modelling uses predefined modules, mainly the basic and universal gates
+- [Types of Modelling Verilog Codes](/Year%202/Digital%20Design/.FYI1.md)
+- [MultiBit Numbers](/Year%202/Digital%20Design/.FYI2.md)
 
 <br>
-
-#### Dataflow Modelling:
-
-- As seen in [**this code**](./Assignment%20Programs/Expt03/Q02_Eqn_Ckt_Dataflow.sv)
-
-- Dataflow modelling uses the `assign` keyword followed by an equation made from **Bitwise** or **Logical** Operators
-
-<br>
-
-#### Behavioral Modelling:
-
-- As seen in [**this code**](./Assignment%20Programs/Expt04/Q03_Full_Subtarctor_Behavior.sv)
-
-- Behavioral modelling uses `if... else` or `case` statements
-
-- These statements are defined inside of loops
-
-  - `always` loop: executes repeatedly after starting at time 0
-
-  - `initial` loop: executes only once after starting at time 0
-
-<br>
-
-#### Structural Modelling:
-
-- As seen in [**this code**](./Self%20Evaluation%20Programs/Expt04/SE05_FullSubber_Struct.sv) and [**this code**](./Experiment%20Runs/Expt04/R3_parallel_adder)
-
-- Structural modelling uses **multiple modules** (similar to methods or functions in other programming languages) defined in the file _(or different programs)_
-
-- Any of the above mentioned modelling can be used to define these modules
-
-<br>
-
----
-
-## FYI 2
-
-n-bit binary numbers can be initialized as
-
-```verilog
-input[(n-1):0] num1, num2;
-output[(n-1):0] num3, num4;
-// num1, num2, num3 and num4 here are both n-bit inputs/outputs
-```
-
-or
-
-```verilog
-input [(n-1):0]num1, num2;
-output [(n-1):0]num3, num4;
-// here, num1 and num3 is an n-bit input/output but num2 and num4 is not
-```
-
-These numbers can be specified as
-
-```verilog
-num = n'bxxxx    // n-bit binary number
-num = n'dxxxx    // n-bit decimal number
-num = n'hxxxx    // n-bit hexadecimal number
-num = n'oxxxx    // n-bit octal number
-// ('x' stands for unknown logic values)
-```
-
-<br>
-
-for eg:
-
-```verilog
-output reg [3:0]num1; // 4-bit number
-num1 = 4'd0123;
-
-output reg [7:0]num2; // 8-bit number
-num2 = 8'd01234567;
-```
-
-**Note:** `[7:0]` and `[0:7]` are different
-
-```verilog
-[7:0]num1 -> [7 6 5 4 3 2 1 0]
-[0:7]num2 -> [0 1 2 3 4 5 6 7]
-```
-
-Most Significant Bits:
-
-- `num1 -> 7`
-
-- `num2 -> 0`
-
-Least Significant Bits:
-
-- `num1 -> 0`
-
-- `num2 -> 7`
-
-_i.e.,_ when defining, `[(pos of msb):(pos of lsb)]`
-
-<br>
-
----
 
 ## How to Run the Code
 
@@ -137,7 +31,7 @@ Use the settings as shown below:
 
 ## To View Binary Output in EPWave
 
-EPWave defaults waveform signals to Hexadecimal (Output of [this code](Year%202/Digital%20Design/Lab%20Codes%20%5BSelf%20Eval%20Progs%5D/Expt04/SE09_GrayCodetoBinary.sv)):
+EPWave defaults waveform signals to Hexadecimal (Output of [this code](Year%202/Digital%20Design/Self%20Evaluation%20Programs/Expt04/SE09_GrayCodetoBinary.sv)):
 
 <p align="center">
 

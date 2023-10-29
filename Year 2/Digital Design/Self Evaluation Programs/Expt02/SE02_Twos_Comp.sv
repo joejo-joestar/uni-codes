@@ -25,8 +25,8 @@ module tb_Twos_Comp;
     // $dumpvars (1, tb_Twos_Comp); //only needed if using the online compiler
 
     // binary number	: 10111011
-    // 1's comp 		: 01000100
-    // 2's comp 		: 01000101
+    // 1's comp  : 01000100
+    // 2's comp  : 01000101
 
     #00 p = 8'b10111011;
     #800 $stop;
