@@ -10,6 +10,7 @@ All the codes written for Digital Design course in Year 2 Sem 1.
 
 - [Types of Modelling Verilog Codes](/Year%202/Digital%20Design/.FYI1.md)
 - [MultiBit Numbers](/Year%202/Digital%20Design/.FYI2.md)
+- [Basic Gates with Universal Gates](/Year%202/Digital%20Design/.FYI3.md)
 
 <br>
 
@@ -39,7 +40,7 @@ EPWave defaults waveform signals to Hexadecimal (Output of [this code](Year%202/
 
 <p align="center">
 
-<img src="/Year%202/Digital%20Design/.assets/EPWave_Hex_op.png" alt="EPWave Hex Output" title="EPWave Hex Output" data-align="center">
+<img src="/Year%202/Digital%20Design/.assets/EPWave_Hex_op.png" alt="EPWave Hex Output" title="EPWave Hex Output">
 
 </p>
 
@@ -47,9 +48,9 @@ To Display the waveform in Binary, Switch from `Hex` to `Binary` in the `Radix` 
 
 <p align="center">
 
-<img src="/Year%202/Digital%20Design/.assets/EPWave_Hex_Radix.png" alt="EPWave Hex Radix" title="EPWave Hex Radix" data-align="center">
+<img src="/Year%202/Digital%20Design/.assets/EPWave_Hex_Radix.png" alt="EPWave Hex Radix" title="EPWave Hex Radix">
 
-<img src="/Year%202/Digital%20Design/.assets/EPWave_Binary_Radix.png" alt="EPWave Binary Radix" title="EPWave Binary Radix" data-align="center">
+<img src="/Year%202/Digital%20Design/.assets/EPWave_Binary_Radix.png" alt="EPWave Binary Radix" title="EPWave Binary Radix">
 
 </p>
 
@@ -57,6 +58,6 @@ The final output should be
 
 <p align="center">
 
-<img src="/Year%202/Digital%20Design/.assets/EPWave_Binary_op.png" alt="EPWave Binary Output" title="EPWave Binary Output" data-align="center">
+<img src="/Year%202/Digital%20Design/.assets/EPWave_Binary_op.png" alt="EPWave Binary Output" title="EPWave Binary Output">
 
 </p>
