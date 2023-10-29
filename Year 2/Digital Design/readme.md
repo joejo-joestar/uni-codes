@@ -2,7 +2,9 @@
 
 All the codes written for Digital Design course in Year 2 Sem 1.
 
-## <br>
+<br>
+
+---
 
 ## FYIs
 
@@ -10,6 +12,8 @@ All the codes written for Digital Design course in Year 2 Sem 1.
 - [MultiBit Numbers](/Year%202/Digital%20Design/.FYI2.md)
 
 <br>
+
+---
 
 ## How to Run the Code
 
