@@ -1,37 +1,58 @@
-module TFlipFlop (input t, clk, output reg q, qBar) ;
+/*
+  Code can be found here: https://edaplayground.com/x/qHeW
+*/
 
-  wire w1, w2;
+// main program
+module DFlipFLop (q, d, clk, rst);
 
-  nand N1 (w1, clk, qBar, t);
-  nand N2 (w2, clk, q, t);
-  nand N3 (q, w1, qBar);
-  nand N4 (qBar, w2, q);
+  input d, rst, clk;
+  output reg q;
+
+  always @ (posedge clk, negedge rst) begin
+    if (rst)
+      q <= 1'b0;
+
+    else
+      q <= d;
+
+  end
 
 endmodule
 
-// no testbech because this code is to program an fpga
-// refer to the Pin Planner Diagram readme file
+
+module TFlipFlop (q, rst, clk);
+
+  output q;
+  input rst, clk;
+  wire qBar;
+
+  DFlipFLop dff0 (q, qBar, clk, rst);
+  not n (qBar, q);
+
+endmodule
 
 
 // testbench
-module tb_TFlipFLop;
+module tb_TFlipFlop;
 
 reg t, clk;
-wire q, qBar;
+wire q;
 
   initial begin
 
-  $dumpfile("dump.vcd"); //only needed if using the online compiler
-  $dumpvars(1, tb_TFlipFLop); //only needed if using the online compiler
+    $dumpfile("dump.vcd"); //only needed if using the online compiler
+    $dumpvars(1, tb_TFlipFlop); //only needed if using the online compiler
 
-  #00 clk = 0; t = 0;
-  #10 clk = 0; t = 1;
-  #10 clk = 1; t = 0;
-  #10 clk = 1; t = 1;
-  #10 $stop;
-  
+    #00  t = 0; clk = 0;
+    #10  t = 1; clk = 1;
+    #10  t = 1; clk = 0;
+    #10  t = 1; clk = 1;
+    #10  t = 1; clk = 0;
+    #10  t = 1; clk = 1;
+    #10 $stop;
+
   end
 
-  TFlipFLop U1 (t, clk, q, qBar);
+  TFlipFlop U1 (q, clk, t);
 
 endmodule
