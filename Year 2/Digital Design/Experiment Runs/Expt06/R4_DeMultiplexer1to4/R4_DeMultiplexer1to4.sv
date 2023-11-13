@@ -5,10 +5,10 @@ module dmux1to4 (op, ip, sIp);
   input ip;
   input[1:0] sIp;
 
-  assign op[0] = ip & (~sIp[1]) & (~sIp[0]);
-  assign op[1] = ip & (~sIp[1]) & (sIp[0]);
-  assign op[2] = ip & (sIp[1]) & (~sIp[0]);
-  assign op[3] = ip & (sIp[1]) & (sIp[0]);
+  assign op[3] = ip & (~sIp[1]) & (~sIp[0]);
+  assign op[2] = ip & (~sIp[1]) & (sIp[0]);
+  assign op[1] = ip & (sIp[1]) & (~sIp[0]);
+  assign op[0] = ip & (sIp[1]) & (sIp[0]);
 
 endmodule
 

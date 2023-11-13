@@ -5,8 +5,8 @@ module dmux1to2 (op, ip, sIp);
   input ip;
   input sIp;
 
-  assign op[0] = ip & (~sIp);
-  assign op[1] = ip & (sIp);
+  assign op[1] = ip & (~sIp);
+  assign op[0] = ip & (sIp);
 
 endmodule
 

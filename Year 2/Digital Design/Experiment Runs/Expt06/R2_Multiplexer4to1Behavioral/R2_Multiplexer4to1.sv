@@ -7,10 +7,10 @@ module mux4to1 (op, ip, sIp);
 
   always @* begin
     case (sIp)
-      2'b00: op = ip[0];
-      2'b01: op = ip[1];
-      2'b10: op = ip[2];
-      2'b11: op = ip[3];
+      2'b00: op = ip[3];
+      2'b01: op = ip[2];
+      2'b10: op = ip[1];
+      2'b11: op = ip[0];
       default: op = xx;
 
     endcase

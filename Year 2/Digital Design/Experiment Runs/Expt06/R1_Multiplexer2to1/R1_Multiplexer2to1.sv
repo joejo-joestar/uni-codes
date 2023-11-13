@@ -6,8 +6,8 @@ module mux2to1 (op, ip, sIp);
   input[1:0] ip;
   input sIp;
 
-  assign p = ip[0] & (~sIp);
-  assign q = ip[1] & (sIp);
+  assign p = ip[1] & (~sIp);
+  assign q = ip[0] & (sIp);
   assign op = p | q;
 
 endmodule
