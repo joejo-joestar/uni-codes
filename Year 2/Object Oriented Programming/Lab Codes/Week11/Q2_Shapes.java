@@ -2,7 +2,7 @@ interface Drawable {
     public void draw();
 }
 
-class Circle implements Drawable {
+class DCircle implements Drawable {
     public void draw() {
         System.out.println("Circle: ");
         System.out.println("o");
@@ -11,17 +11,17 @@ class Circle implements Drawable {
 
 }
 
-class Rectangle implements Drawable {
+class DRectangle implements Drawable {
     public void draw() {
         System.out.println("\nRectangle: ");
-        System.out.println("\n┌┐");
-        System.out.println("└┘");
+        System.out.println("\n _____");
+        System.out.println("|_____|");
 
     }
 
 }
 
-class Triangle implements Drawable {
+class DTriangle implements Drawable {
     public void draw() {
         System.out.println("\nTriangle:");
         System.out.println("\n /\\");
@@ -33,13 +33,13 @@ class Triangle implements Drawable {
 
 public class Q2_Shapes {
     public static void main(String[] args) {
-        Drawable circle = new Circle();
+        Drawable circle = new DCircle();
         circle.draw();
 
-        Drawable rectangle = new Rectangle();
+        Drawable rectangle = new DRectangle();
         rectangle.draw();
 
-        Drawable triangle = new Triangle();
+        Drawable triangle = new DTriangle();
         triangle.draw();
     }
 
