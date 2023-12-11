@@ -78,9 +78,14 @@ class Student {
         if (!Validator.isYearValid(year)) {throw new YearInvalidException(year);}
         if (!Validator.isIDValid(id)) {throw new IDInvalidException(id);}
     }
+
+    public String getName() {
+        return name;
+    }
 }
 
 public class Q2_StudentTester {
+    @SuppressWarnings("resource") // to ignore the resource leak warning
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter student details:");
@@ -91,7 +96,7 @@ public class Q2_StudentTester {
 
         try {
             Student student = new Student(name, age, year, id);
-            System.out.println("Created Student object!");
+            System.out.println("Created Student object with name: " + student.getName());
         } catch (Exception e) {
             System.out.println("Error: " + e);
         }

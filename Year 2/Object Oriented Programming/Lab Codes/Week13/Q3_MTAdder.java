@@ -1,36 +1,63 @@
+import java.util.*;
 
-import java.util.Scanner;
+class Sum extends Thread {
+    int from, to;
+    long sum = 0;
 
-class Sum extends Thread implements Runnable {
-    int l1, l2;
-    long sum;
+    public Sum(int from, int to) {
+        this.from = from;
+        this.to = to;
+
+    }
 
     public void run() {
-        for (int i = l1; i <= l2; i++) sum += i;
+        for (int i = from; i <= to; i++) {
+            sum += i;
+        }
 
     }
 }
 
 public class Q3_MTAdder {
-    private static long sum(int nTerms, int nThreads){
-        Sum s = new Sum();
-        int count = 1;
-        while (count <= (nTerms/nThreads)){
-            s.l1 = s.l2+1;
-            s.l2 = (nTerms/nThreads) == count ? nTerms : nTerms/nThreads;
-            Thread t1 = new Thread(s);
-            t1.start();
-            while(t1.isAlive());
-            count++;
-        }
-        return s.sum;
-    }
+    @SuppressWarnings("resource") // to ignore the resource leak warning
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter terms : ");
-        int terms = scanner.nextInt();
-        System.out.print("Enter threads : ");
-        int threads = scanner.nextInt();
-        System.out.println("Sum : " + sum(terms,threads));
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Please enter the limit: ");
+        int lim = sc.nextInt();
+
+        System.out.print("Please enter the number of threads: ");
+        int numT = sc.nextInt();
+
+        Sum[] t = new Sum[numT];
+
+        for (int i = 0; i < numT; i++) {
+            int from = 1 + (i * (lim / numT));
+            int to = ((i + 1) * (lim / numT));
+            if (i == numT - 1) {
+                to = lim;
+
+            }
+            t[i] = new Sum(from, to);
+            t[i].start();
+
+        }
+
+        long sum = 0;
+        for (int i = 0; i < numT; i++) {
+            try {
+                t[i].join();
+
+            } catch (Exception e) {
+                System.out.println(e);
+
+            }
+            sum += t[i].sum;
+
+        }
+
+        System.out.println("Sum is " + sum);
+
     }
+
 }

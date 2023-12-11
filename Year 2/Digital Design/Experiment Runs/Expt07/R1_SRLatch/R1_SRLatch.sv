@@ -1,4 +1,4 @@
-module SRLatch (s, r, clk, q, qBar) ;
+module SRLatch (s, r, clk, q, qBar);
 
   input s, r, clk;
   output reg q, qBar;
@@ -9,7 +9,6 @@ module SRLatch (s, r, clk, q, qBar) ;
   nand N2 (r1, r, clk);
   nand N3 (qBar, q, r1);
   nand N4 (q, qBar, s1);
-
 
 endmodule
 

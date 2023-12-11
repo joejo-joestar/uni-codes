@@ -1,4 +1,4 @@
-
+// main program
 module mux2to1 (op, ip, sIp);
 
   output op;

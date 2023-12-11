@@ -1,8 +1,8 @@
-class Car {
+class CarSale {
     double price;
     int year;
 
-    public Car(double price, int year) {
+    public CarSale(double price, int year) {
         this.price = price;
         this.year = year;
 
@@ -20,7 +20,7 @@ class Car {
 
 }
 
-class ClassicCar extends Car {
+class ClassicCar extends CarSale {
 
     public ClassicCar(double price, int year) {
         super(price, year);
@@ -34,7 +34,7 @@ class ClassicCar extends Car {
 
 }
 
-class SportsCar extends Car {
+class SportsCar extends CarSale {
 
     public SportsCar(double price, int year) {
         super(price, year);
@@ -59,11 +59,11 @@ class SportsCar extends Car {
 
 public class Q2_CarTester {
     public static void main(String[] args) {
-        Car car = new Car(20000, 2014);
-        Car classicCar = new ClassicCar(75000, 1950);
-        Car sportsCar1 = new SportsCar(10000, 2019);
-        Car sportsCar2 = new SportsCar(10000, 1997);
-        Car sportsCar3 = new SportsCar(10000, 1950);
+        CarSale car = new CarSale(20000, 2014);
+        CarSale classicCar = new ClassicCar(75000, 1950);
+        CarSale sportsCar1 = new SportsCar(10000, 2019);
+        CarSale sportsCar2 = new SportsCar(10000, 1997);
+        CarSale sportsCar3 = new SportsCar(10000, 1950);
 
         System.out.println((car.toString()));
         System.out.println((classicCar.toString()));

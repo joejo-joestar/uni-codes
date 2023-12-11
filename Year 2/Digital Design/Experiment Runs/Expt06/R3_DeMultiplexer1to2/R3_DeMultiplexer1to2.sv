@@ -1,4 +1,4 @@
-
+// main program
 module dmux1to2 (op, ip, sIp);
 
   output[1:0] op;

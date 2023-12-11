@@ -1,3 +1,4 @@
+// main program
 module JKFlipFlop (input j, k, clk, output reg op) ;
 
   always @(posedge clk) begin

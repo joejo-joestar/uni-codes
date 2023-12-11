@@ -35,6 +35,7 @@ class GenPrimesB {
 }
 
 public class Q1b_PrimeNumGen {
+    @SuppressWarnings("resource") // to ignore the resource leak warning
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		try {		
