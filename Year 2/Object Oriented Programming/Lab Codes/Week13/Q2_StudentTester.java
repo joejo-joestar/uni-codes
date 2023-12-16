@@ -59,13 +59,13 @@ class Validator {
     }
 }
 
-class Student {
+class StudentCheck {
     private String name;
     private int age;
     private int year;
     private String id;
 
-    public Student(String name, int age, int year, String id)
+    public StudentCheck(String name, int age, int year, String id)
         throws NameInvalidException, AgeInvalidException,
         YearInvalidException, IDInvalidException {
         this.name = name;
@@ -95,7 +95,7 @@ public class Q2_StudentTester {
         System.out.print("  ID:   "); String id = sc.nextLine();
 
         try {
-            Student student = new Student(name, age, year, id);
+            StudentCheck student = new StudentCheck(name, age, year, id);
             System.out.println("Created Student object with name: " + student.getName());
         } catch (Exception e) {
             System.out.println("Error: " + e);

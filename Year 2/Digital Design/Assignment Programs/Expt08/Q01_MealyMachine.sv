@@ -31,7 +31,7 @@ module MealyFSM (output reg [1: 0]nextState, output reg[1:0] state, output reg z
       if (~xIn) begin
         nextState = S2; z = 0;
       end
-
+  
       else begin
         nextState = S3; z = 1;
       end

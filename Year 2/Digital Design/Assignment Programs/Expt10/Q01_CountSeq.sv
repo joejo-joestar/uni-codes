@@ -6,8 +6,7 @@ module CountSeq (
     rst);
 
   always @(posedge clk, posedge rst) begin
-    if begin
-      (rst) modFive <= 1;
+    if(rst) begin modFive <= 1;
       end
 
     else begin
@@ -29,7 +28,6 @@ module tb_CountSeq;
     $dumpvars(1, tb_CountSeq); //only needed if using the online compiler
 
     #00 clk = 0;
-
       forever #5 clk = ~clk;
     
   end
