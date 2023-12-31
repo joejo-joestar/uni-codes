@@ -12,6 +12,7 @@ All the codes written for Digital Design course in Year 2 Sem 1.
 - [MultiBit Numbers](/Year%202/Digital%20Design/.FYI2.md)
 - [Basic Gates with Universal Gates](/Year%202/Digital%20Design/.FYI3.md)
 - [Boolean Operations](/Year%202/Digital%20Design/.FYI4.md)
+- [Common Tables for Flip Flops and Stuff](/Year%202/Digital%20Design/.FYI5.md)
 
 <br>
 
