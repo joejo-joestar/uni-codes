@@ -1,8 +1,8 @@
-class Person implements Comparable<Person> {
+class PersonInh implements Comparable<PersonInh> {
     private String name;
     private int age;
 
-    public Person(String name, int age) {
+    public PersonInh(String name, int age) {
         this.name = name;
         this.age = age;
 
@@ -14,7 +14,7 @@ class Person implements Comparable<Person> {
     }
 
     @Override
-    public int compareTo(Person o) {
+    public int compareTo(PersonInh o) {
         if (this.age == o.age) {
             return 0;
 
@@ -31,8 +31,8 @@ class Person implements Comparable<Person> {
 
 public class InheritanceTester {
     public static void main(String[] args) {
-        Person p2 = new Person("stell", 20);
-        Person p1 = new Person("Joe", 20);
+        PersonInh p2 = new PersonInh("stell", 20);
+        PersonInh p1 = new PersonInh("Joe", 20);
 
         switch (p1.compareTo(p2)) {
             case 0:
