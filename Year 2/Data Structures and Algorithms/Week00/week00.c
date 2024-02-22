@@ -12,12 +12,13 @@ void main() {
   int opt;
 
   while (1) {
-    printf("\nOptions:"
-           "\n  1. Append to file"
-           "\n  2. Read File"
-           "\n  3. Copy file"
-           "\n  4. Count Characters, Words and Sentences"
-           "\nPlease enter the Option: ");
+    printf(
+        "\nOptions:"
+        "\n  1. Append to file"
+        "\n  2. Read File"
+        "\n  3. Copy file"
+        "\n  4. Count Characters, Words and Sentences"
+        "\nPlease enter the Option: ");
 
     scanf("%d", &opt);
     getchar();
@@ -67,19 +68,18 @@ void main() {
         countSentence++;
 
         for (int i = 0; i < strlen(str); i++) {
-          if (isalnum(str[i]))
-            countChar++;
+          if (isalnum(str[i])) countChar++;
 
-          if (str[i] == ' ')
-            countWord++;
+          if (str[i] == ' ') countWord++;
         }
         countWord++;
       }
 
-      printf("Number of Characters: %d"
-             "\nNumber of Words: %d"
-             "\nNumber of Sentences: %d\n",
-             countChar, countWord, countSentence);
+      printf(
+          "Number of Characters: %d"
+          "\nNumber of Words: %d"
+          "\nNumber of Sentences: %d\n",
+          countChar, countWord, countSentence);
 
     }
 
