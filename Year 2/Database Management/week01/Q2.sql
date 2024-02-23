@@ -13,22 +13,27 @@ VALUES    ('Fluffy', 'Harold', 'Cat', 'f', '1993-02-04', NULL),
           ('Slim', 'Benny', 'Snake', 'm', '1996-04-29', NULL),
           ('Puffball', 'Diane', 'Hamster', 'f', '1999-03-30', NULL);
 
+-- Q1
 SELECT    *
 FROM      pet
 WHERE     P_Name = 'Fang';
 
+-- Q2
 SELECT    *
 FROM      pet
 WHERE     P_Owner = 'Gwen';
 
+-- Q3
 SELECT    P_Owner
 FROM      pet
 WHERE     Species = 'Dog';
 
+-- Q4
 SELECT    *
 FROM      pet
 WHERE     Sex = 'f';
 
+-- Q5
 SELECT    Birth
 FROM      pet
 WHERE     Species = 'Hamster';

@@ -53,7 +53,7 @@ VALUES    (70001, 150.5, "2012-10-05", 3005, 5002),
           (70011, 75.29, "2012-08-17", 3003, 5007),
           (70013, 3045.6, "2012-04-25", 3002, 5001);
 
--- q1
+-- Q1
 SELECT    cust_name,
           sa.s_name,
           sa.city
@@ -61,14 +61,14 @@ FROM      Customer AS cu,
           Salesman AS sa
 WHERE     cu.city = sa.city;
 
--- q2
+-- Q2
 SELECT    cust_name,
           sa.s_name
 FROM      Customer AS cu,
           Salesman AS sa
 WHERE     cu.salesman_id = sa.salesman_id;
 
--- q3
+-- Q3
 SELECT    cust_name,
           ord_no
 FROM      Salesman AS sa,
@@ -79,14 +79,14 @@ AND       o.customer_id = cu.customer_id
 AND       cu.salesman_id = sa.salesman_id
 AND       cu.city != sa.city;
 
--- q4
+-- Q4
 SELECT    ord_no,
           cust_name
 FROM      Customer AS cu,
           Orders AS o
 WHERE     o.customer_id = cu.customer_id;
 
--- q5
+-- Q5
 SELECT    cust_name,
           grade,
           ord_no
@@ -98,7 +98,7 @@ AND       grade IS NOT NULL
 AND       cu.salesman_id = sa.salesman_id
 AND       sa.city IS NOT NULL;
 
--- q6
+-- Q6
 SELECT    cust_name,
           cu.city,
           sa.s_name,
@@ -109,7 +109,7 @@ WHERE     cu.salesman_id = sa.salesman_id
 AND       commission > 0.12
 AND       commission < 0.14;
 
--- q7
+-- Q7
 SELECT    ord_no,
           cu.cust_name,
           commission,
@@ -121,31 +121,31 @@ WHERE     cu.grade >= 200
 AND       o.customer_id = cu.customer_id
 AND       o.salesman_id = sa.salesman_id;
 
--- q8
+-- Q8
 SELECT    cust_name,
           grade
 FROM      Customer
 WHERE     grade > 100;
 
--- q9
+-- Q9
 SELECT    cust_name
 FROM      Customer
 WHERE     grade > 100
 AND       city = "New York";
 
--- q10
+-- Q10
 SELECT    cust_name
 FROM      Customer
 WHERE     grade <= 100
 OR        city != "New York";
 
--- q11
+-- Q11
 SELECT    cust_name
 FROM      Customer
 WHERE     grade <= 100
 AND       city != "New York";
 
--- q12
+-- Q12
 SELECT    ord_no,
           ord_date
 FROM      Orders AS o

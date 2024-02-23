@@ -1,5 +1,6 @@
 USE       20220019db;
 
+-- Q1
 CREATE    TABLE Admission (E_No INT PRIMARY KEY AUTO_INCREMENT, E_Name VARCHAR(32), Age INT, Department VARCHAR(32), DateofAdm DATE, Fee INT, Sex CHAR(1));
 
 INSERT    INTO Admission (E_Name, Age, Department, DateofAdm, Fee, Sex)
@@ -14,16 +15,20 @@ VALUES    ('Pankaj', 24, 'Computer', '2002-10-12', 120, 'M'),
 SELECT    *
 FROM      Admission;
 
+-- Q2
 UPDATE    Admission
 SET       Age = 27
 WHERE     E_No = 1;
 
+-- Q3
 ALTER     TABLE Admission
 ADD       City VARCHAR(30);
 
+-- Q4
 UPDATE    Admission
 SET       Fee = 425
 WHERE     E_No = 4;
 
+-- Q5
 ALTER     TABLE Admission
 DROP      COLUMN City;
