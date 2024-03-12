@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define STRING_SIZE 100
-#define STACK_SIZE 10
+#define STRING_SIZE 50
+#define STACK_SIZE 1
 
 typedef struct {
   char *id;
@@ -13,11 +13,19 @@ typedef struct {
 } studentInfo;
 
 void push(studentInfo stack[STACK_SIZE], int *top, studentInfo s) {
+  if (*top == STACK_SIZE - 1) {  // Checking Overflow Condition
+    printf("Stack is filled, Overflow Condition\n");
+    return;
+  }
   stack[++(*top)] = s;
 }
 
-studentInfo pop(studentInfo stack[STACK_SIZE], int *top) {
-  return stack[(*top)--];
+studentInfo *pop(studentInfo stack[STACK_SIZE], int *top) {
+  if (*top == -1) {  // Checking Underflow Condition
+    printf("Stack is empty, Underflow Condition\n");
+    return NULL;
+  }
+  return &stack[(*top)--];
 }
 
 void getParts(char parts[4][STRING_SIZE], char *line) {
@@ -49,14 +57,14 @@ void getParts(char parts[4][STRING_SIZE], char *line) {
 }
 
 void main() {
-  char *line = malloc(STRING_SIZE);
+  char *line = calloc(STRING_SIZE, sizeof(char));
   studentInfo arr[STACK_SIZE];
   char parts[4][STRING_SIZE];
   int lineNumber = 0;
 
   FILE *file = fopen("studentin.dat", "r");
   int top = -1;
-  while (fgets(line, STRING_SIZE, file)) {
+  while (fgets(line, STRING_SIZE - 1, file)) {
     getParts(parts, line);
     studentInfo s;
     s.id = malloc(STRING_SIZE);
@@ -72,9 +80,10 @@ void main() {
 
   FILE *output = fopen("studentout.dat", "w");
   while (top >= 0) {
-    studentInfo s = pop(arr, &top);
-    fprintf(output, "%s %s %s %.2f\n", s.id, s.name, s.date, s.cgpa);
-    printf("%s %s %s %.2f\n", s.id, s.name, s.date, s.cgpa);
+    studentInfo *s = pop(arr, &top);
+    if (s == NULL) break;
+    fprintf(output, "%s %s %s %.2f\n", s->id, s->name, s->date, s->cgpa);
+    printf("%s %s %s %.2f\n", s->id, s->name, s->date, s->cgpa);
   }
   fclose(output);
 }
