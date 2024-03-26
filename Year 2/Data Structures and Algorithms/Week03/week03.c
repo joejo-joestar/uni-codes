@@ -65,7 +65,7 @@ void insert(int index, char* name, char* id, float cgpa, node** start) {
   if (isEmpty(*start) || index == 0) {
     newNode->next = *start;
     *start = newNode;
-    printf("Node Inserted in the beninging\n");
+    printf("Node Inserted in the beginning\n");
   }
   // insert at end
   else if (index >= lSize) {

@@ -1,0 +1,5 @@
+sno,sname,city
+(1,"Smith","London"),
+(2,"Jones","Paris"),
+(3,"Adams","Vienna"),
+(4,"Blake","Rome")

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define Q_MAX 4
+#define Q_MAX 6
 #define STR_SIZE 100
 
 typedef struct {
@@ -54,7 +54,7 @@ student dequeue(cQueue *q) {
 
 void main() {
   cQueue *q = malloc(Q_MAX);
-  q->front = 2;
+  q->front = 3;
   q->rear = 2;
   q->s = malloc(Q_MAX * sizeof(student));
   q->size = 0;
