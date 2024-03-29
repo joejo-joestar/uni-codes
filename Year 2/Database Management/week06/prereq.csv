@@ -1,0 +1,4 @@
+course_id,prereq_id
+BIO-301,BIO-101
+CS-190,CS-101
+CS-347,CS-101
