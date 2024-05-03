@@ -1,6 +1,12 @@
 import java.util.*;
 import java.io.File;
 
+class GV {
+    public static int MILLIS = 1000000; // Only used to convert ns to ms
+    
+}
+
+// MARK: Student Info
 class StudentInfo {
     private String name;
     private String id;
@@ -31,14 +37,13 @@ class StudentInfo {
     }
 }
 
+// MARK: Class for File Handle
 class FileHandle {
     String[] buffer;
     int i = 0, count = 0;
 
     public FileHandle() {
-        File inputFile = new File(
-                "C:\\Users\\joecn\\Documents\\GitHub\\uni-codes\\Year 2\\Data Structures and Algorithms\\Week05\\studentin.txt");
-        // File inputFile = new File("studentin.txt");
+        File inputFile = new File("studentin.txt");
         try {
             Scanner fileReader = new Scanner(inputFile);
             while (fileReader.hasNextLine()) {
@@ -65,6 +70,7 @@ class FileHandle {
         }
     }
 
+    // Method to split Lines into values of student class
     StudentInfo[] splitLines() {
         String[] splitBuffer = new String[4];
         StudentInfo[] temp = new StudentInfo[10];
@@ -77,7 +83,9 @@ class FileHandle {
     }
 }
 
+// MARK: Class for Merge Sort
 public class MergeSort {
+    // MARK: sort()
     public static void sort(StudentInfo[] arr, int l, int h) {
         if (l < h) {
             int mid = (h + l - 1) / 2;
@@ -87,6 +95,7 @@ public class MergeSort {
         }
     }
 
+    // MARK: merge()
     static void merge(StudentInfo[] arr, int l, int m, int h) {
         int countIndex = 0;
         int left = l;
@@ -121,11 +130,13 @@ public class MergeSort {
             arr[i + l] = auxArr[i];
 
         System.out.print("    ");
+        // Displaying each iteration
         for (int i = 0; i < arr.length; i++)
             System.out.print(arr[i].getName() + " ");
         System.out.println();
     }
 
+    // MARK: main()
     public static void main(String[] args) {
         FileHandle file = new FileHandle();
         StudentInfo[] stu = new StudentInfo[file.count];
@@ -142,7 +153,7 @@ public class MergeSort {
             i++;
         }
         System.out.println();
-        float timeTaken = (float) (endTime - startTime) / 1000000;
+        float timeTaken = (float) (endTime - startTime) / GV.MILLIS;
         System.out.println("Time Taken: " + timeTaken + "ms");
     }
 }

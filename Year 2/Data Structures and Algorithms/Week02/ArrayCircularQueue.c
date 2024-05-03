@@ -4,6 +4,7 @@
 
 #define Q_MAX 6
 #define STR_SIZE 100
+#define ELEMENTS_PER_ROW 4
 
 typedef struct {
   char *id;
@@ -19,7 +20,7 @@ typedef struct {
   student *s;
 } cQueue;
 
-void getParts(char *parts[4], char *line) {
+void getParts(char *parts[ELEMENTS_PER_ROW], char *line) {
   char *tok;
   tok = strtok(line, " ");
   int i = 0;
@@ -60,7 +61,7 @@ void main() {
   q->size = 0;
 
   char *line = malloc(STR_SIZE);
-  char *parts[4];
+  char *parts[ELEMENTS_PER_ROW];
   FILE *inp = fopen("studentin.dat", "r");
   while (fgets(line, STR_SIZE, inp)) {
     getParts(parts, line);

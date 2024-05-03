@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 // MARK: Linked List
 class Node {
     int info;
@@ -8,14 +10,16 @@ class Node {
     }
 }
 
+// MARK: Stack class
 public class Stack {
     Node top;
 
+    // MARK: isEmpty()
     boolean isEmpty() {
         return (top == null);
     }
 
-    // MARK: PUSH Operation
+    // MARK: push()
     void push(int info) {
         System.out.println("Pushed " + info);
         Node temp = new Node(info);
@@ -23,7 +27,7 @@ public class Stack {
         top = temp;
     }
 
-    // MARK: POP Operation
+    // MARK: pop()
     String pop() {
         if (isEmpty()) {
             return "underflow condition";
@@ -33,7 +37,7 @@ public class Stack {
         return "popping " + temp;
     }
 
-    // MARK: Main Method
+    // MARK: main()
     public static void main(String[] args) {
         Stack s = new Stack();
         s.push(4);

@@ -1,7 +1,12 @@
 import java.util.*;
 import java.io.File;
 
-// MARK: Info of Student
+class GV {
+    public static int MILLIS = 1000000; // Only used to convert ns to ms
+    
+}
+
+// MARK: Student Info
 class StudentInfo {
     private String name;
     private String id;
@@ -32,7 +37,7 @@ class StudentInfo {
     }
 }
 
-// MARK: File Handle Class
+// MARK: Class for File Handle 
 class FileHandle {
     String[] buffer;
     int i = 0, count = 0;
@@ -82,6 +87,7 @@ class FileHandle {
 
 // MARK: Quick Sort Class
 public class QuickSort {
+    // MARK: sort()
     public static void sort(StudentInfo[] arr, int l, int h) {
         if (l < h) {
             int pivot = partition(arr, l, h);
@@ -95,12 +101,14 @@ public class QuickSort {
         }
     }
 
+    // MARK: swap()
     static void swap(StudentInfo[] arr, int a, int b) {
         StudentInfo temp = arr[a];
         arr[a] = arr[b];
-        arr[b] = temp;``````
+        arr[b] = temp;
     }
 
+    // MARK: partition()
     static int partition(StudentInfo[] arr, int l, int h) {
         int pivot = l;
         int left = l + 1;
@@ -124,6 +132,7 @@ public class QuickSort {
         return right;
     }
 
+    // MARK: main()
     public static void main(String[] args) {
         FileHandle file = new FileHandle();
         StudentInfo[] stu = new StudentInfo[file.count];
@@ -141,7 +150,7 @@ public class QuickSort {
         }
 
         System.out.println();
-        float timeTaken = (float) (endTime - startTime)/1000000;
+        float timeTaken = (float) (endTime - startTime)/GV.MILLIS;
         System.out.println("Time Taken: " + timeTaken + "ms");
     }
 }

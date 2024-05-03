@@ -8,13 +8,15 @@ class Node {
     }
 }
 
+// MARK: Queue Class
 public class Queue {
     Node front, rear;
 
+    // MARK: isEmpty()
     boolean isEmpty() {
         return (front == null);
     }
-    // MARK: Enqueue Operation
+    // MARK: enqueue()
     void enqueue(int info) {
         System.out.println("Enqueueing "+ info);
         Node temp = new Node(info);
@@ -26,7 +28,7 @@ public class Queue {
         rear = rear.next;
     }
 
-    // MARK: Dequeue Operation
+    // MARK: dequeue()
     String dequeue() {
         // underflow condition
         if (isEmpty()) {
@@ -38,7 +40,7 @@ public class Queue {
         return "dequeueing " + temp;
     }
 
-// MARK: Main Method
+// MARK: main()
     public static void main(String[] args) {
         Queue q = new Queue();
 

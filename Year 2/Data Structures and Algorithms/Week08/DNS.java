@@ -145,7 +145,7 @@ public class DNS {
 
             // 2. Find
             else if (option == 2) {
-                System.out.println("\nPlease enter a hostname to search:");
+                System.out.println("\nPlease enter a Hostname to Search:");
                 System.out.print("  => ");
                 String hostname = joe.nextLine();
                 hashTable.find(hostname);

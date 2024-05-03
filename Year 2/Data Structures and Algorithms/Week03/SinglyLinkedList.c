@@ -4,6 +4,7 @@
 
 /*----------------------------------------------------------------------------*/
 
+// MARK: Student Info Struct
 // struct for student info
 typedef struct {
   char* id;
@@ -11,6 +12,7 @@ typedef struct {
   float cgpa;
 } student;
 
+// MARK: Linked List Struct
 // struct for defining node
 typedef struct node {
   student stu;
@@ -25,6 +27,7 @@ char* trim(char* s) {
 
 /*----------------------------------------------------------------------------*/
 
+// MARK: isEmpty()
 // fn for checking if ll is empty
 int isEmpty(node* start) {
   if (start == NULL)
@@ -33,6 +36,7 @@ int isEmpty(node* start) {
     return 0;
 }
 
+// MARK: size()
 // fn to return size of ll
 int size(node* start) {
   node* cursor;
@@ -47,6 +51,7 @@ int size(node* start) {
 
 /*----------------------------------------------------------------------------*/
 
+// MARK: insert()
 // fn to insert elements into a node and then into a ll
 void insert(int index, char* name, char* id, float cgpa, node** start) {
   node* temp;
@@ -89,6 +94,7 @@ void insert(int index, char* name, char* id, float cgpa, node** start) {
   }
 }
 
+// MARK: find()
 // searching node by stu.name
 int find(node* start, char* name) {
   node* cursor;
@@ -105,6 +111,7 @@ int find(node* start, char* name) {
   return -1;
 }
 
+// MARK: delete()
 int delete(node** start, char* name) {
   if (isEmpty(*start)) {
     return -1;
@@ -132,6 +139,7 @@ int delete(node** start, char* name) {
   return 0;  // since no record was deleted.
 }  // delete node by stu.name
 
+// MARK: display()
 // fn to display
 void display(node* start) {
   struct node* cursor;
@@ -157,6 +165,7 @@ void display(node* start) {
 
 /*----------------------------------------------------------------------------*/
 
+// MARK: insert dummy vals
 // fn to insert dummy testing records.
 void insert_testing_records(node** start) {
   node* rec1 = calloc(1, sizeof(node));
@@ -177,6 +186,7 @@ void insert_testing_records(node** start) {
   *start = rec1;
 }
 
+// MARK: main()
 void main() {
   int option;
   node* start = NULL;

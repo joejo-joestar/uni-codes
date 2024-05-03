@@ -5,6 +5,7 @@
 
 #define MAX 300000000
 
+// MARK: sizeOfArray()
 // function to return size of array from file
 int sizeOfArray(int op) {
   FILE* sizeFile = fopen("testCaseSize.txt", "r");
@@ -20,6 +21,7 @@ int sizeOfArray(int op) {
   return size;
 }
 
+// MARK: getArray()
 // function to convert needed line into array of integers also from file
 int* getArray(int arraySize, int sizeOp) {
   FILE* testCase = fopen("searchTestCase.txt", "r");
@@ -45,7 +47,7 @@ int* getArray(int arraySize, int sizeOp) {
   return numbers;
 }
 
-// function to perform linear search
+// MARK: linearSearch()
 int linearSearch(int key, int* numbers, int arraySize) {
   for (int i = 0; i < arraySize; i++) {
     if (numbers[i] == key) {
@@ -55,10 +57,11 @@ int linearSearch(int key, int* numbers, int arraySize) {
   return -1;
 }
 
-// function for qsort
+// MARK: cmpFunc() (for inbuilt qsort fn)
 int cmpFunc(const void* a, const void* b) { return (*(int*)a - *(int*)b); }
 
-// function to do selection sort (Old)
+// MARK: selectionSort() (Obsolete)
+// function to do selection sort for sorting array before doing binary search
 void sort(int* numbers, int arraySize) {
   int min = 0, temp = 0;
   for (int i = 0; i < arraySize; i++) {
@@ -71,11 +74,13 @@ void sort(int* numbers, int arraySize) {
     temp = numbers[min];
     numbers[min] = numbers[i];
     numbers[i] = temp;
+    
+    // "Loading"
     if (i % 1000 == 0) printf(".");
   }
 }
 
-// function to perform binary search
+// MARK: binarySearch()
 int binarySearch(int key, int* numbers, int arraySize) {
   int mid = 0, beg = 0, end = arraySize - 1;
   while (end >= beg) {
@@ -91,7 +96,7 @@ int binarySearch(int key, int* numbers, int arraySize) {
   return -1;
 }
 
-// main function
+// MARK: main()
 void main() {
   printf("Enter size of array to search from (1-15): ");
   int sizeOp = -1;

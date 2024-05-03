@@ -4,6 +4,7 @@
 
 #define STRING_SIZE 50
 #define STACK_SIZE 1
+#define ELEMENTS_PER_ROW 4
 
 typedef struct {
   char *id;
@@ -28,7 +29,7 @@ studentInfo *pop(studentInfo stack[STACK_SIZE], int *top) {
   return &stack[(*top)--];
 }
 
-void getParts(char parts[4][STRING_SIZE], char *line) {
+void getParts(char parts[ELEMENTS_PER_ROW][STRING_SIZE], char *line) {
   int word = 0, begin = 0, len = strlen(line);
 
   // Exclude the trailing \n from the string.
@@ -59,7 +60,7 @@ void getParts(char parts[4][STRING_SIZE], char *line) {
 void main() {
   char *line = calloc(STRING_SIZE, sizeof(char));
   studentInfo arr[STACK_SIZE];
-  char parts[4][STRING_SIZE];
+  char parts[ELEMENTS_PER_ROW][STRING_SIZE];
   int lineNumber = 0;
 
   FILE *file = fopen("studentin.dat", "r");
