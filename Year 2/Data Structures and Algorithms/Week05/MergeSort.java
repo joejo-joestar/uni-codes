@@ -1,9 +1,8 @@
 import java.util.*;
 import java.io.File;
 
-class GV {
-    public static int MILLIS = 1000000; // Only used to convert ns to ms
-    
+final class GV {
+    public final static int MILLIS = 1000000; // Only used to convert ns to ms
 }
 
 // MARK: Student Info
@@ -43,7 +42,9 @@ class FileHandle {
     int i = 0, count = 0;
 
     public FileHandle() {
-        File inputFile = new File("studentin.txt");
+        File inputFile = new File(
+                "C:\\Users\\joecn\\Documents\\GitHub\\uni-codes\\Year 2\\Data Structures and Algorithms\\Week05\\studentin.txt");
+        // File inputFile = new File("studentin.txt");
         try {
             Scanner fileReader = new Scanner(inputFile);
             while (fileReader.hasNextLine()) {
@@ -59,14 +60,13 @@ class FileHandle {
             System.out.println();
             while (fileReader.hasNextLine()) {
                 buffer[i] = fileReader.nextLine();
-                System.out.println("[" + i + "] " + buffer[i]);
                 i++;
             }
             System.out.println();
 
             fileReader.close();
         } catch (Exception e) {
-            System.out.println("File Handling Error");
+            System.out.println(Ansi.FG_RED + "File Handling Error" + Ansi.RESET);
         }
     }
 
@@ -136,24 +136,47 @@ public class MergeSort {
         System.out.println();
     }
 
+    // MARK: display()
+    public static void display(StudentInfo[] stu) {
+        int index = 0;
+        System.out.println();
+        String indexFormat = Ansi.FG_CYAN + "[" + Ansi.FG_YELLOW + "%2d" + Ansi.FG_CYAN + "]"
+                + Ansi.RESET;
+        int longestName = 0, longestID = 0;
+        for (StudentInfo temp : stu) {
+            if (temp.getName().length() > longestName) {
+                longestName = temp.getName().length();
+            }
+            if (temp.getId().length() > longestID) {
+                longestID = temp.getName().length();
+            }
+        }
+        String nameFormat = "%" + -longestName + "s";
+        String idFormat = " %" + longestID + "s";
+        String yearFormat = "%4d";
+        String cgpaFormat = "%.2f";
+        String div = Ansi.FG_YELLOW + " | " + Ansi.RESET;
+        for (StudentInfo inf : stu) {
+            System.out.printf(indexFormat + idFormat + div + nameFormat + div + yearFormat + div + cgpaFormat + "\n",
+                    index,
+                    inf.getId(),
+                    inf.getName(), inf.getYear(), inf.getCgpa());
+            index++;
+        }
+    }
+
     // MARK: main()
     public static void main(String[] args) {
         FileHandle file = new FileHandle();
         StudentInfo[] stu = new StudentInfo[file.count];
         stu = file.splitLines();
+        display(stu);
         long startTime = System.nanoTime();
         sort(stu, 0, stu.length - 1);
         long endTime = System.nanoTime();
-
-        int i = 0;
-
-        System.out.println();
-        for (StudentInfo inf : stu) {
-            System.out.printf("[%d] %s %s %d %.2f\n", i, inf.getId(), inf.getName(), inf.getYear(), inf.getCgpa());
-            i++;
-        }
-        System.out.println();
+        display(stu);
         float timeTaken = (float) (endTime - startTime) / GV.MILLIS;
-        System.out.println("Time Taken: " + timeTaken + "ms");
+        System.out.println(Ansi.FG_BRIGHT_GREEN + "\nTime Taken: " + Ansi.FG_CYAN + "[" + Ansi.FG_YELLOW + timeTaken
+                + Ansi.FG_CYAN + "]" + Ansi.FG_BRIGHT_GREEN + "ms" + Ansi.RESET);
     }
 }
