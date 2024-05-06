@@ -14,6 +14,11 @@ This is just an unofficial repo to store most of my codes from all the different
 
   - [Object Oriented Programming Lab (CS F213)](https://github.com/joejo-joestar/uni_codes/tree/main/Year%202/Object%20Oriented%20Programming)
 
+  - [Data Structures and Algorithms](https://github.com/joejo-joestar/uni-codes/tree/main/Year%202/Data%20Structures%20and%20Algorithms)
+
+  - [Database Management](https://github.com/joejo-joestar/uni-codes/tree/main/Year%202/Database%20Management)
+
+  - [Microprocessors and Interfacing](https://github.com/joejo-joestar/uni-codes/tree/main/Year%202/Microprocessors%20and%20Interfacing) 
 <br>
 
 ## Authors
