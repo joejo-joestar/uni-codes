@@ -9,13 +9,15 @@ Year 2/Digital Design/Media/testtest.sv
 Year 2/Object Oriented Programming/Lectorial Codes/Test.java
 Year 2/Object Oriented Programming/Lectorial Codes/ArraylistTry.java
 *.lnk
+
+# Year 2/Microprocessors and Interfacing/
 *.OBJ
 *.MAP
-# Year 2/Microprocessors and Interfacing/
 Year 2/Microprocessors and Interfacing/stdout.txt
 Year 2/Microprocessors and Interfacing/stderr.txt
+
+# Ansi Color Codes
 Year 2/Data Structures and Algorithms/Week05/Ansi.java
 Year 2/Data Structures and Algorithms/Week06/Ansi.java
-Year 2/Data Structures and Algorithms/Week07/Stack/Ansi.java
-Year 2/Data Structures and Algorithms/Week07/Queue/Ansi.java
+Year 2/Data Structures and Algorithms/Week09/Ansi.java
 Year 2/Data Structures and Algorithms/Week08/Ansi.java
