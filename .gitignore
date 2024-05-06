@@ -13,13 +13,16 @@ Year 2/Object Oriented Programming/Lectorial Codes/ArraylistTry.java
 # Year 2/Microprocessors and Interfacing/
 *.OBJ
 *.MAP
+*.pdsbak
+*.pdsbak
+Year 2/Microprocessors and Interfacing/Practice
 Year 2/Microprocessors and Interfacing/stdout.txt
 Year 2/Microprocessors and Interfacing/stderr.txt
+
+Year 2/Data Structures and Algorithms/DataStructs
 
 # Ansi Color Codes
 Year 2/Data Structures and Algorithms/Week05/Ansi.java
 Year 2/Data Structures and Algorithms/Week06/Ansi.java
 Year 2/Data Structures and Algorithms/Week09/Ansi.java
 Year 2/Data Structures and Algorithms/Week08/Ansi.java
-Year 2/Microprocessors and Interfacing/week07/Backup Of 7SegCount.pdsbak
-Year 2/Microprocessors and Interfacing/week07/Last Loaded 7SegCount.pdsbak
