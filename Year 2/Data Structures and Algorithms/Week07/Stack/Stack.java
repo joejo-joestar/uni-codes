@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 // MARK: Linked List
 class Node {
     int info;
