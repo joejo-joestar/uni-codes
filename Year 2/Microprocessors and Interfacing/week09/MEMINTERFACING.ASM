@@ -1,0 +1,35 @@
+DATA SEGMENT
+   PORTA EQU 00H
+   PORTB EQU 02H
+   PORTC EQU 04H
+   PORT_CON EQU 06H
+DATA ENDS
+
+CODE SEGMENT
+   MOV AX, DATA
+   MOV DS, AX
+   ORG 0000H
+
+   START:
+      MOV DX, PORT_CON
+      MOV AL, 10000000B
+      OUT DX, AL
+      MOV AL, 0
+      MOV CX, 1FH
+
+   UP:
+      PUSH CX
+      MOV DX, PORTA
+      OUT DX, AL
+      INC AL
+      
+      MOV CX, 0DF36H
+      
+      DOWN: LOOP DOWN
+      POP CX
+      LOOP UP
+      
+      JMP START
+      
+CODE ENDS
+END START
