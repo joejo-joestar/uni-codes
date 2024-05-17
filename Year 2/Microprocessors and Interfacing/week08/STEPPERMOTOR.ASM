@@ -20,8 +20,7 @@ CODE SEGMENT
       ; D7    D6    D5    D4    D3    D2    D1    D0        (8-bit number)
       ; 1     0     0     0     0     0     0     0
 
-      ; More info on this can be found here: [FYI Link]
-
+      ; More info on this can be found here: [https://github.com/joejo-joestar/uni-codes/blob/09b6c9fb4a770a9a4db902f7408d3b57134582b1/Year%202/Microprocessors%20and%20Interfacing/.FYI1.md#bit-set-reset-mode]
 
       ; OUT instruction
       ; Outputs data in accumulator (AL / AX)
