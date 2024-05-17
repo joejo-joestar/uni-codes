@@ -24,13 +24,13 @@ All the codes written for Digital Design course in Year 2 Sem 1.
 
 Use the settings as shown below:
 
-<p align="center">
+<div align="center">
 
 <img src="/Year%202/Digital%20Design/.assets/langnlibspart1.png" alt="Language settings" title="Language settings" data-align="center">
 
 <img src="/Year%202/Digital%20Design/.assets/toolsnsimspart2.png" title="Tools & Simulators settings" alt="Tools & Simulators settings" data-align="center">
 
-</p>
+</div>
 
 <br>
 
@@ -40,26 +40,26 @@ Use the settings as shown below:
 
 EPWave defaults waveform signals to Hexadecimal (Output of [this code](Year%202/Digital%20Design/Self%20Evaluation%20Programs/Expt04/SE09_GrayCodetoBinary.sv)):
 
-<p align="center">
+<div align="center">
 
 <img src="/Year%202/Digital%20Design/.assets/EPWave_Hex_op.png" alt="EPWave Hex Output" title="EPWave Hex Output">
 
-</p>
+</div>
 
 To Display the waveform in Binary, Switch from `Hex` to `Binary` in the `Radix` menu
 
-<p align="center">
+<div align="center">
 
 <img src="/Year%202/Digital%20Design/.assets/EPWave_Hex_Radix.png" alt="EPWave Hex Radix" title="EPWave Hex Radix">
 
 <img src="/Year%202/Digital%20Design/.assets/EPWave_Binary_Radix.png" alt="EPWave Binary Radix" title="EPWave Binary Radix">
 
-</p>
+</div>
 
 The final output should be
 
-<p align="center">
+<div align="center">
 
 <img src="/Year%202/Digital%20Design/.assets/EPWave_Binary_op.png" alt="EPWave Binary Output" title="EPWave Binary Output">
 
-</p>
+</div>
