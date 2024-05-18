@@ -1,27 +1,44 @@
 CODE SEGMENT
-    PORTA  EQU  00H              ; Address of Port A = 00H
-    CONFIG EQU  06H              ; Address of Config. Word = 06H
-           ORG  100H
-           MOV  DX, CONFIG
-           MOV  AL, 10000000B    ; PORT C = output, PORT A = output in mode 0, PORT B = output in mode 0
-           OUT  DX, AL
-    START:
-           MOV  AL, 00000000B    ; All pins of port A will be (0)
-           MOV  DX, PORTA
-           OUT  DX,AL
+       ; Port Addresses of Ports for the 8255A PPI
+       PORTA    EQU  00H
+       PORTB    EQU  02H
+       PORTC    EQU  04H
 
-           MOV  CX, 0FFH         ; Small Delay
-    L1:
-           LOOP L1
+       CTRLREG  EQU  06H                 ; Port Address for the Control Register
+       CTRLWORD EQU  10000000B
+       ; 10000000B (80H) is the Control Word for the PPI
+       ;
+       ; D7    D6    D5    D4    D3    D2    D1    D0        (8-bit number)
+       ; 1     0     0     0     0     0     0     0
+       ; Set PPI to I/O Mode (D7 is set) and
+       ; Set all Ports to Simple and Output Modes (All others are cleared)
+       ;
+       ; More info on this can be found here:
+       ; [https://github.com/joejo-joestar/uni-codes/blob/09b6c9fb4a770a9a4db902f7408d3b57134582b1/Year%202/Microprocessors%20and%20Interfacing/.FYI1.md]
 
-           MOV  AL, 11111111B    ; All pins of port A will be (1)
-           MOV  DX, PORTA
-           OUT  DX,AL
+                ORG  0000H
 
-           MOV  CX, 0FFH         ; Small Delay again
-    L2:
-           LOOP L2
+                MOV  DX, CTRLREG
+                MOV  AL, CTRLWORD
+                OUT  DX, AL
+       ; OUT instruction Outputs data in accumulator (AL / AX)
+       ; To port address stored in DX
 
-           JMP  START            ; Loop forever
+       START:
+                MOV  AL, 00000000B       ; All pins of Port A will be (0)
+                MOV  DX, PORTA
+                OUT  DX,AL
+
+                MOV  CX, 0FFH            ; Small Delay
+       L1:      LOOP L1
+
+                MOV  AL, 11111111B       ; All pins of Port A will be (1)
+                MOV  DX, PORTA
+                OUT  DX,AL
+
+                MOV  CX, 0FFH            ; Another Small Delay
+       L2:      LOOP L2
+
+                JMP  START               ; Loop Indefinitely
 CODE ENDS
 END
