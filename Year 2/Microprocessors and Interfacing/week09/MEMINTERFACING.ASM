@@ -39,7 +39,7 @@ CODE SEGMENT
 
    L2:      LOOP L2
 
-            POP  CX
+            POP  CX             ; Retrieve stored index (Count)
 
             LOOP L1
 
