@@ -1,53 +1,62 @@
 ; Macro for generating Delay
-DELAY MACRO L               ; Label name is Parameter
-          PUSH CX
-          MOV  CX, 0FFFH
-    L:    LOOP L
-          POP  CX
+DELAY MACRO L                   ; Label name is Parameter
+            PUSH CX             ; Pushing Current CX into Stack
+            MOV  CX, 0FFFH      ; Setting CX as some Large number for delay
+      L:    LOOP L
+            POP  CX             ; Popping count back into CX
 ENDM
 
 CODE SEGMENT
-    PORTA    EQU   00H
-    PORTB    EQU   02H
-    PORTC    EQU   04H
+      ; Port Addresses of Ports for the 8255A PPI
+      PORTA     EQU   00H
+      PORTB     EQU   02H
+      PORTC     EQU   04H
 
-    CTRLREG  EQU   06H
-    CTRLWORD EQU   10000000B
+      CTRLREG   EQU   06H                ; Port Address for the Control Register
+      CTRLWORD  EQU   10000000B
+      ; 10000000B (80H) is the Control Word for the PPI
+      ;
+      ; D7    D6    D5    D4    D3    D2    D1    D0        (8-bit number)
+      ; 1     0     0     0     0     0     0     0
+      ; Set PPI to I/O Mode (D7 is set) and
+      ; Set all Ports to Simple and Output Modes (All others are cleared)
+      ;
+      ; More info on this can be found here:
+      ; [https://github.com/joejo-joestar/uni-codes/blob/09b6c9fb4a770a9a4db902f7408d3b57134582b1/Year%202/Microprocessors%20and%20Interfacing/.FYI1.md]
 
-    LEDON    EQU   00000001B
 
-    START:   
-    ; Setting
-             MOV   AL, CTRLWORD
-             OUT   CTRLREG, AL
+      LEDENABLE EQU   00000001B          ; 8-Bit number to enable LEDs one by one
 
-             MOV   AL, LEDON
-             MOV   CX, 08H
+      START:    
+      ; Initialize the PPI
+                MOV   AL, CTRLWORD
+                OUT   CTRLREG, AL
 
-    ; TY @Sapphire-Starflower
+                MOV   AL, LEDENABLE
+                MOV   CX, 08H
 
-    ; Loop to output though Port A (First half of the LED Array)
-    PALOOP:  
-             OUT   PORTA, AL
-             DELAY L1
-             SHL   AL, 01H
-             LOOP  PALOOP
+      ; Loop to output though Port A (First half of the LED Array)
+      FIRSTHALF:
+                OUT   PORTA, AL
+                DELAY L1
+                SHL   AL, 01H
+                LOOP  FIRSTHALF
 
-    ; Clearing Port A
-             MOV   AL, 00H
-             OUT   PORTA, AL
+      ; Clearing Port A
+                MOV   AL, 00H
+                OUT   PORTA, AL
 
-    ; Resetting AL and CX for next half
-             MOV   AL, LEDON
-             MOV   CX, 08H
-    ; Loop to output though Port B (Second half of the LED Array)
-    PBLOOP:  
-             OUT   PORTB, AL
-             DELAY L2
-             SHL   AL, 01H
-             LOOP  PBLOOP
+      ; Resetting AL and CX for next half
+                MOV   AL, LEDENABLE
+                MOV   CX, 08H
+      ; Loop to output though Port B (Second half of the LED Array)
+      SECNDHALF:
+                OUT   PORTB, AL
+                DELAY L2
+                SHL   AL, 01H
+                LOOP  SECNDHALF
 
-             JMP   START
+                JMP   START
 
 CODE ENDS
 END
