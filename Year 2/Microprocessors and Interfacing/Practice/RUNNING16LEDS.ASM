@@ -34,7 +34,6 @@ CODE SEGMENT
 
                 MOV   AL, LEDENABLE
                 MOV   CX, 08H
-
       ; Loop to output though Port A (First half of the LED Array)
       FIRSTHALF:
                 OUT   PORTA, AL

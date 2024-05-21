@@ -25,7 +25,7 @@ CODE SEGMENT
    ; OUT instruction Outputs data in accumulator (AL / AX)
    ; To port address stored in DX
 
-            MOV  SI, 0S
+            MOV  SI, 00H
 
    L1:      MOV  CX, 2FFFH      ; Delay to retain current output (TODO: Find how much delay tho)
 
