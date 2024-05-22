@@ -18,7 +18,7 @@ CODE SEGMENT
 
             ORG  0000H
 
-   START:
+   START:   
             MOV  DX, CTRLREG
             MOV  AL, CTRLWORD
             OUT  DX, AL
@@ -29,8 +29,8 @@ CODE SEGMENT
 
    L1:      MOV  CX, 2FFFH      ; Delay to retain current output (TODO: Find how much delay tho)
 
-   L2:
-            MOV  AL, CW[SI]     ; For Clockwise Rotation
+   L2:      
+            MOV  AL, STA[SI]    ; For Clockwise Rotation
    ;    MOV  AL, CCW[SI]       ; For Counter Clockwise Rotation
 
             MOV  DX, PORTC
@@ -48,11 +48,11 @@ CODE SEGMENT
    ; turn on and off based on the given input
    ;
    ; Take for eg the input: 1101,
-   ; A    B    C    D
+   ; D    C    B    A
    ; 1    1    0    1
    ;
-   ; This means that the magnets A, B and D will be Active
-   ; And C will be Inactive
+   ; This means that the magnets A, C and D will be Inactive
+   ; And B will be Active
    ; And the Motor will rotate to the right
 
    ; Clockwise Rotation
@@ -67,6 +67,13 @@ CODE SEGMENT
    CCW      DB   1110B
             DB   0111B
             DB   1011B
+            DB   1101B
+
+   ; Counter Clockwise Rotation
+            ORG  2000H          ; Starting Address (to rotate in negative direction)
+   STA      DB   1110B
+            DB   0111B
+            DB   1110B
             DB   1101B
 CODE ENDS
 END
