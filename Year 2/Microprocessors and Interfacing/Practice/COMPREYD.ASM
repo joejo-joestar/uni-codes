@@ -13,8 +13,6 @@
              MOV  AX, @DATA
              MOV  DS, AX
 
-             MOV  AX, 0
-
              LEA  DX, MSG
              MOV  AH, 09H
              INT  21H
@@ -58,6 +56,5 @@
 
              MOV  AH, 4CH
              INT  21H
-
 
 END START

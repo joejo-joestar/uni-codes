@@ -44,7 +44,7 @@ ENDM
                   MOV   AH, 3DH
                   LEA   DX, FNAME+2                 ; Assigning DX the starting adderss of File Name
                   MOV   AL, 0                       ; Open File in Read Mode
-                  MOV   CX, 0                       ; ??
+        ;   MOV   CX, 0                       ; ??
                   INT   21H
         ; AX stores the File Handle
                   MOV   BX, AX                      ; Storing File Handle into BX before modifying AX
@@ -58,6 +58,7 @@ ENDM
 
         READ_FILE:
         ; Read File Operation
+        ; File handle referenced from BX while reading
                   MOV   AH, 3FH
                   MOV   CX, 100                     ; Count of Bytes to read from File
                   LEA   DX, BUFFER                  ; String to Store Bytes to
@@ -79,7 +80,7 @@ ENDM
         EOF:                                        ; End of File
         ; Close File Operation
                   MOV   AH, 3EH
-                  MOV   BX, AX                      ; BX Holds the File Handle
+        ;   MOV   BX, AX                      ; BX Holds the File Handle
                   INT   21H
 
         EXIT:     

@@ -33,11 +33,11 @@ ENDM
                  JAE      SKIP
 
                  CALL     ASCII2HEX        ; Convert Ascii to Hex (just Sub 30H)
-                 MUL      AX               ; Squaring Hex val in AX
+                 MUL      AL             ; Squaring Hex val in AX
                  ADC      RES, AX          ; Adding into Res
        SKIP:
                  LOOP     L
-
+                 
        ; Displaying individual digits: 008FH
        ; Displaying first digit: 0
                  MOV      AX, RES
