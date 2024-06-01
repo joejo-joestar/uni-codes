@@ -7,14 +7,13 @@ CODE SEGMENT
     led     equ 01b
 
     START:  
-    ; initializing pa, pc in simple output and pb as simple output
+    ; initializing pa, pc in simple output and pb as simple input
             mov al, 10000010b
             out cr, al
 
     ; clearing both ports
             mov al, 0h
             out pa, al
-            out pb, al
 
     ENDLESS:                     ; loop to output continuously
     ; moving 01 to enable atleast 1 led
@@ -37,4 +36,3 @@ CODE SEGMENT
             JMP ENDLESS
 CODE ENDS
 END START
-
