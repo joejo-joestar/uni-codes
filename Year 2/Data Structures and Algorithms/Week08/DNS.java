@@ -34,7 +34,7 @@ class SeparateChaining {
 
     // separate chaining logic
     SeparateChaining(int n, long a) {
-        this.n = n;
+        this.n = n; // Size of
         this.a = a;
         bucket = new Node[n];
     }
@@ -68,7 +68,8 @@ class SeparateChaining {
             System.out.println(Ansi.FG_BRIGHT_GREEN + "  DNS insertion successful" + Ansi.RESET);
             return;
         }
-        while (currentNode != null && currentNode.next != null) {
+        // while (currentNode != null && currentNode.next != null) {
+        while (currentNode.next != null) {
             currentNode = currentNode.next;
         }
         currentNode.next = newNode;
