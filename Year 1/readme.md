@@ -1,6 +1,5 @@
 # Codes in Year 1
 
-
 Almost all the codes from the Labs and Tutorials / Practice in CSE Year 1.
 
 ## ⚠️ Note ⚠️
