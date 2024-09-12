@@ -6,13 +6,15 @@ This is just an unofficial repo to store most of my codes from all the different
 
 ## Navigate
 
-- Explore the [Year 1](Year%201/) for Programs in C for Computer Programming Lab (CS F111)
+- Explore the [Year 1](Year%201/) for Programs in
+
+  - [Computer Programming (CS F111)](https://github.com/joejo-joestar/uni-codes/tree/main/Year%201/Computer%20Programming)
 
 - Explore the [Year 2](Year%202/) for Programs in
 
-  - [Digital Design Lab (CS F215)](https://github.com/joejo-joestar/uni_codes/tree/main/Year%202/Digital%20Design)
+  - [Digital Design (CS F215)](https://github.com/joejo-joestar/uni_codes/tree/main/Year%202/Digital%20Design)
 
-  - [Object Oriented Programming Lab (CS F213)](https://github.com/joejo-joestar/uni_codes/tree/main/Year%202/Object%20Oriented%20Programming)
+  - [Object Oriented Programming (CS F213)](https://github.com/joejo-joestar/uni_codes/tree/main/Year%202/Object%20Oriented%20Programming)
 
   - [Data Structures and Algorithms (CS F211)](https://github.com/joejo-joestar/uni-codes/tree/main/Year%202/Data%20Structures%20and%20Algorithms)
 
