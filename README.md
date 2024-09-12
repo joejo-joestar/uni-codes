@@ -18,7 +18,12 @@ This is just an unofficial repo to store most of my codes from all the different
 
   - [Database Management (CS F212)](https://github.com/joejo-joestar/uni-codes/tree/main/Year%202/Database%20Management)
 
-  - [Microprocessors and Interfacing (CS F241)](https://github.com/joejo-joestar/uni-codes/tree/main/Year%202/Microprocessors%20and%20Interfacing) 
+  - [Microprocessors and Interfacing (CS F241)](https://github.com/joejo-joestar/uni-codes/tree/main/Year%202/Microprocessors%20and%20Interfacing)
+
+- Explore the [Year 3](Year%203/) for Programs in
+
+  - [Computer Architecture Lab (CS F342)](https://github.com/joejo-joestar/uni-codes/tree/main/Year%203/Computer%20Architecture)
+
 <br>
 
 ## Authors
