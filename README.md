@@ -1,6 +1,6 @@
 <h1 align="center">🏫 Uni Codes 💻</h1>
 
-This is just an unofficial repo to store most of my codes from all the different CSE courses :)
+This is just an unofficial repo to store most of my codes from all the different CSE courses :3
 
 <br>
 
@@ -35,5 +35,5 @@ This is just an unofficial repo to store most of my codes from all the different
 
 <br>
 <p align = "center">
-<img src="/Year%202/Digital%20Design/.assets/InBreadCar.png" alt="In Bread Car" title="In Bread Car">
+<img src="https://www.gstatic.com/android/keyboard/emojikitchen/20240206/u1f4bb/u1f4bb_u1f431.png" alt="In Bread Car" title="In Bread Car" width="128">
 </p>
