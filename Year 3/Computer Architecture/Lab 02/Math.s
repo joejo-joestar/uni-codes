@@ -9,6 +9,3 @@ X:  .word   0
 .text
 main:
     # x = (a - b) + (c - 5)
-
-    addi    $v0,    $zero,      4       # $t0 = $t1 + 0
-    

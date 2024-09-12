@@ -2,6 +2,10 @@
 
 All the codes written for Digital Design course in Year 2 Sem 1.
 
+Most of theme programs can be simulated on [EDA Playground] (https://edaplayground.com) ([see below](#how-to-run-the-code)).
+
+The FPGA programs require an FPGA to test on. The software used for those experiments is the [Intel Quartus® Prime](https://www.intel.com/content/www/us/en/software-kit/825278/intel-quartus-prime-lite-edition-design-software-version-23-1-1-for-windows.html).
+
 <br>
 
 ---
@@ -63,3 +67,10 @@ The final output should be
 <img src="/Year%202/Digital%20Design/.assets/EPWave_Binary_op.png" alt="EPWave Binary Output" title="EPWave Binary Output">
 
 </div>
+
+<br>
+
+---
+
+## Useful VS Code Extensions
+- Formatting, Snippets and Syntax Highlighting [Masahiro Hiramori | Verilog-HDL/SystemVerilog/Bluespec SystemVerilog](https://marketplace.visualstudio.com/items?itemName=mshr-h.VerilogHDL)
