@@ -35,5 +35,5 @@ This is just an unofficial repo to store most of my codes from all the different
 
 <br>
 <p align = "center">
-<img src="https://www.gstatic.com/android/keyboard/emojikitchen/20240206/u1f4bb/u1f4bb_u1f431.png" alt="In Bread Car" title="In Bread Car" width="128">
+  <img src="https://www.gstatic.com/android/keyboard/emojikitchen/20240206/u1f4bb/u1f4bb_u1f431.png" alt="Coding Car" title="Coding Car" width="128">
 </p>
