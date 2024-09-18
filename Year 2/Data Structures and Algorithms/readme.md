@@ -2,6 +2,4 @@
 
 All the codes written for Data Structures and Algorithm course in Year 2 Sem 2.
 
-<br>
-
----
+For more info on these codes please visit the [wiki](https://github.com/joejo-joestar/uni-codes/wiki/Data-Structures-and-Algorithms)
