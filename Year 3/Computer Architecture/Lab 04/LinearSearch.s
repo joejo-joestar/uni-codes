@@ -25,7 +25,7 @@ loop:
     lw      $t1,    0($s0)                                          # $t1 = arr[i]
     beq     $v0,    $t1,        isFound                             # if v0 == t1, goto isFound
 
-    addi    $t2,    $t2,        1                                   # t2++
+    addi    $t2,    $t2,        1                                   # $t2++
     addi    $s0,    $s0,        4                                   # arr++
     addi    $t0,    $t0,        -1                                  # i--
     bne     $t0,    $zero,      loop                                # if i != 0, goto loop

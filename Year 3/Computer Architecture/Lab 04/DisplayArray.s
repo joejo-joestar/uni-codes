@@ -7,7 +7,7 @@ crlf:   .asciiz "\n"
 .text
 main:
     la      $t0,    arr                                         # load the base address of the array
-    lw      $t1,    count                                       # load the number of elements in the array
+    lw      $t1,    count                                       # $t1 = count
 
 loop:
     # Print the element
@@ -20,7 +20,7 @@ loop:
     addi    $v0,    $zero,  4
     syscall
 
-    addi    $t0,    $t0,    4                                   # $t0++
+    addi    $t0,    $t0,    4                                   # arr++
 
     addi    $t1,    $t1,    -1                                  # $t1--
     bne     $t1,    $zero,  loop                                # if $t1 != 0, continue the loop
