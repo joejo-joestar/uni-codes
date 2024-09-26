@@ -1,3 +1,4 @@
+    # Check if a number is odd or even
 .data
 msg1:   .asciiz "Enter a number: "
 even:   .asciiz "Number is Even!"

@@ -1,10 +1,9 @@
+    # Ignore
 .data
-
-    msg1    :,      .asciiz,    "X="
-A:  .word   7
-B:  .word   6
-C:  .word   5
-X:  .word   0
+a:  .word   7
+b:  .word   6
+c:  .word   5
+msg1:    .asciiz "x="
 
 .text
 main:

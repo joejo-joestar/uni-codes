@@ -1,3 +1,4 @@
+    # Sum of two arrays
 .data
 arr1:   .word   1, 2, 3, 4, 5
 arr2:   .word   6, 7, 8, 9, 10

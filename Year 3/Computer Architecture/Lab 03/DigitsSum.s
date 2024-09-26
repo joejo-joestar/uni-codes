@@ -1,3 +1,4 @@
+    # Sum of digits of a user input integer
 .data
 msg1:   .asciiz "Enter a number: "
 msg2:   .asciiz "Sum of digits is: "

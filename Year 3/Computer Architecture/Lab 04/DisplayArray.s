@@ -1,3 +1,4 @@
+    # Display the elements of an array
 .data
 arr:    .word   1, 24, 56, 78, 90, 100, 323, 4326, 57456, 74554
 count:  .word   10
@@ -14,7 +15,7 @@ loop:
     addi    $v0,    $zero,  1
     syscall
 
-# Print a newline
+    # Print a newline
     la      $a0,    crlf
     addi    $v0,    $zero,  4
     syscall

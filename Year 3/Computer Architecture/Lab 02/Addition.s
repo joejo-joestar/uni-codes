@@ -1,3 +1,4 @@
+    # Add two user input numbers and display the sum
 .data
 msg1:   .asciiz "Enter the first number: "
 msg2:   .asciiz "Enter the second number: "

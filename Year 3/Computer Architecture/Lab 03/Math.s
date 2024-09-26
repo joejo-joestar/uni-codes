@@ -1,3 +1,4 @@
+    # Program to perform the following operation:
     # a = a * b / c % d + e
     # a = $s0
     # b = $t0

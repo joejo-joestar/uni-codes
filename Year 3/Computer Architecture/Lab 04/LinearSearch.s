@@ -1,3 +1,4 @@
+    # Search for an element in an array using linear search algorithm
 .data
 arr:        .word   1, 24, 56, 78, 90, 100, 323, 4326, 57456, 74554
 count:      .word   10

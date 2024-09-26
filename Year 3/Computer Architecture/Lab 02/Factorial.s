@@ -1,3 +1,4 @@
+    # Find the factorial of a user input number.
 .data
 msg1:   .asciiz "Enter a number: "
 msg2:   .asciiz "The factorial is: "

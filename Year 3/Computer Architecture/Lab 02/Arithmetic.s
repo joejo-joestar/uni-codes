@@ -1,9 +1,10 @@
+    # Multiply and divide two user input numbers and display the product, quotient, and remainder.
 .data
 msg1:   .asciiz "Enter the first number: "
 msg2:   .asciiz "Enter the second number: "
-msg3:   .asciiz "The quotient is: "
-crlf:   .asciiz "\n"
-msg4:   .asciiz "The remainder is: "
+msg3:   .asciiz "The product is: "
+msg4:   .asciiz "The quotient is: "
+msg5:   .asciiz "The remainder is: "
 
 .text
 main:
@@ -25,26 +26,18 @@ main:
 
     add     $t1,    $v0,    $zero           # Move 2nd num to t1
 
-    div     $t0,    $t1                     # Find Product
+    mult    $t0,    $t1                     # Find Product
 
     addi    $v0,    $zero,  4
     la      $a0,    msg3
     syscall
 
     addi    $v0,    $zero,  1
-    mflo    $a0                             # print upper 32 bits
-    syscall
-
-    addi    $v0,    $zero,  4
-    la      $a0,    crlf
-    syscall
-
-    addi    $v0,    $zero,  4
-    la      $a0,    msg4
+    mfhi    $a0                             # print upper 32 bits
     syscall
 
     addi    $v0,    $zero,  1
-    mfhi    $a0                             # print lower 32 bits
+    mflo    $a0                             # print lower 32 bits
     syscall
 
     addi    $v0,    $zero,  10
