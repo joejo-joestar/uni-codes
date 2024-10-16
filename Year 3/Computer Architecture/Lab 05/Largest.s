@@ -1,6 +1,6 @@
     # Find the largest element in an array
 .data
-arr:        .word   1, 24, 56, 78, 90, 74554, 57456, 100, 323, 4326
+arr:        .word   1, 24, 56, 78, 90, 754, 57456, 100, 323, 4326
 count:      .word   10
 largest:    .asciiz "Largest element: "
 
@@ -22,7 +22,7 @@ loop:
     j       end                                                     # jump to end
 
 isLarger:
-    add     $t2,    $zero,      $t1                                 # $t1 = $t2 + 0
+    add     $t2,    $zero,      $t1                                 # $t2 = $t1 + 0
     addi    $s0,    $s0,        4                                   # arr++
     addi    $t0,    $t0,        -1                                  # i--
     bne     $t0,    $zero,      loop                                # if i != 0, goto loop
