@@ -1,5 +1,5 @@
     # Calculate the area of a circle
-
+# Storing data in data segment
 .data
 msg1:   .asciiz "Enter the radius of the circle: "
 msg2:   .asciiz "The area of the circle is: "
