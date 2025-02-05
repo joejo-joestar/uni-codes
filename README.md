@@ -25,6 +25,10 @@ This is just an unofficial repo to store most of my codes from all the different
 - Explore the [Year 3](Year%203/) for Programs in
 
   - [Computer Architecture (CS F342)](https://github.com/joejo-joestar/uni-codes/tree/main/Year%203/Computer%20Architecture)
+  
+  - [Compiler Construction (CS F363)](https://github.com/joejo-joestar/uni-codes/tree/main/Year%203/Compiler%20Construction)
+  
+  - [Computer Networks (CS F303)](https://github.com/joejo-joestar/uni-codes/tree/main/Year%203/Computer%20Networks)
 
 <br>
 
