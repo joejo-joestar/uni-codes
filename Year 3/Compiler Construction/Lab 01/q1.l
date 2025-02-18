@@ -1,4 +1,4 @@
-/* Rules Section */
+/* MARK: Rules Section */
 /* RegEx <space> Action */
 %%
     // Regex Definitions (in order)
