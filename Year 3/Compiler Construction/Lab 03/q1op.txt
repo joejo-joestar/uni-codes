@@ -1,0 +1,23 @@
+<plus, +>
+<minus, ->
+<mul, *>
+<div, />
+<abs, |>
+<mystery char, d>
+<mystery char, t>
+<mystery char, e>
+<mystery char, s>
+<mystery char, t>
+<number, 12323> (5)
+<mystery char, h>
+<number, 3> (1)
+<mystery char, _>
+<mystery char, e>
+<number, 2> (1)
+<minus, ->
+<number, 55> (2)
+<newline>
+<plus, +>
+<number, 312> (3)
+<space> (1)
+<number, 433> (3)
