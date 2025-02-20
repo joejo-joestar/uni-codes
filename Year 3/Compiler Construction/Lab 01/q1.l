@@ -1,15 +1,15 @@
 /* MARK: Rules Section */
-/* RegEx <space> Action */
 %%
-    // Regex Definitions (in order)
-    // Character 'f'
-    // Any Vowel
-    // Newline and Tab
-    // Period ('.') Character
-    // Keyword "while"
-    // Word with 3 characters starting with c and ending with t
-    // Word starting with con
-    // Word ending with te
+    /* Regex Definitions (in order) */
+    /*  Character 'f'
+        Any Vowel
+        Newline and Tab
+        Period ('.') Character
+        Keyword "while"
+        Word with 3 characters starting with c and ending with t
+        Word starting with con
+        Word ending with te
+    */
 
 f           printf("`f` found\n");
 
