@@ -6,18 +6,12 @@ int letter = 0, word = 0, line = 1;
 %}
 
     /* MARK: Declaration Section */
-l [A-Za-z]
-newline \n
+l [A-Za-z]{6,}
 
     /* MARK: Rules Section */
 %%
-{l}+    {
-            if (yyleng >= 6) {
-                letter += yyleng;
-                word++;
-            }
-        }
-{newline}       { line++; }
+{l}             { letter += yyleng; word++; }
+\n              { line++; }
 [^A-Za-z\n]     {}
 %%
 
