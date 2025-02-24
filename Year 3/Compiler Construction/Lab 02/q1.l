@@ -15,7 +15,8 @@ s [+-]
 {w}+                                                fprintf(yyout, "<word, %s> (%d)", yytext, yyleng);
 {d}+                                                fprintf(yyout, "<integer, %s> (%d)", yytext, yyleng);
 {i}+({i}|{d})*                                      fprintf(yyout, "<identifier, %s> (%d)", yytext, yyleng);
-{s}?(({d}+\.?{d}*)|({d}*\.?{d}+))([eE]{s}?{d}*)?    fprintf(yyout, "<float, %s> (%d)", yytext, yyleng);
+(({d}+\.?{d}*)|({d}*\.?{d}+))([eE]{s}?{d}+)?        fprintf(yyout, "<unsigned float, %s> (%d)", yytext, yyleng);
+{s}?(({d}+\.?{d}*)|({d}*\.?{d}+))([eE]{s}?{d}+)?    fprintf(yyout, "<signed float, %s> (%d)", yytext, yyleng);
 %%
 
     /* MARK: AuxilIary Functions */
