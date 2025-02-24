@@ -5,8 +5,7 @@
 
     /* MARK: Declaration Section */
 d       [0-9]
-newline \n
-space   [\t\f\r ]
+space   [\t ]
 
     /* MARK: Rules Section */
 %%
@@ -17,7 +16,7 @@ space   [\t\f\r ]
 \/          { fprintf(yyout, "<div, %s>\n", yytext); }
 \|          { fprintf(yyout, "<abs, %s>\n", yytext); }
 {d}+        { fprintf(yyout, "<number, %s> (%d)\n", yytext, yyleng); }
-{newline}   { fprintf(yyout, "<newline>\n"); }
+\n          { fprintf(yyout, "<newline>\n"); }
 {space}     { fprintf(yyout, "<space> (%d)\n", yyleng); } /* whitespace */
 .           { fprintf(yyout, "<mystery char, %s>\n", yytext); }
 %%

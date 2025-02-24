@@ -1,4 +1,6 @@
 hello world
 testing code
 empty line
+test
+test    testing
 the clever brown fox jumps over the lazy dog

@@ -15,6 +15,11 @@ l [A-Za-z]{6,}
 [^A-Za-z\n]     {}
 %%
 
+    /* MARK: AuxilIary Functions */
+int yywrap() {
+    return 1;
+}
+
     /* MARK: Main Function */
 int main() {
     yyin = fopen("q3ip.txt", "r");

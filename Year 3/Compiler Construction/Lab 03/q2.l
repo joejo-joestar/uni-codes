@@ -7,14 +7,18 @@ int letter = 0, word = 0, line = 1;
 
     /* MARK: Declaration Section */
 l [A-Za-z]
-newline \n
 
     /* MARK: Rules Section */
 %%
 {l}+            { letter += yyleng; word++; }
-{newline}       { line++; }
+\n              { line++; }
 [^A-Za-z\n]     {} /* Ignore all other characters */
 %%
+
+    /* MARK: AuxilIary Functions */
+int yywrap() {
+    return 1;
+}
 
     /* MARK: Main Function */
 int main() {
