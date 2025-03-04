@@ -729,42 +729,42 @@ case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
 #line 10 "q3.l"
-{return NEWLINE;}
+{ return NEWLINE; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
 #line 11 "q3.l"
-{yylval = atoi(yytext); return INT;}
+{ yylval.num = atoi(yytext); return INT; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
 #line 12 "q3.l"
-{return PLUS;}
+{ return PLUS; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
 #line 13 "q3.l"
-{return MINUS;}
+{ return MINUS; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
 #line 14 "q3.l"
-{return MUL;}
+{ return MUL; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
 #line 15 "q3.l"
-{return DIV;}
+{ return DIV; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
 #line 16 "q3.l"
-{return LP;}
+{ return LP; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
 #line 17 "q3.l"
-{return RP;}
+{ return RP; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
@@ -774,7 +774,7 @@ YY_RULE_SETUP
 case 10:
 YY_RULE_SETUP
 #line 19 "q3.l"
-{printf("unrecognized char\n");}
+{ printf("unrecognized char\n"); }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP

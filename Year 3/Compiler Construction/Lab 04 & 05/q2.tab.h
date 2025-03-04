@@ -35,8 +35,8 @@
    especially those whose name start with YY_ or yy_.  They are
    private implementation details that can be changed or removed.  */
 
-#ifndef YY_YY_Q1_TAB_H_INCLUDED
-# define YY_YY_Q1_TAB_H_INCLUDED
+#ifndef YY_YY_Q2_TAB_H_INCLUDED
+# define YY_YY_Q2_TAB_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -56,8 +56,8 @@ extern int yydebug;
     YYUNDEF = 257,                 /* "invalid token"  */
     PLUS = 258,                    /* PLUS  */
     MINUS = 259,                   /* MINUS  */
-    INT = 260,                     /* INT  */
-    NEWLINE = 261                  /* NEWLINE  */
+    NEWLINE = 260,                 /* NEWLINE  */
+    INT = 261                      /* INT  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -68,12 +68,21 @@ extern int yydebug;
 #define YYUNDEF 257
 #define PLUS 258
 #define MINUS 259
-#define INT 260
-#define NEWLINE 261
+#define NEWLINE 260
+#define INT 261
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef int YYSTYPE;
+union YYSTYPE
+{
+#line 9 "q2.y"
+
+    int num;
+
+#line 83 "q2.tab.h"
+
+};
+typedef union YYSTYPE YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
 #endif
@@ -85,4 +94,4 @@ extern YYSTYPE yylval;
 int yyparse (void);
 
 
-#endif /* !YY_YY_Q1_TAB_H_INCLUDED  */
+#endif /* !YY_YY_Q2_TAB_H_INCLUDED  */
