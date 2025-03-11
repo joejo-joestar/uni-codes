@@ -1,0 +1,680 @@
+State 2 conflicts: 7 reduce/reduce
+
+
+Grammar
+
+    0 $accept: S $end
+
+    1 S: I NL
+    2  | F NL
+
+    3 I: INT
+    4  | LP I RP
+    5  | MINUS I
+    6  | PLUS I
+    7  | I POW I
+    8  | I PLUS I
+    9  | I MINUS I
+   10  | I DIV I
+   11  | I MUL I
+
+   12 F: FLOAT
+   13  | INT
+   14  | LP F RP
+   15  | MINUS F
+   16  | PLUS F
+   17  | F POW F
+   18  | F PLUS F
+   19  | F MINUS F
+   20  | F DIV F
+   21  | F MUL F
+
+
+Terminals, with rules where they appear
+
+    $end (0) 0
+    error (256)
+    NL (258) 1 2
+    FLOAT <floatval> (259) 12
+    INT <intval> (260) 3 13
+    PLUS (261) 6 8 16 18
+    MINUS (262) 5 9 15 19
+    MUL (263) 11 21
+    DIV (264) 10 20
+    LP (265) 4 14
+    RP (266) 4 14
+    UMINUS (267)
+    UPLUS (268)
+    POW (269) 7 17
+
+
+Nonterminals, with rules where they appear
+
+    $accept (15)
+        on left: 0
+    S (16)
+        on left: 1 2
+        on right: 0
+    I <intval> (17)
+        on left: 3 4 5 6 7 8 9 10 11
+        on right: 1 4 5 6 7 8 9 10 11
+    F <floatval> (18)
+        on left: 12 13 14 15 16 17 18 19 20 21
+        on right: 2 14 15 16 17 18 19 20 21
+
+
+State 0
+
+    0 $accept: • S $end
+
+    FLOAT  shift, and go to state 1
+    INT    shift, and go to state 2
+    PLUS   shift, and go to state 3
+    MINUS  shift, and go to state 4
+    LP     shift, and go to state 5
+
+    S  go to state 6
+    I  go to state 7
+    F  go to state 8
+
+
+State 1
+
+   12 F: FLOAT •
+
+    $default  reduce using rule 12 (F)
+
+
+State 2
+
+    3 I: INT •
+   13 F: INT •
+
+    NL        reduce using rule 3 (I)
+    NL        [reduce using rule 13 (F)]
+    PLUS      reduce using rule 3 (I)
+    PLUS      [reduce using rule 13 (F)]
+    MINUS     reduce using rule 3 (I)
+    MINUS     [reduce using rule 13 (F)]
+    MUL       reduce using rule 3 (I)
+    MUL       [reduce using rule 13 (F)]
+    DIV       reduce using rule 3 (I)
+    DIV       [reduce using rule 13 (F)]
+    RP        reduce using rule 3 (I)
+    RP        [reduce using rule 13 (F)]
+    POW       reduce using rule 3 (I)
+    POW       [reduce using rule 13 (F)]
+    $default  reduce using rule 3 (I)
+
+
+State 3
+
+    6 I: PLUS • I
+   16 F: PLUS • F
+
+    FLOAT  shift, and go to state 1
+    INT    shift, and go to state 2
+    PLUS   shift, and go to state 3
+    MINUS  shift, and go to state 4
+    LP     shift, and go to state 5
+
+    I  go to state 9
+    F  go to state 10
+
+
+State 4
+
+    5 I: MINUS • I
+   15 F: MINUS • F
+
+    FLOAT  shift, and go to state 1
+    INT    shift, and go to state 2
+    PLUS   shift, and go to state 3
+    MINUS  shift, and go to state 4
+    LP     shift, and go to state 5
+
+    I  go to state 11
+    F  go to state 12
+
+
+State 5
+
+    4 I: LP • I RP
+   14 F: LP • F RP
+
+    FLOAT  shift, and go to state 1
+    INT    shift, and go to state 2
+    PLUS   shift, and go to state 3
+    MINUS  shift, and go to state 4
+    LP     shift, and go to state 5
+
+    I  go to state 13
+    F  go to state 14
+
+
+State 6
+
+    0 $accept: S • $end
+
+    $end  shift, and go to state 15
+
+
+State 7
+
+    1 S: I • NL
+    7 I: I • POW I
+    8  | I • PLUS I
+    9  | I • MINUS I
+   10  | I • DIV I
+   11  | I • MUL I
+
+    NL     shift, and go to state 16
+    PLUS   shift, and go to state 17
+    MINUS  shift, and go to state 18
+    MUL    shift, and go to state 19
+    DIV    shift, and go to state 20
+    POW    shift, and go to state 21
+
+
+State 8
+
+    2 S: F • NL
+   17 F: F • POW F
+   18  | F • PLUS F
+   19  | F • MINUS F
+   20  | F • DIV F
+   21  | F • MUL F
+
+    NL     shift, and go to state 22
+    PLUS   shift, and go to state 23
+    MINUS  shift, and go to state 24
+    MUL    shift, and go to state 25
+    DIV    shift, and go to state 26
+    POW    shift, and go to state 27
+
+
+State 9
+
+    6 I: PLUS I •
+    7  | I • POW I
+    8  | I • PLUS I
+    9  | I • MINUS I
+   10  | I • DIV I
+   11  | I • MUL I
+
+    POW  shift, and go to state 21
+
+    $default  reduce using rule 6 (I)
+
+
+State 10
+
+   16 F: PLUS F •
+   17  | F • POW F
+   18  | F • PLUS F
+   19  | F • MINUS F
+   20  | F • DIV F
+   21  | F • MUL F
+
+    POW  shift, and go to state 27
+
+    $default  reduce using rule 16 (F)
+
+
+State 11
+
+    5 I: MINUS I •
+    7  | I • POW I
+    8  | I • PLUS I
+    9  | I • MINUS I
+   10  | I • DIV I
+   11  | I • MUL I
+
+    POW  shift, and go to state 21
+
+    $default  reduce using rule 5 (I)
+
+
+State 12
+
+   15 F: MINUS F •
+   17  | F • POW F
+   18  | F • PLUS F
+   19  | F • MINUS F
+   20  | F • DIV F
+   21  | F • MUL F
+
+    POW  shift, and go to state 27
+
+    $default  reduce using rule 15 (F)
+
+
+State 13
+
+    4 I: LP I • RP
+    7  | I • POW I
+    8  | I • PLUS I
+    9  | I • MINUS I
+   10  | I • DIV I
+   11  | I • MUL I
+
+    PLUS   shift, and go to state 17
+    MINUS  shift, and go to state 18
+    MUL    shift, and go to state 19
+    DIV    shift, and go to state 20
+    RP     shift, and go to state 28
+    POW    shift, and go to state 21
+
+
+State 14
+
+   14 F: LP F • RP
+   17  | F • POW F
+   18  | F • PLUS F
+   19  | F • MINUS F
+   20  | F • DIV F
+   21  | F • MUL F
+
+    PLUS   shift, and go to state 23
+    MINUS  shift, and go to state 24
+    MUL    shift, and go to state 25
+    DIV    shift, and go to state 26
+    RP     shift, and go to state 29
+    POW    shift, and go to state 27
+
+
+State 15
+
+    0 $accept: S $end •
+
+    $default  accept
+
+
+State 16
+
+    1 S: I NL •
+
+    $default  reduce using rule 1 (S)
+
+
+State 17
+
+    8 I: I PLUS • I
+
+    INT    shift, and go to state 30
+    PLUS   shift, and go to state 31
+    MINUS  shift, and go to state 32
+    LP     shift, and go to state 33
+
+    I  go to state 34
+
+
+State 18
+
+    9 I: I MINUS • I
+
+    INT    shift, and go to state 30
+    PLUS   shift, and go to state 31
+    MINUS  shift, and go to state 32
+    LP     shift, and go to state 33
+
+    I  go to state 35
+
+
+State 19
+
+   11 I: I MUL • I
+
+    INT    shift, and go to state 30
+    PLUS   shift, and go to state 31
+    MINUS  shift, and go to state 32
+    LP     shift, and go to state 33
+
+    I  go to state 36
+
+
+State 20
+
+   10 I: I DIV • I
+
+    INT    shift, and go to state 30
+    PLUS   shift, and go to state 31
+    MINUS  shift, and go to state 32
+    LP     shift, and go to state 33
+
+    I  go to state 37
+
+
+State 21
+
+    7 I: I POW • I
+
+    INT    shift, and go to state 30
+    PLUS   shift, and go to state 31
+    MINUS  shift, and go to state 32
+    LP     shift, and go to state 33
+
+    I  go to state 38
+
+
+State 22
+
+    2 S: F NL •
+
+    $default  reduce using rule 2 (S)
+
+
+State 23
+
+   18 F: F PLUS • F
+
+    FLOAT  shift, and go to state 1
+    INT    shift, and go to state 39
+    PLUS   shift, and go to state 40
+    MINUS  shift, and go to state 41
+    LP     shift, and go to state 42
+
+    F  go to state 43
+
+
+State 24
+
+   19 F: F MINUS • F
+
+    FLOAT  shift, and go to state 1
+    INT    shift, and go to state 39
+    PLUS   shift, and go to state 40
+    MINUS  shift, and go to state 41
+    LP     shift, and go to state 42
+
+    F  go to state 44
+
+
+State 25
+
+   21 F: F MUL • F
+
+    FLOAT  shift, and go to state 1
+    INT    shift, and go to state 39
+    PLUS   shift, and go to state 40
+    MINUS  shift, and go to state 41
+    LP     shift, and go to state 42
+
+    F  go to state 45
+
+
+State 26
+
+   20 F: F DIV • F
+
+    FLOAT  shift, and go to state 1
+    INT    shift, and go to state 39
+    PLUS   shift, and go to state 40
+    MINUS  shift, and go to state 41
+    LP     shift, and go to state 42
+
+    F  go to state 46
+
+
+State 27
+
+   17 F: F POW • F
+
+    FLOAT  shift, and go to state 1
+    INT    shift, and go to state 39
+    PLUS   shift, and go to state 40
+    MINUS  shift, and go to state 41
+    LP     shift, and go to state 42
+
+    F  go to state 47
+
+
+State 28
+
+    4 I: LP I RP •
+
+    $default  reduce using rule 4 (I)
+
+
+State 29
+
+   14 F: LP F RP •
+
+    $default  reduce using rule 14 (F)
+
+
+State 30
+
+    3 I: INT •
+
+    $default  reduce using rule 3 (I)
+
+
+State 31
+
+    6 I: PLUS • I
+
+    INT    shift, and go to state 30
+    PLUS   shift, and go to state 31
+    MINUS  shift, and go to state 32
+    LP     shift, and go to state 33
+
+    I  go to state 9
+
+
+State 32
+
+    5 I: MINUS • I
+
+    INT    shift, and go to state 30
+    PLUS   shift, and go to state 31
+    MINUS  shift, and go to state 32
+    LP     shift, and go to state 33
+
+    I  go to state 11
+
+
+State 33
+
+    4 I: LP • I RP
+
+    INT    shift, and go to state 30
+    PLUS   shift, and go to state 31
+    MINUS  shift, and go to state 32
+    LP     shift, and go to state 33
+
+    I  go to state 13
+
+
+State 34
+
+    7 I: I • POW I
+    8  | I • PLUS I
+    8  | I PLUS I •
+    9  | I • MINUS I
+   10  | I • DIV I
+   11  | I • MUL I
+
+    MUL  shift, and go to state 19
+    DIV  shift, and go to state 20
+    POW  shift, and go to state 21
+
+    $default  reduce using rule 8 (I)
+
+
+State 35
+
+    7 I: I • POW I
+    8  | I • PLUS I
+    9  | I • MINUS I
+    9  | I MINUS I •
+   10  | I • DIV I
+   11  | I • MUL I
+
+    MUL  shift, and go to state 19
+    DIV  shift, and go to state 20
+    POW  shift, and go to state 21
+
+    $default  reduce using rule 9 (I)
+
+
+State 36
+
+    7 I: I • POW I
+    8  | I • PLUS I
+    9  | I • MINUS I
+   10  | I • DIV I
+   11  | I • MUL I
+   11  | I MUL I •
+
+    POW  shift, and go to state 21
+
+    $default  reduce using rule 11 (I)
+
+
+State 37
+
+    7 I: I • POW I
+    8  | I • PLUS I
+    9  | I • MINUS I
+   10  | I • DIV I
+   10  | I DIV I •
+   11  | I • MUL I
+
+    POW  shift, and go to state 21
+
+    $default  reduce using rule 10 (I)
+
+
+State 38
+
+    7 I: I • POW I
+    7  | I POW I •
+    8  | I • PLUS I
+    9  | I • MINUS I
+   10  | I • DIV I
+   11  | I • MUL I
+
+    POW  shift, and go to state 21
+
+    $default  reduce using rule 7 (I)
+
+
+State 39
+
+   13 F: INT •
+
+    $default  reduce using rule 13 (F)
+
+
+State 40
+
+   16 F: PLUS • F
+
+    FLOAT  shift, and go to state 1
+    INT    shift, and go to state 39
+    PLUS   shift, and go to state 40
+    MINUS  shift, and go to state 41
+    LP     shift, and go to state 42
+
+    F  go to state 10
+
+
+State 41
+
+   15 F: MINUS • F
+
+    FLOAT  shift, and go to state 1
+    INT    shift, and go to state 39
+    PLUS   shift, and go to state 40
+    MINUS  shift, and go to state 41
+    LP     shift, and go to state 42
+
+    F  go to state 12
+
+
+State 42
+
+   14 F: LP • F RP
+
+    FLOAT  shift, and go to state 1
+    INT    shift, and go to state 39
+    PLUS   shift, and go to state 40
+    MINUS  shift, and go to state 41
+    LP     shift, and go to state 42
+
+    F  go to state 14
+
+
+State 43
+
+   17 F: F • POW F
+   18  | F • PLUS F
+   18  | F PLUS F •
+   19  | F • MINUS F
+   20  | F • DIV F
+   21  | F • MUL F
+
+    MUL  shift, and go to state 25
+    DIV  shift, and go to state 26
+    POW  shift, and go to state 27
+
+    $default  reduce using rule 18 (F)
+
+
+State 44
+
+   17 F: F • POW F
+   18  | F • PLUS F
+   19  | F • MINUS F
+   19  | F MINUS F •
+   20  | F • DIV F
+   21  | F • MUL F
+
+    MUL  shift, and go to state 25
+    DIV  shift, and go to state 26
+    POW  shift, and go to state 27
+
+    $default  reduce using rule 19 (F)
+
+
+State 45
+
+   17 F: F • POW F
+   18  | F • PLUS F
+   19  | F • MINUS F
+   20  | F • DIV F
+   21  | F • MUL F
+   21  | F MUL F •
+
+    POW  shift, and go to state 27
+
+    $default  reduce using rule 21 (F)
+
+
+State 46
+
+   17 F: F • POW F
+   18  | F • PLUS F
+   19  | F • MINUS F
+   20  | F • DIV F
+   20  | F DIV F •
+   21  | F • MUL F
+
+    POW  shift, and go to state 27
+
+    $default  reduce using rule 20 (F)
+
+
+State 47
+
+   17 F: F • POW F
+   17  | F POW F •
+   18  | F • PLUS F
+   19  | F • MINUS F
+   20  | F • DIV F
+   21  | F • MUL F
+
+    POW  shift, and go to state 27
+
+    $default  reduce using rule 17 (F)
