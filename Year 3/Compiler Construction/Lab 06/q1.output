@@ -1,0 +1,365 @@
+State 12 conflicts: 2 reduce/reduce
+State 18 conflicts: 1 reduce/reduce
+State 32 conflicts: 1 shift/reduce
+
+
+Grammar
+
+    0 $accept: PGM $end
+
+    1 PGM: HEADER INT MAIN LP RP LCB BODY RCP
+
+    2 BODY: DECL_STMTS PROG_STMTS
+
+    3 DECL_STMTS: DECL_STMT
+    4           | DECL_STMT DECL_STMTS
+    5           | ε
+
+    6 PROG_STMTS: PROG_STMT
+    7           | PROG_STMT PROG_STMTS
+    8           | ε
+
+    9 DECL_STMT: INT VAR_LIST SC
+
+   10 VAR_LIST: VAR
+   11         | VAR COMMA VAR_LIST
+
+   12 PROG_STMT: VAR EQ EXPR SC
+
+   13 EXPR: VAR
+   14     | LP EXPR RP
+   15     | EXPR OP EXPR
+
+
+Terminals, with rules where they appear
+
+    $end (0) 0
+    error (256)
+    HEADER (258) 1
+    INT (259) 1 9
+    MAIN (260) 1
+    LP (261) 1 14
+    RP (262) 1 14
+    LCB (263) 1
+    RCP (264) 1
+    SC (265) 9 12
+    VAR (266) 10 11 12 13
+    COMMA (267) 11
+    EQ (268) 12
+    OP (269) 15
+
+
+Nonterminals, with rules where they appear
+
+    $accept (15)
+        on left: 0
+    PGM (16)
+        on left: 1
+        on right: 0
+    BODY (17)
+        on left: 2
+        on right: 1
+    DECL_STMTS (18)
+        on left: 3 4 5
+        on right: 2 4
+    PROG_STMTS (19)
+        on left: 6 7 8
+        on right: 2 7
+    DECL_STMT (20)
+        on left: 9
+        on right: 3 4
+    VAR_LIST (21)
+        on left: 10 11
+        on right: 9 11
+    PROG_STMT (22)
+        on left: 12
+        on right: 6 7
+    EXPR (23)
+        on left: 13 14 15
+        on right: 12 14 15
+
+
+State 0
+
+    0 $accept: • PGM $end
+
+    HEADER  shift, and go to state 1
+
+    PGM  go to state 2
+
+
+State 1
+
+    1 PGM: HEADER • INT MAIN LP RP LCB BODY RCP
+
+    INT  shift, and go to state 3
+
+
+State 2
+
+    0 $accept: PGM • $end
+
+    $end  shift, and go to state 4
+
+
+State 3
+
+    1 PGM: HEADER INT • MAIN LP RP LCB BODY RCP
+
+    MAIN  shift, and go to state 5
+
+
+State 4
+
+    0 $accept: PGM $end •
+
+    $default  accept
+
+
+State 5
+
+    1 PGM: HEADER INT MAIN • LP RP LCB BODY RCP
+
+    LP  shift, and go to state 6
+
+
+State 6
+
+    1 PGM: HEADER INT MAIN LP • RP LCB BODY RCP
+
+    RP  shift, and go to state 7
+
+
+State 7
+
+    1 PGM: HEADER INT MAIN LP RP • LCB BODY RCP
+
+    LCB  shift, and go to state 8
+
+
+State 8
+
+    1 PGM: HEADER INT MAIN LP RP LCB • BODY RCP
+
+    INT  shift, and go to state 9
+
+    $default  reduce using rule 5 (DECL_STMTS)
+
+    BODY        go to state 10
+    DECL_STMTS  go to state 11
+    DECL_STMT   go to state 12
+
+
+State 9
+
+    9 DECL_STMT: INT • VAR_LIST SC
+
+    VAR  shift, and go to state 13
+
+    VAR_LIST  go to state 14
+
+
+State 10
+
+    1 PGM: HEADER INT MAIN LP RP LCB BODY • RCP
+
+    RCP  shift, and go to state 15
+
+
+State 11
+
+    2 BODY: DECL_STMTS • PROG_STMTS
+
+    VAR  shift, and go to state 16
+
+    $default  reduce using rule 8 (PROG_STMTS)
+
+    PROG_STMTS  go to state 17
+    PROG_STMT   go to state 18
+
+
+State 12
+
+    3 DECL_STMTS: DECL_STMT •
+    4           | DECL_STMT • DECL_STMTS
+
+    INT  shift, and go to state 9
+
+    RCP       reduce using rule 3 (DECL_STMTS)
+    RCP       [reduce using rule 5 (DECL_STMTS)]
+    VAR       reduce using rule 3 (DECL_STMTS)
+    VAR       [reduce using rule 5 (DECL_STMTS)]
+    $default  reduce using rule 3 (DECL_STMTS)
+
+    DECL_STMTS  go to state 19
+    DECL_STMT   go to state 12
+
+
+State 13
+
+   10 VAR_LIST: VAR •
+   11         | VAR • COMMA VAR_LIST
+
+    COMMA  shift, and go to state 20
+
+    $default  reduce using rule 10 (VAR_LIST)
+
+
+State 14
+
+    9 DECL_STMT: INT VAR_LIST • SC
+
+    SC  shift, and go to state 21
+
+
+State 15
+
+    1 PGM: HEADER INT MAIN LP RP LCB BODY RCP •
+
+    $default  reduce using rule 1 (PGM)
+
+
+State 16
+
+   12 PROG_STMT: VAR • EQ EXPR SC
+
+    EQ  shift, and go to state 22
+
+
+State 17
+
+    2 BODY: DECL_STMTS PROG_STMTS •
+
+    $default  reduce using rule 2 (BODY)
+
+
+State 18
+
+    6 PROG_STMTS: PROG_STMT •
+    7           | PROG_STMT • PROG_STMTS
+
+    VAR  shift, and go to state 16
+
+    RCP       reduce using rule 6 (PROG_STMTS)
+    RCP       [reduce using rule 8 (PROG_STMTS)]
+    $default  reduce using rule 6 (PROG_STMTS)
+
+    PROG_STMTS  go to state 23
+    PROG_STMT   go to state 18
+
+
+State 19
+
+    4 DECL_STMTS: DECL_STMT DECL_STMTS •
+
+    $default  reduce using rule 4 (DECL_STMTS)
+
+
+State 20
+
+   11 VAR_LIST: VAR COMMA • VAR_LIST
+
+    VAR  shift, and go to state 13
+
+    VAR_LIST  go to state 24
+
+
+State 21
+
+    9 DECL_STMT: INT VAR_LIST SC •
+
+    $default  reduce using rule 9 (DECL_STMT)
+
+
+State 22
+
+   12 PROG_STMT: VAR EQ • EXPR SC
+
+    LP   shift, and go to state 25
+    VAR  shift, and go to state 26
+
+    EXPR  go to state 27
+
+
+State 23
+
+    7 PROG_STMTS: PROG_STMT PROG_STMTS •
+
+    $default  reduce using rule 7 (PROG_STMTS)
+
+
+State 24
+
+   11 VAR_LIST: VAR COMMA VAR_LIST •
+
+    $default  reduce using rule 11 (VAR_LIST)
+
+
+State 25
+
+   14 EXPR: LP • EXPR RP
+
+    LP   shift, and go to state 25
+    VAR  shift, and go to state 26
+
+    EXPR  go to state 28
+
+
+State 26
+
+   13 EXPR: VAR •
+
+    $default  reduce using rule 13 (EXPR)
+
+
+State 27
+
+   12 PROG_STMT: VAR EQ EXPR • SC
+   15 EXPR: EXPR • OP EXPR
+
+    SC  shift, and go to state 29
+    OP  shift, and go to state 30
+
+
+State 28
+
+   14 EXPR: LP EXPR • RP
+   15     | EXPR • OP EXPR
+
+    RP  shift, and go to state 31
+    OP  shift, and go to state 30
+
+
+State 29
+
+   12 PROG_STMT: VAR EQ EXPR SC •
+
+    $default  reduce using rule 12 (PROG_STMT)
+
+
+State 30
+
+   15 EXPR: EXPR OP • EXPR
+
+    LP   shift, and go to state 25
+    VAR  shift, and go to state 26
+
+    EXPR  go to state 32
+
+
+State 31
+
+   14 EXPR: LP EXPR RP •
+
+    $default  reduce using rule 14 (EXPR)
+
+
+State 32
+
+   15 EXPR: EXPR • OP EXPR
+   15     | EXPR OP EXPR •
+
+    OP  shift, and go to state 30
+
+    OP        [reduce using rule 15 (EXPR)]
+    $default  reduce using rule 15 (EXPR)
