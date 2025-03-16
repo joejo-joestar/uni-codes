@@ -1080,31 +1080,31 @@ yyreduce:
 
   case 4: /* E: LP E RP  */
 #line 28 "q3.y"
-                      { (yyval.num) = (yyvsp[-1].num);        printf("E -> (%d)\n", (yyvsp[-1].num));  }
+                      { (yyval.num) = (yyvsp[-1].num);        printf("E -> (%d)\n"    , (yyvsp[-1].num));  }
 #line 1085 "q3.tab.c"
     break;
 
   case 5: /* E: E PLUS E  */
 #line 29 "q3.y"
-                      { (yyval.num) = (yyvsp[-2].num) + (yyvsp[0].num);   printf("E -> %d + %d\n", (yyvsp[-2].num), (yyvsp[0].num)); }
+                      { (yyval.num) = (yyvsp[-2].num) + (yyvsp[0].num);   printf("E -> %d + %d\n" , (yyvsp[-2].num), (yyvsp[0].num)); }
 #line 1091 "q3.tab.c"
     break;
 
   case 6: /* E: E MINUS E  */
 #line 30 "q3.y"
-                      { (yyval.num) = (yyvsp[-2].num) - (yyvsp[0].num);   printf("E -> %d - %d\n", (yyvsp[-2].num), (yyvsp[0].num)); }
+                      { (yyval.num) = (yyvsp[-2].num) - (yyvsp[0].num);   printf("E -> %d - %d\n" , (yyvsp[-2].num), (yyvsp[0].num)); }
 #line 1097 "q3.tab.c"
     break;
 
   case 7: /* E: E DIV E  */
 #line 31 "q3.y"
-                      { (yyval.num) = (yyvsp[-2].num) / (yyvsp[0].num);   printf("E -> %d / %d\n", (yyvsp[-2].num), (yyvsp[0].num)); }
+                      { (yyval.num) = (yyvsp[-2].num) / (yyvsp[0].num);   printf("E -> %d / %d\n" , (yyvsp[-2].num), (yyvsp[0].num)); }
 #line 1103 "q3.tab.c"
     break;
 
   case 8: /* E: E MUL E  */
 #line 32 "q3.y"
-                      { (yyval.num) = (yyvsp[-2].num) * (yyvsp[0].num);   printf("E -> %d * %d\n", (yyvsp[-2].num), (yyvsp[0].num)); }
+                      { (yyval.num) = (yyvsp[-2].num) * (yyvsp[0].num);   printf("E -> %d * %d\n" , (yyvsp[-2].num), (yyvsp[0].num)); }
 #line 1109 "q3.tab.c"
     break;
 
