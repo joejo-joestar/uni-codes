@@ -18,7 +18,7 @@ char                        { return CHAR; }
 main                        { return MAIN; }
 \(                          { return LP; }
 \)                          { return RP; }
-\{                          { return LCB; }
+\{                          { return LCP; }
 \}                          { return RCP; }
 ;                           { return SC; }
 (if)|(while)|(do)|(for)     { yyerror("invalid variable name"); }

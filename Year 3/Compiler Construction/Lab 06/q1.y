@@ -7,12 +7,12 @@ int yylex(void);
 void yyerror(char*);
 %}
 
-%token HEADER INT MAIN LP RP LCB RCP SC VAR COMMA EQ OP
+%token HEADER INT MAIN LP RP LCP RCP SC VAR COMMA EQ OP
 
 /* MARK: Production Rules */
 %%
 
-PGM         : HEADER INT MAIN LP RP LCB BODY RCP    { printf("Parsed Successfully!\n"); }
+PGM         : HEADER INT MAIN LP RP LCP BODY RCP    { printf("Parsed Successfully!\n"); }
             ;
 
 BODY        :DECL_STMTS PROG_STMTS                  { printf("BODY -> DECL_STMTS PROG_STMTS\n"); }

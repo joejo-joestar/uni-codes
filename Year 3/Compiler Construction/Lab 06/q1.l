@@ -14,7 +14,7 @@ int                     { return INT; }
 main                    { return MAIN; }
 \(                      { return LP; }
 \)                      { return RP; }
-\{                      { return LCB; }
+\{                      { return LCP; }
 \}                      { return RCP; }
 ;                       { return SC; }
 {c}{i}*                 { return VAR; }
