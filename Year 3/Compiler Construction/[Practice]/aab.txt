@@ -1,0 +1,22 @@
+S -> S\n
+  -> aSb
+  -> ε
+
+aab
+
+S => S\n
+  => aSb\n
+  => aS\nb\n
+  => aaSb\nb\n
+  => aa b
+
+
+E -> S\n
+
+S -> aSb
+  -> ε
+
+E -> S\n
+  -> aSb\n
+  -> aaSbb
+  -> aa bb
