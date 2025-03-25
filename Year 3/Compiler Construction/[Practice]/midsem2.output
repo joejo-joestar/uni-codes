@@ -1,0 +1,338 @@
+Grammar
+
+    0 $accept: S $end
+
+    1 S: PRG S
+    2  | PRG
+
+    3 PRG: E NL
+
+    4 E: SIN LP E RP
+    5  | COS LP E RP
+    6  | LOG LP E RP
+    7  | SQRT LP E RP
+    8  | MINUS E
+    9  | LP E RP
+   10  | PI
+   11  | FLOAT
+
+
+Terminals, with rules where they appear
+
+    $end (0) 0
+    error (256)
+    SIN (258) 4
+    COS (259) 5
+    LOG (260) 6
+    SQRT (261) 7
+    MINUS (262) 8
+    RP (263) 4 5 6 7 9
+    NL (264) 3
+    PI <floatval> (265) 10
+    FLOAT <floatval> (266) 11
+    UMINUS (267)
+    LP (268) 4 5 6 7 9
+
+
+Nonterminals, with rules where they appear
+
+    $accept (14)
+        on left: 0
+    S <floatval> (15)
+        on left: 1 2
+        on right: 0 1
+    PRG <floatval> (16)
+        on left: 3
+        on right: 1 2
+    E <floatval> (17)
+        on left: 4 5 6 7 8 9 10 11
+        on right: 3 4 5 6 7 8 9
+
+
+State 0
+
+    0 $accept: • S $end
+
+    SIN    shift, and go to state 1
+    COS    shift, and go to state 2
+    LOG    shift, and go to state 3
+    SQRT   shift, and go to state 4
+    MINUS  shift, and go to state 5
+    PI     shift, and go to state 6
+    FLOAT  shift, and go to state 7
+    LP     shift, and go to state 8
+
+    S    go to state 9
+    PRG  go to state 10
+    E    go to state 11
+
+
+State 1
+
+    4 E: SIN • LP E RP
+
+    LP  shift, and go to state 12
+
+
+State 2
+
+    5 E: COS • LP E RP
+
+    LP  shift, and go to state 13
+
+
+State 3
+
+    6 E: LOG • LP E RP
+
+    LP  shift, and go to state 14
+
+
+State 4
+
+    7 E: SQRT • LP E RP
+
+    LP  shift, and go to state 15
+
+
+State 5
+
+    8 E: MINUS • E
+
+    SIN    shift, and go to state 1
+    COS    shift, and go to state 2
+    LOG    shift, and go to state 3
+    SQRT   shift, and go to state 4
+    MINUS  shift, and go to state 5
+    PI     shift, and go to state 6
+    FLOAT  shift, and go to state 7
+    LP     shift, and go to state 8
+
+    E  go to state 16
+
+
+State 6
+
+   10 E: PI •
+
+    $default  reduce using rule 10 (E)
+
+
+State 7
+
+   11 E: FLOAT •
+
+    $default  reduce using rule 11 (E)
+
+
+State 8
+
+    9 E: LP • E RP
+
+    SIN    shift, and go to state 1
+    COS    shift, and go to state 2
+    LOG    shift, and go to state 3
+    SQRT   shift, and go to state 4
+    MINUS  shift, and go to state 5
+    PI     shift, and go to state 6
+    FLOAT  shift, and go to state 7
+    LP     shift, and go to state 8
+
+    E  go to state 17
+
+
+State 9
+
+    0 $accept: S • $end
+
+    $end  shift, and go to state 18
+
+
+State 10
+
+    1 S: PRG • S
+    2  | PRG •
+
+    SIN    shift, and go to state 1
+    COS    shift, and go to state 2
+    LOG    shift, and go to state 3
+    SQRT   shift, and go to state 4
+    MINUS  shift, and go to state 5
+    PI     shift, and go to state 6
+    FLOAT  shift, and go to state 7
+    LP     shift, and go to state 8
+
+    $default  reduce using rule 2 (S)
+
+    S    go to state 19
+    PRG  go to state 10
+    E    go to state 11
+
+
+State 11
+
+    3 PRG: E • NL
+
+    NL  shift, and go to state 20
+
+
+State 12
+
+    4 E: SIN LP • E RP
+
+    SIN    shift, and go to state 1
+    COS    shift, and go to state 2
+    LOG    shift, and go to state 3
+    SQRT   shift, and go to state 4
+    MINUS  shift, and go to state 5
+    PI     shift, and go to state 6
+    FLOAT  shift, and go to state 7
+    LP     shift, and go to state 8
+
+    E  go to state 21
+
+
+State 13
+
+    5 E: COS LP • E RP
+
+    SIN    shift, and go to state 1
+    COS    shift, and go to state 2
+    LOG    shift, and go to state 3
+    SQRT   shift, and go to state 4
+    MINUS  shift, and go to state 5
+    PI     shift, and go to state 6
+    FLOAT  shift, and go to state 7
+    LP     shift, and go to state 8
+
+    E  go to state 22
+
+
+State 14
+
+    6 E: LOG LP • E RP
+
+    SIN    shift, and go to state 1
+    COS    shift, and go to state 2
+    LOG    shift, and go to state 3
+    SQRT   shift, and go to state 4
+    MINUS  shift, and go to state 5
+    PI     shift, and go to state 6
+    FLOAT  shift, and go to state 7
+    LP     shift, and go to state 8
+
+    E  go to state 23
+
+
+State 15
+
+    7 E: SQRT LP • E RP
+
+    SIN    shift, and go to state 1
+    COS    shift, and go to state 2
+    LOG    shift, and go to state 3
+    SQRT   shift, and go to state 4
+    MINUS  shift, and go to state 5
+    PI     shift, and go to state 6
+    FLOAT  shift, and go to state 7
+    LP     shift, and go to state 8
+
+    E  go to state 24
+
+
+State 16
+
+    8 E: MINUS E •
+
+    $default  reduce using rule 8 (E)
+
+
+State 17
+
+    9 E: LP E • RP
+
+    RP  shift, and go to state 25
+
+
+State 18
+
+    0 $accept: S $end •
+
+    $default  accept
+
+
+State 19
+
+    1 S: PRG S •
+
+    $default  reduce using rule 1 (S)
+
+
+State 20
+
+    3 PRG: E NL •
+
+    $default  reduce using rule 3 (PRG)
+
+
+State 21
+
+    4 E: SIN LP E • RP
+
+    RP  shift, and go to state 26
+
+
+State 22
+
+    5 E: COS LP E • RP
+
+    RP  shift, and go to state 27
+
+
+State 23
+
+    6 E: LOG LP E • RP
+
+    RP  shift, and go to state 28
+
+
+State 24
+
+    7 E: SQRT LP E • RP
+
+    RP  shift, and go to state 29
+
+
+State 25
+
+    9 E: LP E RP •
+
+    $default  reduce using rule 9 (E)
+
+
+State 26
+
+    4 E: SIN LP E RP •
+
+    $default  reduce using rule 4 (E)
+
+
+State 27
+
+    5 E: COS LP E RP •
+
+    $default  reduce using rule 5 (E)
+
+
+State 28
+
+    6 E: LOG LP E RP •
+
+    $default  reduce using rule 6 (E)
+
+
+State 29
+
+    7 E: SQRT LP E RP •
+
+    $default  reduce using rule 7 (E)
