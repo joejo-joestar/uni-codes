@@ -1,0 +1,412 @@
+State 37 conflicts: 1 shift/reduce
+
+
+Grammar
+
+    0 $accept: PGM $end
+
+    1 PGM: HEADER MAIN_TYPE MAIN LB RB LCB BODY RCB
+
+    2 BODY: DECLARATION_STATEMENTS PROGRAM_STATEMENTS
+
+    3 DECLARATION_STATEMENTS: DECLARATION_STATEMENT DECLARATION_STATEMENTS
+    4                       | DECLARATION_STATEMENT
+
+    5 PROGRAM_STATEMENTS: PROGRAM_STATEMENT PROGRAM_STATEMENTS
+    6                   | PROGRAM_STATEMENT
+
+    7 DECLARATION_STATEMENT: DATA_TYPE VAR_LIST SC
+
+    8 VAR_LIST: VAR COMA VAR_LIST
+    9         | VAR
+
+   10 PROGRAM_STATEMENT: VAR EQ A_EXPN SC
+
+   11 A_EXPN: A_EXPN OP A_EXPN
+   12       | LB A_EXPN RB
+   13       | VAR
+
+   14 MAIN_TYPE: INT
+
+   15 DATA_TYPE: INT
+   16          | CHAR
+   17          | FLOAT
+   18          | DOUBLE
+
+
+Terminals, with rules where they appear
+
+    $end (0) 0
+    error (256)
+    HEADER (258) 1
+    MAIN (259) 1
+    LB (260) 1 12
+    RB (261) 1 12
+    LCB (262) 1
+    RCB (263) 1
+    SC (264) 7 10
+    COMA (265) 8
+    EQ (266) 10
+    OP (267) 11
+    VAR <var_name> (268) 8 9 10 13
+    INT <data_type> (269) 14 15
+    CHAR <data_type> (270) 16
+    FLOAT <data_type> (271) 17
+    DOUBLE <data_type> (272) 18
+
+
+Nonterminals, with rules where they appear
+
+    $accept (18)
+        on left: 0
+    PGM (19)
+        on left: 1
+        on right: 0
+    BODY (20)
+        on left: 2
+        on right: 1
+    DECLARATION_STATEMENTS (21)
+        on left: 3 4
+        on right: 2 3
+    PROGRAM_STATEMENTS (22)
+        on left: 5 6
+        on right: 2 5
+    DECLARATION_STATEMENT (23)
+        on left: 7
+        on right: 3 4
+    VAR_LIST (24)
+        on left: 8 9
+        on right: 7 8
+    PROGRAM_STATEMENT (25)
+        on left: 10
+        on right: 5 6
+    A_EXPN (26)
+        on left: 11 12 13
+        on right: 10 11 12
+    MAIN_TYPE (27)
+        on left: 14
+        on right: 1
+    DATA_TYPE <data_type> (28)
+        on left: 15 16 17 18
+        on right: 7
+
+
+State 0
+
+    0 $accept: • PGM $end
+
+    HEADER  shift, and go to state 1
+
+    PGM  go to state 2
+
+
+State 1
+
+    1 PGM: HEADER • MAIN_TYPE MAIN LB RB LCB BODY RCB
+
+    INT  shift, and go to state 3
+
+    MAIN_TYPE  go to state 4
+
+
+State 2
+
+    0 $accept: PGM • $end
+
+    $end  shift, and go to state 5
+
+
+State 3
+
+   14 MAIN_TYPE: INT •
+
+    $default  reduce using rule 14 (MAIN_TYPE)
+
+
+State 4
+
+    1 PGM: HEADER MAIN_TYPE • MAIN LB RB LCB BODY RCB
+
+    MAIN  shift, and go to state 6
+
+
+State 5
+
+    0 $accept: PGM $end •
+
+    $default  accept
+
+
+State 6
+
+    1 PGM: HEADER MAIN_TYPE MAIN • LB RB LCB BODY RCB
+
+    LB  shift, and go to state 7
+
+
+State 7
+
+    1 PGM: HEADER MAIN_TYPE MAIN LB • RB LCB BODY RCB
+
+    RB  shift, and go to state 8
+
+
+State 8
+
+    1 PGM: HEADER MAIN_TYPE MAIN LB RB • LCB BODY RCB
+
+    LCB  shift, and go to state 9
+
+
+State 9
+
+    1 PGM: HEADER MAIN_TYPE MAIN LB RB LCB • BODY RCB
+
+    INT     shift, and go to state 10
+    CHAR    shift, and go to state 11
+    FLOAT   shift, and go to state 12
+    DOUBLE  shift, and go to state 13
+
+    BODY                    go to state 14
+    DECLARATION_STATEMENTS  go to state 15
+    DECLARATION_STATEMENT   go to state 16
+    DATA_TYPE               go to state 17
+
+
+State 10
+
+   15 DATA_TYPE: INT •
+
+    $default  reduce using rule 15 (DATA_TYPE)
+
+
+State 11
+
+   16 DATA_TYPE: CHAR •
+
+    $default  reduce using rule 16 (DATA_TYPE)
+
+
+State 12
+
+   17 DATA_TYPE: FLOAT •
+
+    $default  reduce using rule 17 (DATA_TYPE)
+
+
+State 13
+
+   18 DATA_TYPE: DOUBLE •
+
+    $default  reduce using rule 18 (DATA_TYPE)
+
+
+State 14
+
+    1 PGM: HEADER MAIN_TYPE MAIN LB RB LCB BODY • RCB
+
+    RCB  shift, and go to state 18
+
+
+State 15
+
+    2 BODY: DECLARATION_STATEMENTS • PROGRAM_STATEMENTS
+
+    VAR  shift, and go to state 19
+
+    PROGRAM_STATEMENTS  go to state 20
+    PROGRAM_STATEMENT   go to state 21
+
+
+State 16
+
+    3 DECLARATION_STATEMENTS: DECLARATION_STATEMENT • DECLARATION_STATEMENTS
+    4                       | DECLARATION_STATEMENT •
+
+    INT     shift, and go to state 10
+    CHAR    shift, and go to state 11
+    FLOAT   shift, and go to state 12
+    DOUBLE  shift, and go to state 13
+
+    $default  reduce using rule 4 (DECLARATION_STATEMENTS)
+
+    DECLARATION_STATEMENTS  go to state 22
+    DECLARATION_STATEMENT   go to state 16
+    DATA_TYPE               go to state 17
+
+
+State 17
+
+    7 DECLARATION_STATEMENT: DATA_TYPE • VAR_LIST SC
+
+    VAR  shift, and go to state 23
+
+    VAR_LIST  go to state 24
+
+
+State 18
+
+    1 PGM: HEADER MAIN_TYPE MAIN LB RB LCB BODY RCB •
+
+    $default  reduce using rule 1 (PGM)
+
+
+State 19
+
+   10 PROGRAM_STATEMENT: VAR • EQ A_EXPN SC
+
+    EQ  shift, and go to state 25
+
+
+State 20
+
+    2 BODY: DECLARATION_STATEMENTS PROGRAM_STATEMENTS •
+
+    $default  reduce using rule 2 (BODY)
+
+
+State 21
+
+    5 PROGRAM_STATEMENTS: PROGRAM_STATEMENT • PROGRAM_STATEMENTS
+    6                   | PROGRAM_STATEMENT •
+
+    VAR  shift, and go to state 19
+
+    $default  reduce using rule 6 (PROGRAM_STATEMENTS)
+
+    PROGRAM_STATEMENTS  go to state 26
+    PROGRAM_STATEMENT   go to state 21
+
+
+State 22
+
+    3 DECLARATION_STATEMENTS: DECLARATION_STATEMENT DECLARATION_STATEMENTS •
+
+    $default  reduce using rule 3 (DECLARATION_STATEMENTS)
+
+
+State 23
+
+    8 VAR_LIST: VAR • COMA VAR_LIST
+    9         | VAR •
+
+    COMA  shift, and go to state 27
+
+    $default  reduce using rule 9 (VAR_LIST)
+
+
+State 24
+
+    7 DECLARATION_STATEMENT: DATA_TYPE VAR_LIST • SC
+
+    SC  shift, and go to state 28
+
+
+State 25
+
+   10 PROGRAM_STATEMENT: VAR EQ • A_EXPN SC
+
+    LB   shift, and go to state 29
+    VAR  shift, and go to state 30
+
+    A_EXPN  go to state 31
+
+
+State 26
+
+    5 PROGRAM_STATEMENTS: PROGRAM_STATEMENT PROGRAM_STATEMENTS •
+
+    $default  reduce using rule 5 (PROGRAM_STATEMENTS)
+
+
+State 27
+
+    8 VAR_LIST: VAR COMA • VAR_LIST
+
+    VAR  shift, and go to state 23
+
+    VAR_LIST  go to state 32
+
+
+State 28
+
+    7 DECLARATION_STATEMENT: DATA_TYPE VAR_LIST SC •
+
+    $default  reduce using rule 7 (DECLARATION_STATEMENT)
+
+
+State 29
+
+   12 A_EXPN: LB • A_EXPN RB
+
+    LB   shift, and go to state 29
+    VAR  shift, and go to state 30
+
+    A_EXPN  go to state 33
+
+
+State 30
+
+   13 A_EXPN: VAR •
+
+    $default  reduce using rule 13 (A_EXPN)
+
+
+State 31
+
+   10 PROGRAM_STATEMENT: VAR EQ A_EXPN • SC
+   11 A_EXPN: A_EXPN • OP A_EXPN
+
+    SC  shift, and go to state 34
+    OP  shift, and go to state 35
+
+
+State 32
+
+    8 VAR_LIST: VAR COMA VAR_LIST •
+
+    $default  reduce using rule 8 (VAR_LIST)
+
+
+State 33
+
+   11 A_EXPN: A_EXPN • OP A_EXPN
+   12       | LB A_EXPN • RB
+
+    RB  shift, and go to state 36
+    OP  shift, and go to state 35
+
+
+State 34
+
+   10 PROGRAM_STATEMENT: VAR EQ A_EXPN SC •
+
+    $default  reduce using rule 10 (PROGRAM_STATEMENT)
+
+
+State 35
+
+   11 A_EXPN: A_EXPN OP • A_EXPN
+
+    LB   shift, and go to state 29
+    VAR  shift, and go to state 30
+
+    A_EXPN  go to state 37
+
+
+State 36
+
+   12 A_EXPN: LB A_EXPN RB •
+
+    $default  reduce using rule 12 (A_EXPN)
+
+
+State 37
+
+   11 A_EXPN: A_EXPN • OP A_EXPN
+   11       | A_EXPN OP A_EXPN •
+
+    OP  shift, and go to state 35
+
+    OP        [reduce using rule 11 (A_EXPN)]
+    $default  reduce using rule 11 (A_EXPN)
