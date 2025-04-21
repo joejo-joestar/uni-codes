@@ -61,40 +61,40 @@ int main (){
     scanf("%d", &testcase);
 
     if (testcase == 11){
-        yyin = fopen("testcases/1/input1.c", "r");
+        yyin = fopen("tests/1/input1.c", "r");
     }
     else if (testcase == 12){
-        yyin = fopen("testcases/1/input2.c", "r");
+        yyin = fopen("tests/1/input2.c", "r");
     }
     else if (testcase == 13){
-        yyin = fopen("testcases/1/input3.c", "r");
+        yyin = fopen("tests/1/input3.c", "r");
     }
     else if (testcase == 14){
-        yyin = fopen("testcases/1/input4.c", "r");
+        yyin = fopen("tests/1/input4.c", "r");
     }
     else if (testcase == 21){
-        yyin = fopen("testcases/2/input1.c", "r");
+        yyin = fopen("tests/2/input1.c", "r");
     }
     else if (testcase == 22){
-        yyin = fopen("testcases/2/input2.c", "r");
+        yyin = fopen("tests/2/input2.c", "r");
     }
     else if (testcase == 23){
-        yyin = fopen("testcases/2/input3.c", "r");
+        yyin = fopen("tests/2/input3.c", "r");
     }
     else if (testcase == 31){
-        yyin = fopen("testcases/3/input1.c", "r");
+        yyin = fopen("tests/3/input1.c", "r");
     }
     else if (testcase == 32){
-        yyin = fopen("testcases/3/input2.c", "r");
+        yyin = fopen("tests/3/input2.c", "r");
     }
     else if (testcase == 33){
-        yyin = fopen("testcases/3/input3.c", "r");
+        yyin = fopen("tests/3/input3.c", "r");
     }
     else if (testcase == 41){
-        yyin = fopen("testcases/4/input1.c", "r");
+        yyin = fopen("tests/4/input1.c", "r");
     }
     else if (testcase == 42){
-        yyin = fopen("testcases/4/input2.c", "r");
+        yyin = fopen("tests/4/input2.c", "r");
     }
     else{
         printf("Invalid input file number\n");
