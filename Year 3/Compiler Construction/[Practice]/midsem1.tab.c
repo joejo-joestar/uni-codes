@@ -448,7 +448,7 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  9
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   16
+#define YYLAST   22
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  12
@@ -550,7 +550,7 @@ yysymbol_name (yysymbol_kind_t yysymbol)
 static const yytype_int8 yypact[] =
 {
       -3,    -2,    -6,     3,    -3,    -7,    -7,    -1,     2,    -7,
-      -7,    -4,     0,     1,     4,    -7,     5,    -7,    -7
+      -7,    -4,     0,     1,     4,    -7,    -4,    -7,    -7
 };
 
 /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -565,7 +565,7 @@ static const yytype_int8 yydefact[] =
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-      -7,     8,    -7,    -7,    -7,    -7
+      -7,     5,    -7,     6,    -7,    -7
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
@@ -579,14 +579,16 @@ static const yytype_int8 yydefgoto[] =
    number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int8 yytable[] =
 {
-       1,     8,     7,     9,    11,    12,     2,    13,    15,     0,
-      17,    16,    10,     0,     0,     0,    18
+       1,     8,     7,     9,    11,    12,     2,    13,    15,    10,
+      17,    16,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,    18
 };
 
 static const yytype_int8 yycheck[] =
 {
-       3,     7,     4,     0,     5,     3,     9,    11,     8,    -1,
-       6,    10,     4,    -1,    -1,    -1,    11
+       3,     7,     4,     0,     5,     3,     9,    11,     8,     4,
+       6,    10,    -1,    -1,    -1,    -1,    -1,    -1,    -1,    -1,
+      -1,    -1,    16
 };
 
 /* YYSTOS[STATE-NUM] -- The symbol kind of the accessing symbol of
@@ -594,7 +596,7 @@ static const yytype_int8 yycheck[] =
 static const yytype_int8 yystos[] =
 {
        0,     3,     9,    13,    14,    16,    17,     4,     7,     0,
-      13,     5,     3,    11,    15,     8,    10,     6,    11
+      13,     5,     3,    11,    15,     8,    10,     6,    15
 };
 
 /* YYR1[RULE-NUM] -- Symbol kind of the left-hand side of rule RULE-NUM.  */
@@ -1072,41 +1074,41 @@ yyreduce:
   case 4: /* S: E  */
 #line 16 "midsem1.y"
                                                                     { printf("success var declr!\n"); }
-#line 1076 "midsem1.tab.c"
+#line 1078 "midsem1.tab.c"
     break;
 
   case 5: /* S: P  */
 #line 17 "midsem1.y"
                                                                             { printf("success print stmt!\n"); }
-#line 1082 "midsem1.tab.c"
+#line 1084 "midsem1.tab.c"
     break;
 
-  case 6: /* EXPR_LINE: STR COMMA STR  */
+  case 6: /* EXPR_LINE: STR COMMA EXPR_LINE  */
 #line 20 "midsem1.y"
-                                                            { printf("  str, str\n"); }
-#line 1088 "midsem1.tab.c"
+                                                                    { printf("  str, str\n"); }
+#line 1090 "midsem1.tab.c"
     break;
 
   case 7: /* EXPR_LINE: STR  */
 #line 21 "midsem1.y"
-                                                                    { printf("  str\n"); }
-#line 1094 "midsem1.tab.c"
+                                                                        { printf("  str\n"); }
+#line 1096 "midsem1.tab.c"
     break;
 
   case 8: /* E: VAR EQ SQLP EXPR_LINE SQRP  */
 #line 24 "midsem1.y"
                                                         { printf("  var declr\n"); }
-#line 1100 "midsem1.tab.c"
+#line 1102 "midsem1.tab.c"
     break;
 
   case 9: /* P: PRINT LP VAR RP  */
 #line 27 "midsem1.y"
                                                             { printf("  print stmt\n"); }
-#line 1106 "midsem1.tab.c"
+#line 1108 "midsem1.tab.c"
     break;
 
 
-#line 1110 "midsem1.tab.c"
+#line 1112 "midsem1.tab.c"
 
       default: break;
     }
@@ -1308,7 +1310,6 @@ int yyerror(char *s) {
 }
 
 int main() {
-	printf("Input: ");
 	yyparse();
 	return 1;
 }

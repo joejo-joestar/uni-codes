@@ -13,18 +13,18 @@ int yylex(void);
 X           :   S X
             |   S
 
-S		    :	E				            { printf("success var declr!\n"); }
-			|	P				            { printf("success print stmt!\n"); }
+S		    :	E				                { printf("success var declr!\n"); }
+			|	P				                { printf("success print stmt!\n"); }
 		    ;
 
-EXPR_LINE	:	STR COMMA STR			    { printf("  str, str\n"); }
-		    |	STR				            { printf("  str\n"); }
+EXPR_LINE	:	STR COMMA EXPR_LINE			    { printf("  str, str\n"); }
+		    |	STR				            	{ printf("  str\n"); }
 		    ;
 
-E		    :	VAR EQ SQLP EXPR_LINE SQRP	{ printf("  var declr\n"); }
+E		    :	VAR EQ SQLP EXPR_LINE SQRP	    { printf("  var declr\n"); }
 		    ; 
 
-P		    :	PRINT LP VAR RP			    { printf("  print stmt\n"); }
+P		    :	PRINT LP VAR RP			        { printf("  print stmt\n"); }
 		    ;
 
 %%
@@ -35,7 +35,6 @@ int yyerror(char *s) {
 }
 
 int main() {
-	printf("Input: ");
 	yyparse();
 	return 1;
 }

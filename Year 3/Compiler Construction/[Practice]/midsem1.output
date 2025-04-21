@@ -8,7 +8,7 @@ Grammar
     3 S: E
     4  | P
 
-    5 EXPR_LINE: STR COMMA STR
+    5 EXPR_LINE: STR COMMA EXPR_LINE
     6          | STR
 
     7 E: VAR EQ SQLP EXPR_LINE SQRP
@@ -43,7 +43,7 @@ Nonterminals, with rules where they appear
         on right: 1 2
     EXPR_LINE (15)
         on left: 5 6
-        on right: 7
+        on right: 5 7
     E (16)
         on left: 7
         on right: 3
@@ -162,7 +162,7 @@ State 12
 
 State 13
 
-    5 EXPR_LINE: STR • COMMA STR
+    5 EXPR_LINE: STR • COMMA EXPR_LINE
     6          | STR •
 
     COMMA  shift, and go to state 16
@@ -186,9 +186,11 @@ State 15
 
 State 16
 
-    5 EXPR_LINE: STR COMMA • STR
+    5 EXPR_LINE: STR COMMA • EXPR_LINE
 
-    STR  shift, and go to state 18
+    STR  shift, and go to state 13
+
+    EXPR_LINE  go to state 18
 
 
 State 17
@@ -200,6 +202,6 @@ State 17
 
 State 18
 
-    5 EXPR_LINE: STR COMMA STR •
+    5 EXPR_LINE: STR COMMA EXPR_LINE •
 
     $default  reduce using rule 5 (EXPR_LINE)

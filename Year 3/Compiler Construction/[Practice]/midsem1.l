@@ -9,7 +9,7 @@ int yyerror(char*);
 [\t\r ]			    {}
 print			    { return PRINT; }
 \=			        { return EQ; }
-[_a-z0-9]		    { return VAR; }
+[a-z][_a-z]+	    { return VAR; }
 \[			        { return SQLP; }
 \]			        { return SQRP; }
 \(			        { return LP; }
