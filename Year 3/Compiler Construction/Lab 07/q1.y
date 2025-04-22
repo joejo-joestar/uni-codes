@@ -8,10 +8,10 @@ int success = 1;
 int current_data_type;
 int expn_type = -1;
 int temp;
-struct symbol_table { char var_name[30]; int type; } var_list[20];	// you may associate an integer with a datatype (say var_list[i].type=1 may imply that variable var_list[i].var_name is of type int) and store that integer against the variable whenever you deal with a declaration statement
-int var_count = 0;													// number of entries in the symbol table
-extern int lookup_in_table(char var[30]);							// returns the data type associated with the variable name being passed to, returns -1 if in case the variable is undeclared
-extern void insert_to_table(char var[30], int type);				// adds a new variable along with its data type to the table and terminates with a "multiple declaration error message", if in case the variable is already being defined
+struct symbol_table { char var_name[30]; int type; } var_list[20];  // you may associate an integer with a datatype (say var_list[i].type=1 may imply that variable var_list[i].var_name is of type int) and store that integer against the variable whenever you deal with a declaration statement
+int var_count = 0;                                                  // number of entries in the symbol table
+extern int lookup_in_table(char var[30]);                           // returns the data type associated with the variable name being passed to, returns -1 if in case the variable is undeclared
+extern void insert_to_table(char var[30], int type);                // adds a new variable along with its data type to the table and terminates with a "multiple declaration error message", if in case the variable is already being defined
 extern FILE *yyin;
 %}
 
@@ -28,33 +28,33 @@ extern FILE *yyin;
 
 %%
 
-PGM						:	HEADER MAIN_TYPE MAIN LB RB LCB BODY RCB 		{ printf("\tparsing successful\n"); }
+PGM                     :   HEADER MAIN_TYPE MAIN LB RB LCB BODY RCB        { printf("\tparsing successful\n"); }
                         ;
 
-BODY					: 	DECLARATION_STATEMENTS PROGRAM_STATEMENTS
+BODY                    :   DECLARATION_STATEMENTS PROGRAM_STATEMENTS
                         ;
 
-DECLARATION_STATEMENTS 	: 	DECLARATION_STATEMENT DECLARATION_STATEMENTS  	{ printf("\tdeclaration section successfully parsed\n"); }
-                        | 	DECLARATION_STATEMENT
+DECLARATION_STATEMENTS  :   DECLARATION_STATEMENT DECLARATION_STATEMENTS    { printf("\tdeclaration section successfully parsed\n"); }
+                        |   DECLARATION_STATEMENT
                         ;
 
-PROGRAM_STATEMENTS 		: 	PROGRAM_STATEMENT PROGRAM_STATEMENTS 			{ printf("\tprogram statements successfully parsed\n"); }
-                        | 	PROGRAM_STATEMENT
+PROGRAM_STATEMENTS      :   PROGRAM_STATEMENT PROGRAM_STATEMENTS            { printf("\tprogram statements successfully parsed\n"); }
+                        |   PROGRAM_STATEMENT
                         ;
 
-DECLARATION_STATEMENT	: 	DATA_TYPE VAR_LIST SC
+DECLARATION_STATEMENT   :   DATA_TYPE VAR_LIST SC
                         ;
 
-VAR_LIST 				: 	VAR COMMA VAR_LIST 								{ insert_to_table($1, current_data_type); }
-                        | 	VAR 											{ insert_to_table($1, current_data_type); }
+VAR_LIST                :   VAR COMMA VAR_LIST                              { insert_to_table($1, current_data_type); }
+                        |   VAR                                             { insert_to_table($1, current_data_type); }
                         ;
 
-PROGRAM_STATEMENT 		: 	VAR EQ A_EXPN SC
+PROGRAM_STATEMENT       :   VAR EQ A_EXPN SC
                         ;
 
-A_EXPN					: 	A_EXPN OP A_EXPN
-                        | 	LB A_EXPN RB
-                        | 	VAR 											{ 	expn_type = -1;
+A_EXPN                  :   A_EXPN OP A_EXPN
+                        |   LB A_EXPN RB
+                        |   VAR                                             {   expn_type = -1;
                                                                                 temp = lookup_in_table($1);
                                                                                 if((temp) == -1) {
                                                                                     printf("\tvariable \"%s\" undeclared\n",$1);
@@ -67,13 +67,13 @@ A_EXPN					: 	A_EXPN OP A_EXPN
                                                                             }
                         ;
 
-MAIN_TYPE 				: 	INT
+MAIN_TYPE               :   INT
                         ;
 
-DATA_TYPE 				: 	INT 											{ $$ = $1; current_data_type = $1; }
-                        | 	CHAR 											{ $$ = $1; current_data_type = $1; }
-                        | 	FLOAT											{ $$ = $1; current_data_type = $1; }
-                        | 	DOUBLE											{ $$ = $1; current_data_type = $1; }
+DATA_TYPE               :   INT                                             { $$ = $1; current_data_type = $1; }
+                        |   CHAR                                            { $$ = $1; current_data_type = $1; }
+                        |   FLOAT                                           { $$ = $1; current_data_type = $1; }
+                        |   DOUBLE                                          { $$ = $1; current_data_type = $1; }
                         ;
 
 %%
