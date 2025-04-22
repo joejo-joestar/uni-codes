@@ -1,11 +1,11 @@
 %option yylineno
 
 %{
-	#include<stdio.h>
-	#include<string.h>
-	#include"q1.tab.h"
-	#include<math.h>
-	extern int var_count;
+    #include<stdio.h>
+    #include<string.h>
+    #include"q1.tab.h"
+    #include<math.h>
+    extern int var_count;
 %}
 
 %%
@@ -21,7 +21,7 @@
 ")"							{ return RB; }
 "{"							{ return LCB; }
 "}"							{ return RCB; }
-","							{ return COMA; }
+","							{ return COMMA; }
 ";"							{ return SC; }
 [\+\-\*\/] 					{ return OP; }
 "="							{ return EQ; }
