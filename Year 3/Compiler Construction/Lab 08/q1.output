@@ -1,0 +1,294 @@
+Grammar
+
+    0 $accept: S $end
+
+    1 S: S LINE
+    2  | ε
+
+    3 LINE: STATEMENT NL
+    4     | STATEMENT SC NL
+
+    5 STATEMENT: VAR EQ E
+
+    6 E: VAR
+    7  | LP E RP
+    8  | INT
+    9  | E PLUS E
+   10  | E MINUS E
+   11  | E DIV E
+   12  | E MUL E
+
+
+Terminals, with rules where they appear
+
+    $end (0) 0
+    error (256)
+    NL (258) 3 4
+    LP (259) 7
+    RP (260) 7
+    EQ (261) 5
+    SC (262) 4
+    INT <intval> (263) 8
+    VAR <varval> (264) 5 6
+    PLUS (265) 9
+    MINUS (266) 10
+    DIV (267) 11
+    MUL (268) 12
+
+
+Nonterminals, with rules where they appear
+
+    $accept (14)
+        on left: 0
+    S (15)
+        on left: 1 2
+        on right: 0 1
+    LINE (16)
+        on left: 3 4
+        on right: 1
+    STATEMENT (17)
+        on left: 5
+        on right: 3 4
+    E <varval> (18)
+        on left: 6 7 8 9 10 11 12
+        on right: 5 7 9 10 11 12
+
+
+State 0
+
+    0 $accept: • S $end
+
+    $default  reduce using rule 2 (S)
+
+    S  go to state 1
+
+
+State 1
+
+    0 $accept: S • $end
+    1 S: S • LINE
+
+    $end  shift, and go to state 2
+    VAR   shift, and go to state 3
+
+    LINE       go to state 4
+    STATEMENT  go to state 5
+
+
+State 2
+
+    0 $accept: S $end •
+
+    $default  accept
+
+
+State 3
+
+    5 STATEMENT: VAR • EQ E
+
+    EQ  shift, and go to state 6
+
+
+State 4
+
+    1 S: S LINE •
+
+    $default  reduce using rule 1 (S)
+
+
+State 5
+
+    3 LINE: STATEMENT • NL
+    4     | STATEMENT • SC NL
+
+    NL  shift, and go to state 7
+    SC  shift, and go to state 8
+
+
+State 6
+
+    5 STATEMENT: VAR EQ • E
+
+    LP   shift, and go to state 9
+    INT  shift, and go to state 10
+    VAR  shift, and go to state 11
+
+    E  go to state 12
+
+
+State 7
+
+    3 LINE: STATEMENT NL •
+
+    $default  reduce using rule 3 (LINE)
+
+
+State 8
+
+    4 LINE: STATEMENT SC • NL
+
+    NL  shift, and go to state 13
+
+
+State 9
+
+    7 E: LP • E RP
+
+    LP   shift, and go to state 9
+    INT  shift, and go to state 10
+    VAR  shift, and go to state 11
+
+    E  go to state 14
+
+
+State 10
+
+    8 E: INT •
+
+    $default  reduce using rule 8 (E)
+
+
+State 11
+
+    6 E: VAR •
+
+    $default  reduce using rule 6 (E)
+
+
+State 12
+
+    5 STATEMENT: VAR EQ E •
+    9 E: E • PLUS E
+   10  | E • MINUS E
+   11  | E • DIV E
+   12  | E • MUL E
+
+    PLUS   shift, and go to state 15
+    MINUS  shift, and go to state 16
+    DIV    shift, and go to state 17
+    MUL    shift, and go to state 18
+
+    $default  reduce using rule 5 (STATEMENT)
+
+
+State 13
+
+    4 LINE: STATEMENT SC NL •
+
+    $default  reduce using rule 4 (LINE)
+
+
+State 14
+
+    7 E: LP E • RP
+    9  | E • PLUS E
+   10  | E • MINUS E
+   11  | E • DIV E
+   12  | E • MUL E
+
+    RP     shift, and go to state 19
+    PLUS   shift, and go to state 15
+    MINUS  shift, and go to state 16
+    DIV    shift, and go to state 17
+    MUL    shift, and go to state 18
+
+
+State 15
+
+    9 E: E PLUS • E
+
+    LP   shift, and go to state 9
+    INT  shift, and go to state 10
+    VAR  shift, and go to state 11
+
+    E  go to state 20
+
+
+State 16
+
+   10 E: E MINUS • E
+
+    LP   shift, and go to state 9
+    INT  shift, and go to state 10
+    VAR  shift, and go to state 11
+
+    E  go to state 21
+
+
+State 17
+
+   11 E: E DIV • E
+
+    LP   shift, and go to state 9
+    INT  shift, and go to state 10
+    VAR  shift, and go to state 11
+
+    E  go to state 22
+
+
+State 18
+
+   12 E: E MUL • E
+
+    LP   shift, and go to state 9
+    INT  shift, and go to state 10
+    VAR  shift, and go to state 11
+
+    E  go to state 23
+
+
+State 19
+
+    7 E: LP E RP •
+
+    $default  reduce using rule 7 (E)
+
+
+State 20
+
+    9 E: E • PLUS E
+    9  | E PLUS E •
+   10  | E • MINUS E
+   11  | E • DIV E
+   12  | E • MUL E
+
+    DIV  shift, and go to state 17
+    MUL  shift, and go to state 18
+
+    $default  reduce using rule 9 (E)
+
+
+State 21
+
+    9 E: E • PLUS E
+   10  | E • MINUS E
+   10  | E MINUS E •
+   11  | E • DIV E
+   12  | E • MUL E
+
+    DIV  shift, and go to state 17
+    MUL  shift, and go to state 18
+
+    $default  reduce using rule 10 (E)
+
+
+State 22
+
+    9 E: E • PLUS E
+   10  | E • MINUS E
+   11  | E • DIV E
+   11  | E DIV E •
+   12  | E • MUL E
+
+    $default  reduce using rule 11 (E)
+
+
+State 23
+
+    9 E: E • PLUS E
+   10  | E • MINUS E
+   11  | E • DIV E
+   12  | E • MUL E
+   12  | E MUL E •
+
+    $default  reduce using rule 12 (E)
