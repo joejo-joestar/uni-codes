@@ -61,7 +61,7 @@ extern int yydebug;
     LCB = 262,                     /* LCB  */
     RCB = 263,                     /* RCB  */
     SC = 264,                      /* SC  */
-    COMA = 265,                    /* COMA  */
+    COMMA = 265,                   /* COMMA  */
     EQ = 266,                      /* EQ  */
     OP = 267,                      /* OP  */
     VAR = 268,                     /* VAR  */
@@ -84,7 +84,7 @@ extern int yydebug;
 #define LCB 262
 #define RCB 263
 #define SC 264
-#define COMA 265
+#define COMMA 265
 #define EQ 266
 #define OP 267
 #define VAR 268
@@ -99,8 +99,8 @@ union YYSTYPE
 {
 #line 18 "q1.y"
 
-	int data_type;
-	char var_name[30];
+    int data_type;
+    char var_name[30];
 
 #line 106 "q1.tab.h"
 

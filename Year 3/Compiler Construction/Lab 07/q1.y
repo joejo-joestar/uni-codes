@@ -49,13 +49,14 @@ VAR_LIST                :   VAR COMMA VAR_LIST                              { in
                         |   VAR                                             { insert_to_table($1, current_data_type); }
                         ;
 
-PROGRAM_STATEMENT       :   VAR EQ A_EXPN SC
+PROGRAM_STATEMENT       :   VAR EQ { expn_type = -1; } A_EXPN SC                                { expn_type = lookup_in_table($1); printf("exptype: %d %s\n", expn_type, $1); }
                         ;
 
 A_EXPN                  :   A_EXPN OP A_EXPN
                         |   LB A_EXPN RB
-                        |   VAR                                             {   expn_type = -1;
+                        |   VAR                                             {
                                                                                 temp = lookup_in_table($1);
+                                                                                printf("type: %d %s\n", temp, $1);
                                                                                 if((temp) == -1) {
                                                                                     printf("\tvariable \"%s\" undeclared\n",$1);
                                                                                     exit(1);
@@ -64,6 +65,8 @@ A_EXPN                  :   A_EXPN OP A_EXPN
                                                                                     printf("\ttype mismatch in the expression\n");
                                                                                     exit(1);
                                                                                 }
+                                                                                // expn_type = -1;
+
                                                                             }
                         ;
 
@@ -99,7 +102,7 @@ void insert_to_table(char var[30], int type) {
 }
 
 int main() {
-    yyin = fopen("input2.c", "r");
+    yyin = fopen("tests/input3.c", "r");
     yyparse();
     return 0;
 }

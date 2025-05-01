@@ -78,10 +78,10 @@ int success = 1;
 int current_data_type;
 int expn_type = -1;
 int temp;
-struct symbol_table { char var_name[30]; int type; } var_list[20];	// you may associate an integer with a datatype (say var_list[i].type=1 may imply that variable var_list[i].var_name is of type int) and store that integer against the variable whenever you deal with a declaration statement
-int var_count = 0;													// number of entries in the symbol table
-extern int lookup_in_table(char var[30]);							// returns the data type associated with the variable name being passed to, returns -1 if in case the variable is undeclared
-extern void insert_to_table(char var[30], int type);				// adds a new variable along with its data type to the table and terminates with a "multiple declaration error message", if in case the variable is already being defined
+struct symbol_table { char var_name[30]; int type; } var_list[20];  // you may associate an integer with a datatype (say var_list[i].type=1 may imply that variable var_list[i].var_name is of type int) and store that integer against the variable whenever you deal with a declaration statement
+int var_count = 0;                                                  // number of entries in the symbol table
+extern int lookup_in_table(char var[30]);                           // returns the data type associated with the variable name being passed to, returns -1 if in case the variable is undeclared
+extern void insert_to_table(char var[30], int type);                // adds a new variable along with its data type to the table and terminates with a "multiple declaration error message", if in case the variable is already being defined
 extern FILE *yyin;
 
 #line 88 "q1.tab.c"
@@ -122,7 +122,7 @@ enum yysymbol_kind_t
   YYSYMBOL_LCB = 7,                        /* LCB  */
   YYSYMBOL_RCB = 8,                        /* RCB  */
   YYSYMBOL_SC = 9,                         /* SC  */
-  YYSYMBOL_COMA = 10,                      /* COMA  */
+  YYSYMBOL_COMMA = 10,                     /* COMMA  */
   YYSYMBOL_EQ = 11,                        /* EQ  */
   YYSYMBOL_OP = 12,                        /* OP  */
   YYSYMBOL_VAR = 13,                       /* VAR  */
@@ -138,9 +138,10 @@ enum yysymbol_kind_t
   YYSYMBOL_DECLARATION_STATEMENT = 23,     /* DECLARATION_STATEMENT  */
   YYSYMBOL_VAR_LIST = 24,                  /* VAR_LIST  */
   YYSYMBOL_PROGRAM_STATEMENT = 25,         /* PROGRAM_STATEMENT  */
-  YYSYMBOL_A_EXPN = 26,                    /* A_EXPN  */
-  YYSYMBOL_MAIN_TYPE = 27,                 /* MAIN_TYPE  */
-  YYSYMBOL_DATA_TYPE = 28                  /* DATA_TYPE  */
+  YYSYMBOL_26_1 = 26,                      /* $@1  */
+  YYSYMBOL_A_EXPN = 27,                    /* A_EXPN  */
+  YYSYMBOL_MAIN_TYPE = 28,                 /* MAIN_TYPE  */
+  YYSYMBOL_DATA_TYPE = 29                  /* DATA_TYPE  */
 };
 typedef enum yysymbol_kind_t yysymbol_kind_t;
 
@@ -468,16 +469,16 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  5
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   29
+#define YYLAST   30
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  18
 /* YYNNTS -- Number of nonterminals.  */
-#define YYNNTS  11
+#define YYNNTS  12
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  19
+#define YYNRULES  20
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  38
+#define YYNSTATES  39
 
 /* YYMAXUTOK -- Last valid token kind.  */
 #define YYMAXUTOK   272
@@ -529,7 +530,8 @@ static const yytype_int8 yytranslate[] =
 static const yytype_int8 yyrline[] =
 {
        0,    31,    31,    34,    37,    38,    41,    42,    45,    48,
-      49,    52,    55,    56,    57,    69,    72,    73,    74,    75
+      49,    52,    52,    55,    56,    57,    73,    76,    77,    78,
+      79
 };
 #endif
 
@@ -546,10 +548,10 @@ static const char *yysymbol_name (yysymbol_kind_t yysymbol) YY_ATTRIBUTE_UNUSED;
 static const char *const yytname[] =
 {
   "\"end of file\"", "error", "\"invalid token\"", "HEADER", "MAIN", "LB",
-  "RB", "LCB", "RCB", "SC", "COMA", "EQ", "OP", "VAR", "INT", "CHAR",
+  "RB", "LCB", "RCB", "SC", "COMMA", "EQ", "OP", "VAR", "INT", "CHAR",
   "FLOAT", "DOUBLE", "$accept", "PGM", "BODY", "DECLARATION_STATEMENTS",
   "PROGRAM_STATEMENTS", "DECLARATION_STATEMENT", "VAR_LIST",
-  "PROGRAM_STATEMENT", "A_EXPN", "MAIN_TYPE", "DATA_TYPE", YY_NULLPTR
+  "PROGRAM_STATEMENT", "$@1", "A_EXPN", "MAIN_TYPE", "DATA_TYPE", YY_NULLPTR
 };
 
 static const char *
@@ -559,7 +561,7 @@ yysymbol_name (yysymbol_kind_t yysymbol)
 }
 #endif
 
-#define YYPACT_NINF (-29)
+#define YYPACT_NINF (-31)
 
 #define yypact_value_is_default(Yyn) \
   ((Yyn) == YYPACT_NINF)
@@ -573,10 +575,10 @@ yysymbol_name (yysymbol_kind_t yysymbol)
    STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-       1,    -8,    14,   -29,    11,   -29,    12,    10,    13,    -4,
-     -29,   -29,   -29,   -29,    15,     5,    -4,     6,   -29,    16,
-     -29,     5,   -29,    18,    17,    -5,   -29,     6,   -29,    -5,
-     -29,    -7,   -29,    -3,   -29,    -5,   -29,     9
+       1,     0,     7,   -31,    11,   -31,    12,    10,    13,    -4,
+     -31,   -31,   -31,   -31,    14,     5,    -4,     6,   -31,    15,
+     -31,     5,   -31,    17,    16,   -31,   -31,     6,   -31,    -5,
+     -31,    -5,   -31,    -7,    -3,   -31,    -5,   -31,     9
 };
 
 /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -584,24 +586,24 @@ static const yytype_int8 yypact[] =
    means the default is an error.  */
 static const yytype_int8 yydefact[] =
 {
-       0,     0,     0,    15,     0,     1,     0,     0,     0,     0,
-      16,    17,    18,    19,     0,     0,     5,     0,     2,     0,
-       3,     7,     4,    10,     0,     0,     6,     0,     8,     0,
-      14,     0,     9,     0,    11,     0,    13,    12
+       0,     0,     0,    16,     0,     1,     0,     0,     0,     0,
+      17,    18,    19,    20,     0,     0,     5,     0,     2,     0,
+       3,     7,     4,    10,     0,    11,     6,     0,     8,     0,
+       9,     0,    15,     0,     0,    12,     0,    14,    13
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -29,   -29,   -29,     8,     4,   -29,     2,   -29,   -28,   -29,
-     -29
+     -31,   -31,   -31,     8,     2,   -31,     3,   -31,   -31,   -30,
+     -31,   -31
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-       0,     2,    14,    15,    20,    16,    24,    21,    31,     4,
-      17
+       0,     2,    14,    15,    20,    16,    24,    21,    29,    33,
+       4,    17
 };
 
 /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
@@ -609,40 +611,44 @@ static const yytype_int8 yydefgoto[] =
    number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int8 yytable[] =
 {
-      29,    33,    34,    36,     1,    35,     3,    37,    30,    35,
-      10,    11,    12,    13,     5,     6,     8,     7,    19,    23,
-       9,    35,     0,    18,    22,    26,    28,    25,    27,    32
+      31,    34,    35,    37,     1,    36,    38,     5,    32,    36,
+      10,    11,    12,    13,     3,     6,     8,     7,    19,    23,
+       9,    36,    18,    26,    22,    28,    25,    27,     0,     0,
+      30
 };
 
 static const yytype_int8 yycheck[] =
 {
-       5,    29,     9,     6,     3,    12,    14,    35,    13,    12,
-      14,    15,    16,    17,     0,     4,     6,     5,    13,    13,
-       7,    12,    -1,     8,    16,    21,     9,    11,    10,    27
+       5,    31,     9,     6,     3,    12,    36,     0,    13,    12,
+      14,    15,    16,    17,    14,     4,     6,     5,    13,    13,
+       7,    12,     8,    21,    16,     9,    11,    10,    -1,    -1,
+      27
 };
 
 /* YYSTOS[STATE-NUM] -- The symbol kind of the accessing symbol of
    state STATE-NUM.  */
 static const yytype_int8 yystos[] =
 {
-       0,     3,    19,    14,    27,     0,     4,     5,     6,     7,
-      14,    15,    16,    17,    20,    21,    23,    28,     8,    13,
-      22,    25,    21,    13,    24,    11,    22,    10,     9,     5,
-      13,    26,    24,    26,     9,    12,     6,    26
+       0,     3,    19,    14,    28,     0,     4,     5,     6,     7,
+      14,    15,    16,    17,    20,    21,    23,    29,     8,    13,
+      22,    25,    21,    13,    24,    11,    22,    10,     9,    26,
+      24,     5,    13,    27,    27,     9,    12,     6,    27
 };
 
 /* YYR1[RULE-NUM] -- Symbol kind of the left-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr1[] =
 {
        0,    18,    19,    20,    21,    21,    22,    22,    23,    24,
-      24,    25,    26,    26,    26,    27,    28,    28,    28,    28
+      24,    26,    25,    27,    27,    27,    28,    29,    29,    29,
+      29
 };
 
 /* YYR2[RULE-NUM] -- Number of symbols on the right-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr2[] =
 {
        0,     2,     8,     2,     2,     1,     2,     1,     3,     3,
-       1,     4,     3,     3,     1,     1,     1,     1,     1,     1
+       1,     0,     5,     3,     3,     1,     1,     1,     1,     1,
+       1
 };
 
 
@@ -1107,75 +1113,91 @@ yyreduce:
     {
   case 2: /* PGM: HEADER MAIN_TYPE MAIN LB RB LCB BODY RCB  */
 #line 31 "q1.y"
-                                                                                                                { printf("\tparsing successful\n"); }
-#line 1112 "q1.tab.c"
+                                                                            { printf("\tparsing successful\n"); }
+#line 1118 "q1.tab.c"
     break;
 
   case 4: /* DECLARATION_STATEMENTS: DECLARATION_STATEMENT DECLARATION_STATEMENTS  */
 #line 37 "q1.y"
-                                                                                { printf("\tdeclaration section successfully parsed\n"); }
-#line 1118 "q1.tab.c"
+                                                                            { printf("\tdeclaration section successfully parsed\n"); }
+#line 1124 "q1.tab.c"
     break;
 
   case 6: /* PROGRAM_STATEMENTS: PROGRAM_STATEMENT PROGRAM_STATEMENTS  */
 #line 41 "q1.y"
-                                                                                                { printf("\tprogram statements successfully parsed\n"); }
-#line 1124 "q1.tab.c"
+                                                                            { printf("\tprogram statements successfully parsed\n"); }
+#line 1130 "q1.tab.c"
     break;
 
-  case 9: /* VAR_LIST: VAR COMA VAR_LIST  */
+  case 9: /* VAR_LIST: VAR COMMA VAR_LIST  */
 #line 48 "q1.y"
-                                                                                                                                { insert_to_table((yyvsp[-2].var_name), current_data_type); }
-#line 1130 "q1.tab.c"
+                                                                            { insert_to_table((yyvsp[-2].var_name), current_data_type); }
+#line 1136 "q1.tab.c"
     break;
 
   case 10: /* VAR_LIST: VAR  */
 #line 49 "q1.y"
-                                                                                                                                                { insert_to_table((yyvsp[0].var_name), current_data_type); }
-#line 1136 "q1.tab.c"
+                                                                            { insert_to_table((yyvsp[0].var_name), current_data_type); }
+#line 1142 "q1.tab.c"
     break;
 
-  case 14: /* A_EXPN: VAR  */
+  case 11: /* $@1: %empty  */
+#line 52 "q1.y"
+                                   { expn_type = -1; }
+#line 1148 "q1.tab.c"
+    break;
+
+  case 12: /* PROGRAM_STATEMENT: VAR EQ $@1 A_EXPN SC  */
+#line 52 "q1.y"
+                                                                                                { expn_type = lookup_in_table((yyvsp[-4].var_name)); printf("exptype: %d %s\n", expn_type, (yyvsp[-4].var_name)); }
+#line 1154 "q1.tab.c"
+    break;
+
+  case 15: /* A_EXPN: VAR  */
 #line 57 "q1.y"
-                                                                                                                                                { 	expn_type = -1;
-																				temp = lookup_in_table((yyvsp[0].var_name));
-																				if((temp) == -1) {
-																					printf("\tvariable \"%s\" undeclared\n",(yyvsp[0].var_name)); exit(1);
-																				}
-																				if(expn_type != -1 && expn_type != temp) {
-																					printf("\ttype mismatch in the expression\n");
-																					exit(1);
-																				}
-																			}
-#line 1151 "q1.tab.c"
+                                                                            {
+                                                                                temp = lookup_in_table((yyvsp[0].var_name));
+                                                                                printf("type: %d %s\n", temp, (yyvsp[0].var_name));
+                                                                                if((temp) == -1) {
+                                                                                    printf("\tvariable \"%s\" undeclared\n",(yyvsp[0].var_name));
+                                                                                    exit(1);
+                                                                                }
+                                                                                if(expn_type != -1 && expn_type != temp) {
+                                                                                    printf("\ttype mismatch in the expression\n");
+                                                                                    exit(1);
+                                                                                }
+                                                                                // expn_type = -1;
+
+                                                                            }
+#line 1173 "q1.tab.c"
     break;
 
-  case 16: /* DATA_TYPE: INT  */
-#line 72 "q1.y"
-                                                                                                                                        { (yyval.data_type) = (yyvsp[0].data_type); current_data_type = (yyvsp[0].data_type); }
-#line 1157 "q1.tab.c"
-    break;
-
-  case 17: /* DATA_TYPE: CHAR  */
-#line 73 "q1.y"
-                                                                                                                                                { (yyval.data_type) = (yyvsp[0].data_type); current_data_type = (yyvsp[0].data_type); }
-#line 1163 "q1.tab.c"
-    break;
-
-  case 18: /* DATA_TYPE: FLOAT  */
-#line 74 "q1.y"
-                                                                                                                                                { (yyval.data_type) = (yyvsp[0].data_type); current_data_type = (yyvsp[0].data_type); }
-#line 1169 "q1.tab.c"
-    break;
-
-  case 19: /* DATA_TYPE: DOUBLE  */
-#line 75 "q1.y"
-                                                                                                                                                { (yyval.data_type) = (yyvsp[0].data_type); current_data_type = (yyvsp[0].data_type); }
-#line 1175 "q1.tab.c"
-    break;
-
-
+  case 17: /* DATA_TYPE: INT  */
+#line 76 "q1.y"
+                                                                            { (yyval.data_type) = (yyvsp[0].data_type); current_data_type = (yyvsp[0].data_type); }
 #line 1179 "q1.tab.c"
+    break;
+
+  case 18: /* DATA_TYPE: CHAR  */
+#line 77 "q1.y"
+                                                                            { (yyval.data_type) = (yyvsp[0].data_type); current_data_type = (yyvsp[0].data_type); }
+#line 1185 "q1.tab.c"
+    break;
+
+  case 19: /* DATA_TYPE: FLOAT  */
+#line 78 "q1.y"
+                                                                            { (yyval.data_type) = (yyvsp[0].data_type); current_data_type = (yyvsp[0].data_type); }
+#line 1191 "q1.tab.c"
+    break;
+
+  case 20: /* DATA_TYPE: DOUBLE  */
+#line 79 "q1.y"
+                                                                            { (yyval.data_type) = (yyvsp[0].data_type); current_data_type = (yyvsp[0].data_type); }
+#line 1197 "q1.tab.c"
+    break;
+
+
+#line 1201 "q1.tab.c"
 
       default: break;
     }
@@ -1368,39 +1390,39 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 78 "q1.y"
+#line 82 "q1.y"
 
 
 int lookup_in_table(char var[30]) {
-	for (int i = 0; i < var_count; i++){
-		if (strcmp(var_list[i].var_name, var) == 0)
-			return var_list[i].type;
-	}
-	return -1;
+    for (int i = 0; i < var_count; i++){
+        if (strcmp(var_list[i].var_name, var) == 0)
+            return var_list[i].type;
+    }
+    return -1;
 }
 
 void insert_to_table(char var[30], int type) {
-	if (var_count >= 20) {
-		yyerror("table full!");
-	}
-	if (lookup_in_table(var) != -1) {
-		yyerror("duplicate entry!");
-	}
-	strcpy(var_list[var_count].var_name, var);
-	var_list[var_count].type = type;
-	var_count++;
+    if (var_count >= 20) {
+        yyerror("table full!");
+    }
+    if (lookup_in_table(var) != -1) {
+        yyerror("duplicate entry!");
+    }
+    strcpy(var_list[var_count].var_name, var);
+    var_list[var_count].type = type;
+    var_count++;
 }
 
 int main() {
-	yyin = fopen("input2.c", "r");
+    yyin = fopen("tests/input3.c", "r");
     yyparse();
     return 0;
 }
 
 int yyerror(const char *msg) {
-	extern int yylineno;
-	printf("Parsing Failed\nLine Number [%d] : %s\n", yylineno, msg);
-	success = 0;
-	exit(1);
-	return 0;
+    extern int yylineno;
+    printf("Parsing Failed\nLine Number [%d] : %s\n", yylineno, msg);
+    success = 0;
+    exit(1);
+    return 0;
 }

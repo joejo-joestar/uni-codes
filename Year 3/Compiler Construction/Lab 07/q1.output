@@ -1,4 +1,4 @@
-State 37 conflicts: 1 shift/reduce
+State 38 conflicts: 1 shift/reduce
 
 
 Grammar
@@ -17,21 +17,23 @@ Grammar
 
     7 DECLARATION_STATEMENT: DATA_TYPE VAR_LIST SC
 
-    8 VAR_LIST: VAR COMA VAR_LIST
+    8 VAR_LIST: VAR COMMA VAR_LIST
     9         | VAR
 
-   10 PROGRAM_STATEMENT: VAR EQ A_EXPN SC
+   10 $@1: ε
 
-   11 A_EXPN: A_EXPN OP A_EXPN
-   12       | LB A_EXPN RB
-   13       | VAR
+   11 PROGRAM_STATEMENT: VAR EQ $@1 A_EXPN SC
 
-   14 MAIN_TYPE: INT
+   12 A_EXPN: A_EXPN OP A_EXPN
+   13       | LB A_EXPN RB
+   14       | VAR
 
-   15 DATA_TYPE: INT
-   16          | CHAR
-   17          | FLOAT
-   18          | DOUBLE
+   15 MAIN_TYPE: INT
+
+   16 DATA_TYPE: INT
+   17          | CHAR
+   18          | FLOAT
+   19          | DOUBLE
 
 
 Terminals, with rules where they appear
@@ -40,19 +42,19 @@ Terminals, with rules where they appear
     error (256)
     HEADER (258) 1
     MAIN (259) 1
-    LB (260) 1 12
-    RB (261) 1 12
+    LB (260) 1 13
+    RB (261) 1 13
     LCB (262) 1
     RCB (263) 1
-    SC (264) 7 10
-    COMA (265) 8
-    EQ (266) 10
-    OP (267) 11
-    VAR <var_name> (268) 8 9 10 13
-    INT <data_type> (269) 14 15
-    CHAR <data_type> (270) 16
-    FLOAT <data_type> (271) 17
-    DOUBLE <data_type> (272) 18
+    SC (264) 7 11
+    COMMA (265) 8
+    EQ (266) 11
+    OP (267) 12
+    VAR <var_name> (268) 8 9 11 14
+    INT <data_type> (269) 15 16
+    CHAR <data_type> (270) 17
+    FLOAT <data_type> (271) 18
+    DOUBLE <data_type> (272) 19
 
 
 Nonterminals, with rules where they appear
@@ -78,16 +80,19 @@ Nonterminals, with rules where they appear
         on left: 8 9
         on right: 7 8
     PROGRAM_STATEMENT (25)
-        on left: 10
+        on left: 11
         on right: 5 6
-    A_EXPN (26)
-        on left: 11 12 13
-        on right: 10 11 12
-    MAIN_TYPE (27)
-        on left: 14
+    $@1 (26)
+        on left: 10
+        on right: 11
+    A_EXPN (27)
+        on left: 12 13 14
+        on right: 11 12 13
+    MAIN_TYPE (28)
+        on left: 15
         on right: 1
-    DATA_TYPE <data_type> (28)
-        on left: 15 16 17 18
+    DATA_TYPE <data_type> (29)
+        on left: 16 17 18 19
         on right: 7
 
 
@@ -118,9 +123,9 @@ State 2
 
 State 3
 
-   14 MAIN_TYPE: INT •
+   15 MAIN_TYPE: INT •
 
-    $default  reduce using rule 14 (MAIN_TYPE)
+    $default  reduce using rule 15 (MAIN_TYPE)
 
 
 State 4
@@ -175,30 +180,30 @@ State 9
 
 State 10
 
-   15 DATA_TYPE: INT •
-
-    $default  reduce using rule 15 (DATA_TYPE)
-
-
-State 11
-
-   16 DATA_TYPE: CHAR •
+   16 DATA_TYPE: INT •
 
     $default  reduce using rule 16 (DATA_TYPE)
 
 
-State 12
+State 11
 
-   17 DATA_TYPE: FLOAT •
+   17 DATA_TYPE: CHAR •
 
     $default  reduce using rule 17 (DATA_TYPE)
 
 
-State 13
+State 12
 
-   18 DATA_TYPE: DOUBLE •
+   18 DATA_TYPE: FLOAT •
 
     $default  reduce using rule 18 (DATA_TYPE)
+
+
+State 13
+
+   19 DATA_TYPE: DOUBLE •
+
+    $default  reduce using rule 19 (DATA_TYPE)
 
 
 State 14
@@ -253,7 +258,7 @@ State 18
 
 State 19
 
-   10 PROGRAM_STATEMENT: VAR • EQ A_EXPN SC
+   11 PROGRAM_STATEMENT: VAR • EQ $@1 A_EXPN SC
 
     EQ  shift, and go to state 25
 
@@ -287,10 +292,10 @@ State 22
 
 State 23
 
-    8 VAR_LIST: VAR • COMA VAR_LIST
+    8 VAR_LIST: VAR • COMMA VAR_LIST
     9         | VAR •
 
-    COMA  shift, and go to state 27
+    COMMA  shift, and go to state 27
 
     $default  reduce using rule 9 (VAR_LIST)
 
@@ -304,12 +309,11 @@ State 24
 
 State 25
 
-   10 PROGRAM_STATEMENT: VAR EQ • A_EXPN SC
+   11 PROGRAM_STATEMENT: VAR EQ • $@1 A_EXPN SC
 
-    LB   shift, and go to state 29
-    VAR  shift, and go to state 30
+    $default  reduce using rule 10 ($@1)
 
-    A_EXPN  go to state 31
+    $@1  go to state 29
 
 
 State 26
@@ -321,11 +325,11 @@ State 26
 
 State 27
 
-    8 VAR_LIST: VAR COMA • VAR_LIST
+    8 VAR_LIST: VAR COMMA • VAR_LIST
 
     VAR  shift, and go to state 23
 
-    VAR_LIST  go to state 32
+    VAR_LIST  go to state 30
 
 
 State 28
@@ -337,76 +341,86 @@ State 28
 
 State 29
 
-   12 A_EXPN: LB • A_EXPN RB
+   11 PROGRAM_STATEMENT: VAR EQ $@1 • A_EXPN SC
 
-    LB   shift, and go to state 29
-    VAR  shift, and go to state 30
+    LB   shift, and go to state 31
+    VAR  shift, and go to state 32
 
     A_EXPN  go to state 33
 
 
 State 30
 
-   13 A_EXPN: VAR •
-
-    $default  reduce using rule 13 (A_EXPN)
-
-
-State 31
-
-   10 PROGRAM_STATEMENT: VAR EQ A_EXPN • SC
-   11 A_EXPN: A_EXPN • OP A_EXPN
-
-    SC  shift, and go to state 34
-    OP  shift, and go to state 35
-
-
-State 32
-
-    8 VAR_LIST: VAR COMA VAR_LIST •
+    8 VAR_LIST: VAR COMMA VAR_LIST •
 
     $default  reduce using rule 8 (VAR_LIST)
 
 
+State 31
+
+   13 A_EXPN: LB • A_EXPN RB
+
+    LB   shift, and go to state 31
+    VAR  shift, and go to state 32
+
+    A_EXPN  go to state 34
+
+
+State 32
+
+   14 A_EXPN: VAR •
+
+    $default  reduce using rule 14 (A_EXPN)
+
+
 State 33
 
-   11 A_EXPN: A_EXPN • OP A_EXPN
-   12       | LB A_EXPN • RB
+   11 PROGRAM_STATEMENT: VAR EQ $@1 A_EXPN • SC
+   12 A_EXPN: A_EXPN • OP A_EXPN
 
-    RB  shift, and go to state 36
-    OP  shift, and go to state 35
+    SC  shift, and go to state 35
+    OP  shift, and go to state 36
 
 
 State 34
 
-   10 PROGRAM_STATEMENT: VAR EQ A_EXPN SC •
+   12 A_EXPN: A_EXPN • OP A_EXPN
+   13       | LB A_EXPN • RB
 
-    $default  reduce using rule 10 (PROGRAM_STATEMENT)
+    RB  shift, and go to state 37
+    OP  shift, and go to state 36
 
 
 State 35
 
-   11 A_EXPN: A_EXPN OP • A_EXPN
+   11 PROGRAM_STATEMENT: VAR EQ $@1 A_EXPN SC •
 
-    LB   shift, and go to state 29
-    VAR  shift, and go to state 30
-
-    A_EXPN  go to state 37
+    $default  reduce using rule 11 (PROGRAM_STATEMENT)
 
 
 State 36
 
-   12 A_EXPN: LB A_EXPN RB •
+   12 A_EXPN: A_EXPN OP • A_EXPN
 
-    $default  reduce using rule 12 (A_EXPN)
+    LB   shift, and go to state 31
+    VAR  shift, and go to state 32
+
+    A_EXPN  go to state 38
 
 
 State 37
 
-   11 A_EXPN: A_EXPN • OP A_EXPN
-   11       | A_EXPN OP A_EXPN •
+   13 A_EXPN: LB A_EXPN RB •
 
-    OP  shift, and go to state 35
+    $default  reduce using rule 13 (A_EXPN)
 
-    OP        [reduce using rule 11 (A_EXPN)]
-    $default  reduce using rule 11 (A_EXPN)
+
+State 38
+
+   12 A_EXPN: A_EXPN • OP A_EXPN
+   12       | A_EXPN OP A_EXPN •
+
+    OP  shift, and go to state 36
+
+    OP        [reduce using rule 12 (A_EXPN)]
+    $default  reduce using rule 12 (A_EXPN)

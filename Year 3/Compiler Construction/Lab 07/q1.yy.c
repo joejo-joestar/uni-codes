@@ -504,13 +504,12 @@ int yy_flex_debug = 0;
 char *yytext;
 #line 1 "q1.l"
 #line 4 "q1.l"
-	#include<stdio.h>
-	#include<string.h>
-	#include"q1.tab.h"
-	#include<math.h>
-	extern int var_count;
+#include<stdio.h>
+#include<string.h>
+#include"q1.tab.h"
+#include<math.h>
+#line 512 "q1.yy.c"
 #line 513 "q1.yy.c"
-#line 514 "q1.yy.c"
 
 #define INITIAL 0
 
@@ -727,10 +726,10 @@ YY_DECL
 		}
 
 	{
-#line 11 "q1.l"
+#line 10 "q1.l"
 
 
-#line 734 "q1.yy.c"
+#line 733 "q1.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -799,101 +798,101 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 13 "q1.l"
+#line 12 "q1.l"
 { return HEADER; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 14 "q1.l"
-{ printf("usage of keyword \"%s\" is prohibited\n" ,yytext); exit(0); }
+#line 13 "q1.l"
+{ printf("\tusage of keyword \"%s\" is prohibited\n" ,yytext); exit(0); }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 15 "q1.l"
+#line 14 "q1.l"
 { yylval.data_type=0; return INT; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 16 "q1.l"
+#line 15 "q1.l"
 { yylval.data_type=1; return CHAR; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 17 "q1.l"
+#line 16 "q1.l"
 { yylval.data_type=2; return FLOAT; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 18 "q1.l"
+#line 17 "q1.l"
 { yylval.data_type=3; return DOUBLE; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 19 "q1.l"
+#line 18 "q1.l"
 { return MAIN; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 20 "q1.l"
+#line 19 "q1.l"
 { return LB; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 21 "q1.l"
+#line 20 "q1.l"
 { return RB; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 22 "q1.l"
+#line 21 "q1.l"
 { return LCB; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 23 "q1.l"
+#line 22 "q1.l"
 { return RCB; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 24 "q1.l"
-{ return COMA; }
+#line 23 "q1.l"
+{ return COMMA; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 25 "q1.l"
+#line 24 "q1.l"
 { return SC; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 26 "q1.l"
+#line 25 "q1.l"
 { return OP; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 27 "q1.l"
+#line 26 "q1.l"
 { return EQ; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 28 "q1.l"
+#line 27 "q1.l"
 { strcpy(yylval.var_name, yytext); return VAR; }
 	YY_BREAK
 case 17:
 /* rule 17 can match eol */
 YY_RULE_SETUP
-#line 29 "q1.l"
+#line 28 "q1.l"
 { /*new line or space*/ }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 30 "q1.l"
-{ printf("invalid character sequence %s\n",yytext); exit(0); }
+#line 29 "q1.l"
+{ printf("\tinvalid character sequence %s\n",yytext); exit(0); }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 32 "q1.l"
+#line 31 "q1.l"
 ECHO;
 	YY_BREAK
-#line 897 "q1.yy.c"
+#line 896 "q1.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1910,7 +1909,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 32 "q1.l"
+#line 31 "q1.l"
 
 
 int yywrap(void) {
