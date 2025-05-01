@@ -7,59 +7,60 @@
 int yylex(void);
 int yyerror(const char *s);
 
-
-struct expr { char operand1, operand2, op, res; int num1, num2; } expression[20];
+struct expr { char oper1, oper2, op, res; int num1, num2; } expr[20];
 char temp = 'A' - 1;
-int index1 = 0;
+int idx = 0;
 
 char addtotable(char a, char b, char op, int num_a, int num_b) {
     temp++;
-    expression[index1] = (struct expr){a, b, op, temp, num_a, num_b};
-    index1++;
+    expr[idx] = (struct expr){a, b, op, temp, num_a, num_b};
+    idx++;
     return temp;
 }
 
 void print_res() {
     printf("\nThree Addr Code:\n");
-    for(int i = 0; i < index1; i++) {
-        if(expression[i].op == '#') {
-            printf("%c := \t %d\n", expression[i].res, expression[i].num1);
+    for(int i = 0; i < idx; i++) {
+        if(expr[i].op == '#') {
+            printf("%c := \t %d\n", expr[i].res, expr[i].num1);
         }
-        else if(expression[i].op == '=') {
-            printf("%c := \t %c\n", expression[i].res, expression[i].operand1);
+        else if(expr[i].op == '=') {
+            printf("%c := \t %c\n", expr[i].res, expr[i].oper1);
         }
         else {
             printf("%c := \t %c \t %c \t %c\n",
-            expression[i].res,
-            expression[i].operand1,
-            expression[i].op,
-            expression[i].operand2);
+                expr[i].res,
+                expr[i].oper1,
+                expr[i].op,
+                expr[i].oper2
+            );
         }
     }
 
     printf("\nQuadruple:\n");
-    for (int i = 0; i < index1; i++){
-        if(expression[i].op == '#'){
-            printf("const \t %d \t %c\n", expression[i].num1, expression[i].res);
+    for (int i = 0; i < idx; i++){
+        if(expr[i].op == '#'){
+            printf("const \t %d \t %c\n", expr[i].num1, expr[i].res);
         }
         else {
             printf("%c \t %c \t %c \t %c\n",
-                expression[i].op,
-                expression[i].operand1,
-                expression[i].operand2,
-                expression[i].res);
+                expr[i].op,
+                expr[i].oper1,
+                expr[i].oper2,
+                expr[i].res
+            );
         }
     }
 
     printf("\nTriples:\n");
-    for(int i = 0; i < index1; i++) {
-        printf("%c \t", expression[i].op);
-        if(expression[i].op == '#') {
-            printf("%d \t\n", expression[i].num1);
+    for(int i = 0; i < idx; i++) {
+        printf("%c \t", expr[i].op);
+        if(expr[i].op == '#') {
+            printf("%d \t\n", expr[i].num1);
         }
         else {
-            printf(isupper(expression[i].operand1) ? "pointer(%d) \t" : "%c \t", isupper(expression[i].operand1) ? expression[i].operand1 - 'A' : expression[i].operand1);
-            printf(isupper(expression[i].operand2) ? "pointer(%d)\n" : "%c\n", isupper(expression[i].operand2) ? expression[i].operand2 - 'A' : expression[i].operand2);
+            printf(isupper(expr[i].oper1) ? "pointer(%d) \t" : "%c \t", isupper(expr[i].oper1) ? expr[i].oper1 - 'A' : expr[i].oper1);
+            printf(isupper(expr[i].oper2) ? "pointer(%d)\n" : "%c\n", isupper(expr[i].oper2) ? expr[i].oper2 - 'A' : expr[i].oper2);
         }
     }
 }
@@ -85,8 +86,8 @@ void print_res() {
 S           :   S LINE
             |
             ;
-LINE        :   STATEMENT NL       { print_res(); index1 = 0; temp = 'A' - 1; }
-            |   STATEMENT SC NL    { print_res(); index1 = 0; temp = 'A' - 1; }
+LINE        :   STATEMENT NL       { print_res(); idx = 0; temp = 'A' - 1; }
+            |   STATEMENT SC NL    { print_res(); idx = 0; temp = 'A' - 1; }
             ;
 STATEMENT   :   VAR EQ E                { addtotable($3, '\0', '=', 0, 0); }
             ;
