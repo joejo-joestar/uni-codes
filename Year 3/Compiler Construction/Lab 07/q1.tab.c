@@ -1113,37 +1113,37 @@ yyreduce:
     {
   case 2: /* PGM: HEADER MAIN_TYPE MAIN LB RB LCB BODY RCB  */
 #line 31 "q1.y"
-                                                                            { printf("\tparsing successful\n"); }
+                                                                                                { printf("\tparsing successful\n"); }
 #line 1118 "q1.tab.c"
     break;
 
   case 4: /* DECLARATION_STATEMENTS: DECLARATION_STATEMENT DECLARATION_STATEMENTS  */
 #line 37 "q1.y"
-                                                                            { printf("\tdeclaration section successfully parsed\n"); }
+                                                                                                { printf("\tdeclaration section successfully parsed\n"); }
 #line 1124 "q1.tab.c"
     break;
 
   case 6: /* PROGRAM_STATEMENTS: PROGRAM_STATEMENT PROGRAM_STATEMENTS  */
 #line 41 "q1.y"
-                                                                            { printf("\tprogram statements successfully parsed\n"); }
+                                                                                                { printf("\tprogram statements successfully parsed\n"); }
 #line 1130 "q1.tab.c"
     break;
 
   case 9: /* VAR_LIST: VAR COMMA VAR_LIST  */
 #line 48 "q1.y"
-                                                                            { insert_to_table((yyvsp[-2].var_name), current_data_type); }
+                                                                                                { insert_to_table((yyvsp[-2].var_name), current_data_type); }
 #line 1136 "q1.tab.c"
     break;
 
   case 10: /* VAR_LIST: VAR  */
 #line 49 "q1.y"
-                                                                            { insert_to_table((yyvsp[0].var_name), current_data_type); }
+                                                                                                { insert_to_table((yyvsp[0].var_name), current_data_type); }
 #line 1142 "q1.tab.c"
     break;
 
   case 11: /* $@1: %empty  */
 #line 52 "q1.y"
-                                   { expn_type = -1; }
+                                   { expn_type = lookup_in_table((yyvsp[-1].var_name)); }
 #line 1148 "q1.tab.c"
     break;
 
@@ -1155,44 +1155,44 @@ yyreduce:
 
   case 15: /* A_EXPN: VAR  */
 #line 57 "q1.y"
-                                                                            {
-                                                                                temp = lookup_in_table((yyvsp[0].var_name));
-                                                                                printf("type: %d %s\n", temp, (yyvsp[0].var_name));
-                                                                                if((temp) == -1) {
-                                                                                    printf("\tvariable \"%s\" undeclared\n",(yyvsp[0].var_name));
-                                                                                    exit(1);
-                                                                                }
-                                                                                if(expn_type != -1 && expn_type != temp) {
-                                                                                    printf("\ttype mismatch in the expression\n");
-                                                                                    exit(1);
-                                                                                }
-                                                                                // expn_type = -1;
-
-                                                                            }
+                                                                                                {
+                                                                                                    temp = lookup_in_table((yyvsp[0].var_name));
+                                                                                                    printf("type: %d %s\n", temp, (yyvsp[0].var_name));
+                                                                                                    if (expn_type == -1) {
+                                                                                                        expn_type = temp;
+                                                                                                    }
+                                                                                                    if(temp == -1) {
+                                                                                                        printf("\tvariable \"%s\" undeclared\n",(yyvsp[0].var_name));
+                                                                                                        yyerror("undeclared variable");
+                                                                                                    }
+                                                                                                    if(expn_type != -1 && expn_type != temp) {
+                                                                                                        yyerror("type mismatch in the expression");
+                                                                                                    }
+                                                                                                }
 #line 1173 "q1.tab.c"
     break;
 
   case 17: /* DATA_TYPE: INT  */
 #line 76 "q1.y"
-                                                                            { (yyval.data_type) = (yyvsp[0].data_type); current_data_type = (yyvsp[0].data_type); }
+                                                                                                { (yyval.data_type) = (yyvsp[0].data_type); current_data_type = (yyvsp[0].data_type); }
 #line 1179 "q1.tab.c"
     break;
 
   case 18: /* DATA_TYPE: CHAR  */
 #line 77 "q1.y"
-                                                                            { (yyval.data_type) = (yyvsp[0].data_type); current_data_type = (yyvsp[0].data_type); }
+                                                                                                { (yyval.data_type) = (yyvsp[0].data_type); current_data_type = (yyvsp[0].data_type); }
 #line 1185 "q1.tab.c"
     break;
 
   case 19: /* DATA_TYPE: FLOAT  */
 #line 78 "q1.y"
-                                                                            { (yyval.data_type) = (yyvsp[0].data_type); current_data_type = (yyvsp[0].data_type); }
+                                                                                                { (yyval.data_type) = (yyvsp[0].data_type); current_data_type = (yyvsp[0].data_type); }
 #line 1191 "q1.tab.c"
     break;
 
   case 20: /* DATA_TYPE: DOUBLE  */
 #line 79 "q1.y"
-                                                                            { (yyval.data_type) = (yyvsp[0].data_type); current_data_type = (yyvsp[0].data_type); }
+                                                                                                { (yyval.data_type) = (yyvsp[0].data_type); current_data_type = (yyvsp[0].data_type); }
 #line 1197 "q1.tab.c"
     break;
 

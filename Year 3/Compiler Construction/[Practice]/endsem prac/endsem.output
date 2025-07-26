@@ -1,0 +1,266 @@
+Grammar
+
+    0 $accept: S $end
+
+    1 S: for_stmt
+
+    2 for_stmt: FOR LP assign_stmt SC expr SC assign_stmt RP stmt
+
+    3 assign_stmt: ID EQ NUM
+
+    4 expr: ID RELOP NUM
+
+    5 stmt: LCB stmt_list RCB
+    6     | assign_stmt SC
+
+    7 stmt_list: stmt stmt_list
+    8          | ε
+
+
+Terminals, with rules where they appear
+
+    $end (0) 0
+    error (256)
+    FOR (258) 2
+    LP (259) 2
+    SC (260) 2 6
+    RP (261) 2
+    LCB (262) 5
+    RCB (263) 5
+    EQ (264) 3
+    NUM <inttype> (265) 3 4
+    RELOP <reloptype> (266) 4
+    ID <reloptype> (267) 3 4
+
+
+Nonterminals, with rules where they appear
+
+    $accept (13)
+        on left: 0
+    S (14)
+        on left: 1
+        on right: 0
+    for_stmt (15)
+        on left: 2
+        on right: 1
+    assign_stmt (16)
+        on left: 3
+        on right: 2 6
+    expr <reloptype> (17)
+        on left: 4
+        on right: 2
+    stmt (18)
+        on left: 5 6
+        on right: 2 7
+    stmt_list (19)
+        on left: 7 8
+        on right: 5 7
+
+
+State 0
+
+    0 $accept: • S $end
+
+    FOR  shift, and go to state 1
+
+    S         go to state 2
+    for_stmt  go to state 3
+
+
+State 1
+
+    2 for_stmt: FOR • LP assign_stmt SC expr SC assign_stmt RP stmt
+
+    LP  shift, and go to state 4
+
+
+State 2
+
+    0 $accept: S • $end
+
+    $end  shift, and go to state 5
+
+
+State 3
+
+    1 S: for_stmt •
+
+    $default  reduce using rule 1 (S)
+
+
+State 4
+
+    2 for_stmt: FOR LP • assign_stmt SC expr SC assign_stmt RP stmt
+
+    ID  shift, and go to state 6
+
+    assign_stmt  go to state 7
+
+
+State 5
+
+    0 $accept: S $end •
+
+    $default  accept
+
+
+State 6
+
+    3 assign_stmt: ID • EQ NUM
+
+    EQ  shift, and go to state 8
+
+
+State 7
+
+    2 for_stmt: FOR LP assign_stmt • SC expr SC assign_stmt RP stmt
+
+    SC  shift, and go to state 9
+
+
+State 8
+
+    3 assign_stmt: ID EQ • NUM
+
+    NUM  shift, and go to state 10
+
+
+State 9
+
+    2 for_stmt: FOR LP assign_stmt SC • expr SC assign_stmt RP stmt
+
+    ID  shift, and go to state 11
+
+    expr  go to state 12
+
+
+State 10
+
+    3 assign_stmt: ID EQ NUM •
+
+    $default  reduce using rule 3 (assign_stmt)
+
+
+State 11
+
+    4 expr: ID • RELOP NUM
+
+    RELOP  shift, and go to state 13
+
+
+State 12
+
+    2 for_stmt: FOR LP assign_stmt SC expr • SC assign_stmt RP stmt
+
+    SC  shift, and go to state 14
+
+
+State 13
+
+    4 expr: ID RELOP • NUM
+
+    NUM  shift, and go to state 15
+
+
+State 14
+
+    2 for_stmt: FOR LP assign_stmt SC expr SC • assign_stmt RP stmt
+
+    ID  shift, and go to state 6
+
+    assign_stmt  go to state 16
+
+
+State 15
+
+    4 expr: ID RELOP NUM •
+
+    $default  reduce using rule 4 (expr)
+
+
+State 16
+
+    2 for_stmt: FOR LP assign_stmt SC expr SC assign_stmt • RP stmt
+
+    RP  shift, and go to state 17
+
+
+State 17
+
+    2 for_stmt: FOR LP assign_stmt SC expr SC assign_stmt RP • stmt
+
+    LCB  shift, and go to state 18
+    ID   shift, and go to state 6
+
+    assign_stmt  go to state 19
+    stmt         go to state 20
+
+
+State 18
+
+    5 stmt: LCB • stmt_list RCB
+
+    LCB  shift, and go to state 18
+    ID   shift, and go to state 6
+
+    $default  reduce using rule 8 (stmt_list)
+
+    assign_stmt  go to state 19
+    stmt         go to state 21
+    stmt_list    go to state 22
+
+
+State 19
+
+    6 stmt: assign_stmt • SC
+
+    SC  shift, and go to state 23
+
+
+State 20
+
+    2 for_stmt: FOR LP assign_stmt SC expr SC assign_stmt RP stmt •
+
+    $default  reduce using rule 2 (for_stmt)
+
+
+State 21
+
+    7 stmt_list: stmt • stmt_list
+
+    LCB  shift, and go to state 18
+    ID   shift, and go to state 6
+
+    $default  reduce using rule 8 (stmt_list)
+
+    assign_stmt  go to state 19
+    stmt         go to state 21
+    stmt_list    go to state 24
+
+
+State 22
+
+    5 stmt: LCB stmt_list • RCB
+
+    RCB  shift, and go to state 25
+
+
+State 23
+
+    6 stmt: assign_stmt SC •
+
+    $default  reduce using rule 6 (stmt)
+
+
+State 24
+
+    7 stmt_list: stmt stmt_list •
+
+    $default  reduce using rule 7 (stmt_list)
+
+
+State 25
+
+    5 stmt: LCB stmt_list RCB •
+
+    $default  reduce using rule 5 (stmt)

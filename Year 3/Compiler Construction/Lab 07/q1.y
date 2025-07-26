@@ -28,55 +28,55 @@ extern FILE *yyin;
 
 %%
 
-PGM                     :   HEADER MAIN_TYPE MAIN LB RB LCB BODY RCB        { printf("\tparsing successful\n"); }
+PGM                     :   HEADER MAIN_TYPE MAIN LB RB LCB BODY RCB                            { printf("\tparsing successful\n"); }
                         ;
 
 BODY                    :   DECLARATION_STATEMENTS PROGRAM_STATEMENTS
                         ;
 
-DECLARATION_STATEMENTS  :   DECLARATION_STATEMENT DECLARATION_STATEMENTS    { printf("\tdeclaration section successfully parsed\n"); }
+DECLARATION_STATEMENTS  :   DECLARATION_STATEMENT DECLARATION_STATEMENTS                        { printf("\tdeclaration section successfully parsed\n"); }
                         |   DECLARATION_STATEMENT
                         ;
 
-PROGRAM_STATEMENTS      :   PROGRAM_STATEMENT PROGRAM_STATEMENTS            { printf("\tprogram statements successfully parsed\n"); }
+PROGRAM_STATEMENTS      :   PROGRAM_STATEMENT PROGRAM_STATEMENTS                                { printf("\tprogram statements successfully parsed\n"); }
                         |   PROGRAM_STATEMENT
                         ;
 
 DECLARATION_STATEMENT   :   DATA_TYPE VAR_LIST SC
                         ;
 
-VAR_LIST                :   VAR COMMA VAR_LIST                              { insert_to_table($1, current_data_type); }
-                        |   VAR                                             { insert_to_table($1, current_data_type); }
+VAR_LIST                :   VAR COMMA VAR_LIST                                                  { insert_to_table($1, current_data_type); }
+                        |   VAR                                                                 { insert_to_table($1, current_data_type); }
                         ;
 
-PROGRAM_STATEMENT       :   VAR EQ { expn_type = -1; } A_EXPN SC                                { expn_type = lookup_in_table($1); printf("exptype: %d %s\n", expn_type, $1); }
+PROGRAM_STATEMENT       :   VAR EQ { expn_type = lookup_in_table($1); } A_EXPN SC               { expn_type = lookup_in_table($1); printf("exptype: %d %s\n", expn_type, $1); }
                         ;
 
 A_EXPN                  :   A_EXPN OP A_EXPN
                         |   LB A_EXPN RB
-                        |   VAR                                             {
-                                                                                temp = lookup_in_table($1);
-                                                                                printf("type: %d %s\n", temp, $1);
-                                                                                if((temp) == -1) {
-                                                                                    printf("\tvariable \"%s\" undeclared\n",$1);
-                                                                                    exit(1);
-                                                                                }
-                                                                                if(expn_type != -1 && expn_type != temp) {
-                                                                                    printf("\ttype mismatch in the expression\n");
-                                                                                    exit(1);
-                                                                                }
-                                                                                // expn_type = -1;
-
-                                                                            }
+                        |   VAR                                                                 {
+                                                                                                    temp = lookup_in_table($1);
+                                                                                                    printf("type: %d %s\n", temp, $1);
+                                                                                                    if (expn_type == -1) {
+                                                                                                        expn_type = temp;
+                                                                                                    }
+                                                                                                    if(temp == -1) {
+                                                                                                        printf("\tvariable \"%s\" undeclared\n",$1);
+                                                                                                        yyerror("undeclared variable");
+                                                                                                    }
+                                                                                                    if(expn_type != -1 && expn_type != temp) {
+                                                                                                        yyerror("type mismatch in the expression");
+                                                                                                    }
+                                                                                                }
                         ;
 
 MAIN_TYPE               :   INT
                         ;
 
-DATA_TYPE               :   INT                                             { $$ = $1; current_data_type = $1; }
-                        |   CHAR                                            { $$ = $1; current_data_type = $1; }
-                        |   FLOAT                                           { $$ = $1; current_data_type = $1; }
-                        |   DOUBLE                                          { $$ = $1; current_data_type = $1; }
+DATA_TYPE               :   INT                                                                 { $$ = $1; current_data_type = $1; }
+                        |   CHAR                                                                { $$ = $1; current_data_type = $1; }
+                        |   FLOAT                                                               { $$ = $1; current_data_type = $1; }
+                        |   DOUBLE                                                              { $$ = $1; current_data_type = $1; }
                         ;
 
 %%

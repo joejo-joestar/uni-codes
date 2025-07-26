@@ -2,7 +2,8 @@
 int main()
 {
 	int varone,vartwo,varthree;
+
 	char testone, testtwo,testthree;
-	testone=vartwo+testthree/(testone*testtwo);
-	vartwo=varone*varone+varfive;
+	testone=testfour-vartwo+testthree/(testone*testtwo);
+	vartwo=varone*varone+varthree;
 }

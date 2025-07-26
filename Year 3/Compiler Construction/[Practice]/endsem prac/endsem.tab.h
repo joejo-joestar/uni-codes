@@ -35,8 +35,8 @@
    especially those whose name start with YY_ or yy_.  They are
    private implementation details that can be changed or removed.  */
 
-#ifndef YY_YY_Q1_TAB_H_INCLUDED
-# define YY_YY_Q1_TAB_H_INCLUDED
+#ifndef YY_YY_ENDSEM_TAB_H_INCLUDED
+# define YY_YY_ENDSEM_TAB_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -54,17 +54,16 @@ extern int yydebug;
     YYEOF = 0,                     /* "end of file"  */
     YYerror = 256,                 /* error  */
     YYUNDEF = 257,                 /* "invalid token"  */
-    NL = 258,                      /* NL  */
+    FOR = 258,                     /* FOR  */
     LP = 259,                      /* LP  */
-    RP = 260,                      /* RP  */
-    EQ = 261,                      /* EQ  */
-    SC = 262,                      /* SC  */
-    INT = 263,                     /* INT  */
-    VAR = 264,                     /* VAR  */
-    PLUS = 265,                    /* PLUS  */
-    MINUS = 266,                   /* MINUS  */
-    DIV = 267,                     /* DIV  */
-    MUL = 268                      /* MUL  */
+    SC = 260,                      /* SC  */
+    RP = 261,                      /* RP  */
+    LCB = 262,                     /* LCB  */
+    RCB = 263,                     /* RCB  */
+    EQ = 264,                      /* EQ  */
+    NUM = 265,                     /* NUM  */
+    RELOP = 266,                   /* RELOP  */
+    ID = 267                       /* ID  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -73,28 +72,28 @@ extern int yydebug;
 #define YYEOF 0
 #define YYerror 256
 #define YYUNDEF 257
-#define NL 258
+#define FOR 258
 #define LP 259
-#define RP 260
-#define EQ 261
-#define SC 262
-#define INT 263
-#define VAR 264
-#define PLUS 265
-#define MINUS 266
-#define DIV 267
-#define MUL 268
+#define SC 260
+#define RP 261
+#define LCB 262
+#define RCB 263
+#define EQ 264
+#define NUM 265
+#define RELOP 266
+#define ID 267
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 71 "q1.y"
+#line 50 "endsem.y"
 
-    int intval;
-    char varval;
+    char chartype;
+    int inttype;
+    char reloptype[20];
 
-#line 98 "q1.tab.h"
+#line 97 "endsem.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;
@@ -109,4 +108,4 @@ extern YYSTYPE yylval;
 int yyparse (void);
 
 
-#endif /* !YY_YY_Q1_TAB_H_INCLUDED  */
+#endif /* !YY_YY_ENDSEM_TAB_H_INCLUDED  */

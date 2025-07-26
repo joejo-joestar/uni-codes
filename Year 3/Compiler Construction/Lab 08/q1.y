@@ -22,13 +22,13 @@ void print_res() {
     printf("\nThree Addr Code:\n");
     for(int i = 0; i < idx; i++) {
         if(expr[i].op == '#') {
-            printf("%c := \t %d\n", expr[i].res, expr[i].num1);
+            printf("\t%c := \t %d\n", expr[i].res, expr[i].num1);
         }
         else if(expr[i].op == '=') {
-            printf("%c := \t %c\n", expr[i].res, expr[i].oper1);
+            printf("\t%c := \t %c\n", expr[i].res, expr[i].oper1);
         }
         else {
-            printf("%c := \t %c \t %c \t %c\n",
+            printf("\t%c := \t %c \t %c \t %c\n",
                 expr[i].res,
                 expr[i].oper1,
                 expr[i].op,
@@ -40,10 +40,10 @@ void print_res() {
     printf("\nQuadruple:\n");
     for (int i = 0; i < idx; i++){
         if(expr[i].op == '#'){
-            printf("const \t %d \t %c\n", expr[i].num1, expr[i].res);
+            printf("\tconst \t %d \t %c\n", expr[i].num1, expr[i].res);
         }
         else {
-            printf("%c \t %c \t %c \t %c\n",
+            printf("\t%c \t %c \t %c \t %c\n",
                 expr[i].op,
                 expr[i].oper1,
                 expr[i].oper2,
@@ -54,13 +54,13 @@ void print_res() {
 
     printf("\nTriples:\n");
     for(int i = 0; i < idx; i++) {
-        printf("%c \t", expr[i].op);
+        printf("\t%c \t", expr[i].op);
         if(expr[i].op == '#') {
-            printf("%d \t\n", expr[i].num1);
+            printf("\t%d \t\n", expr[i].num1);
         }
         else {
-            printf(isupper(expr[i].oper1) ? "pointer(%d) \t" : "%c \t", isupper(expr[i].oper1) ? expr[i].oper1 - 'A' : expr[i].oper1);
-            printf(isupper(expr[i].oper2) ? "pointer(%d)\n" : "%c\n", isupper(expr[i].oper2) ? expr[i].oper2 - 'A' : expr[i].oper2);
+            printf(isupper(expr[i].oper1) ? "\tpointer(%d) \t" : "\t%c \t", isupper(expr[i].oper1) ? expr[i].oper1 - 'A' : expr[i].oper1);
+            printf(isupper(expr[i].oper2) ? "\tpointer(%d)\n" : "\t%c\n", isupper(expr[i].oper2) ? expr[i].oper2 - 'A' : expr[i].oper2);
         }
     }
 }
@@ -86,8 +86,8 @@ void print_res() {
 S           :   S LINE
             |
             ;
-LINE        :   STATEMENT NL       { print_res(); idx = 0; temp = 'A' - 1; }
-            |   STATEMENT SC NL    { print_res(); idx = 0; temp = 'A' - 1; }
+LINE        :   STATEMENT NL            { print_res(); idx = 0; temp = 'A' - 1; }
+            |   STATEMENT SC NL         { print_res(); idx = 0; temp = 'A' - 1; }
             ;
 STATEMENT   :   VAR EQ E                { addtotable($3, '\0', '=', 0, 0); }
             ;
@@ -104,7 +104,7 @@ E           :
 %%
 
 int main() {
-    printf("Input: ");
+    printf("Input:\n");
     yyparse();
     return 0;
 }
