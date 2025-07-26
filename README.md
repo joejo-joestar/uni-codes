@@ -1,7 +1,7 @@
 <h1 align="center">🏫 Uni Codes 💻</h1>
 
 <p align = "center">
-  <img src=".assets/pixcodingcar.png" alt="Coding Car" title="Coding Car" width="128">
+  <img src=".assets/pixunicar.png" alt="Coding Car" title="Coding Car" width="128">
 </p>
 
 This is just an unofficial repo to store most of my codes from all the different CSE courses :3
